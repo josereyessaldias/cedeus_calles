@@ -1,0 +1,6 @@
+<h3>Investigadores</h3>
+<% @persons.each do |person| %>
+	<%= person.name %> <%= link_to 'borrar', person_path(person), method: :delete %> <br>
+<% end %>
+
+<%= link_to 'Crear nuevo investigador', new_person_path %>

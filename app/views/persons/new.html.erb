@@ -1,0 +1,13 @@
+<h3>Crear Investigador</h3>
+
+
+
+<%= form_with model: @person, url: persons_path, method: :post, local: true do |f| %>
+	
+	<%= f.label :nombre %>: 
+	<%= f.text_field :name %>	<br>
+
+	<%= f.submit "Crear Persona", :class => 'btn boton-config-titulo' %>
+
+<% end %>
+

@@ -1,0 +1,13 @@
+<h3>Ingresar Producto</h3>
+
+
+
+<%= form_with model: @product, url: products_path, method: :post, local: true do |f| %>
+	
+	<%= f.label :titulo %>: 
+	<%= f.text_field :titulo %>	<br>
+
+	<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
+
+<% end %>
+

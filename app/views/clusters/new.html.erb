@@ -1,0 +1,12 @@
+<h3>Crear Investigador</h3>
+
+
+<%= form_with model: @cluster, url: clusters_path, method: :post, local: true do |f| %>
+	
+	<%= f.label :nombre %>: 
+	<%= f.text_field :name %>	<br>
+
+	<%= f.submit "Crear Cluster", :class => 'btn btn-info' %>
+
+<% end %>
+

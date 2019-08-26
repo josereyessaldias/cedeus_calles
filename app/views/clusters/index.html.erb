@@ -1,0 +1,6 @@
+<h3>Clusters</h3>
+<% @clusters.each do |cluster| %>
+	<%= cluster.name %> <%= link_to 'borrar', cluster_path(cluster), method: :delete %> <br>
+<% end %>
+
+<%= link_to 'Crear nuevo cluster', new_cluster_path %>
