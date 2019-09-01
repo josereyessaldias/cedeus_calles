@@ -1,11 +1,20 @@
 <h3>Ingresar Producto</h3>
 
-
-
+<br>
 <%= form_with model: @product, url: products_path, method: :post, local: true do |f| %>
 	
 	<%= f.label :titulo %>: 
 	<%= f.text_field :titulo %>	<br>
+
+	<%= f.label :revista %>: 
+	<%= f.text_field :revista %>	<br>
+
+	<%= f.label :tipo %>: 
+	<%= f.select(:tipo, Product.tipos.keys.map {|tipo| [tipo.titleize,tipo]})  %>	<br>
+
+	<%= f.label :year %>: 
+	<%= f.text_field :year %>	<br>
+	<br>
 
 	<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
 

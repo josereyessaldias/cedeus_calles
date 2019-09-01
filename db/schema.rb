@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_045733) do
+ActiveRecord::Schema.define(version: 2019_08_26_052429) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_045733) do
 
   create_table "products", force: :cascade do |t|
     t.string "titulo"
-    t.integer "type"
+    t.integer "tipo"
     t.string "revista"
     t.string "year"
     t.datetime "created_at", null: false

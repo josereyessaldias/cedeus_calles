@@ -1,6 +1,30 @@
 <h3>Productos</h3>
-<% @products.each do |product| %>
-	<%= product.titulo %> <%= link_to 'borrar', product_path(product), method: :delete %> <br>
-<% end %>
 
-<%= link_to 'Ingresar nuevo product', new_product_path %>
+<br>
+<table>
+	<thead>
+		<th>Título</th>
+		<th>Revista</th>
+		<th>Tipo</th>
+		<th>Año</th>
+		<th></th>
+	</thead>
+
+
+
+	<% @products.each do |product| %>
+		
+		<tr>
+			<td><%= product.titulo %></td>
+			<td><%= product.revista %> </td>
+			<td><%= product.tipo %></td>
+			<td><%= product.year %></td>
+			<td><%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+		</tr>
+	<% end %>
+
+</table>
+
+<br>
+<%= link_to 'Ingresar nuevo product', new_product_path, :class => 'btn btn-sm btn-info' %>
