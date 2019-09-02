@@ -3,6 +3,8 @@
 <br>
 <table>
 	<thead>
+		<th>Autores</th>
+		<th>Cluster</th>
 		<th>Título</th>
 		<th>Revista</th>
 		<th>Tipo</th>
@@ -10,11 +12,25 @@
 		<th></th>
 	</thead>
 
-
-
 	<% @products.each do |product| %>
-		
 		<tr>
+			<td>
+				<% product.persons.each do |person| %>
+					<%= person.name %>,
+					<% person.clusters.each do |cluster| %>
+						<% if cluster.name != "Sin cluster" %>
+							<% @temp << cluster.name %>
+						<% end %>
+					<% end %> 
+				<% end %>
+			</td>
+
+			<td>
+				<% @temp.uniq.each do |i| %>
+					<%= i %>/ 
+				<% end %>
+			</td>
+
 			<td><%= product.titulo %></td>
 			<td><%= product.revista %> </td>
 			<td><%= product.tipo %></td>
@@ -27,4 +43,4 @@
 </table>
 
 <br>
-<%= link_to 'Ingresar nuevo product', new_product_path, :class => 'btn btn-sm btn-info' %>
+<%= link_to 'Ingresar nuevo producto', new_product_path, :class => 'btn btn-sm btn-info' %>

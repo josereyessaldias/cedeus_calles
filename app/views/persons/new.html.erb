@@ -1,13 +1,25 @@
 <h3>Crear Investigador</h3>
 
 
+<br>
 
 <%= form_with model: @person, url: persons_path, method: :post, local: true do |f| %>
 	
 	<%= f.label :nombre %>: 
-	<%= f.text_field :name %>	<br>
+	<%= f.text_field :name %><br>
 
-	<%= f.submit "Crear Persona", :class => 'btn boton-config-titulo' %>
+	<%= f.label :cluster_1 %>: 
+	<%= f.collection_select :cluster_id_1, @clusters, :id, :name %><br>
+
+	<%= f.label :cluster_2 %>: 
+	<%= f.collection_select :cluster_id_2, @clusters, :id, :name, :prompt => true %><br>
+
+	<%= f.label :cluster_3 %>: 
+	<%= f.collection_select :cluster_id_3, @clusters, :id, :name, :prompt => true %><br>
+
+	<br>
+	<%= f.submit "Crear Persona", :class => 'btn btn-dark btn-sm' %>
 
 <% end %>
+
 
