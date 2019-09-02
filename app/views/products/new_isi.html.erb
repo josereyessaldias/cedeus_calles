@@ -1,0 +1,58 @@
+<h3>Ingresar Revista ISI</h3>
+
+<br>
+
+
+	
+<%= form_with model: @product, url: products_path, method: :post, local: true do |f| %>
+	<div class="row">
+		<div class="col-12 col-md-6">
+
+			<%= f.label :titulo %>: 
+			<%= f.text_field :titulo %>	<br>
+
+			<%= f.label :revista %>: 
+			<%= f.text_field :revista %>	<br>
+
+			<%= f.label :tipo %>: 
+			<%= f.select(:tipo, Product.tipos.keys.map {|tipo| [tipo.titleize,tipo]})  %>	<br>
+
+			<%= f.label :year %>: 
+			<%= f.text_field :year %>	<br>
+				
+		</div>
+
+		<div class="col-12 col-md-6">
+		
+			<%= f.label :autor_1 %>: 
+			<%= f.collection_select :person_id_1, @persons, :id, :name %><br>
+
+			<%= f.label :autor_2 %>: 
+			<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_3 %>: 
+			<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_4 %>: 
+			<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_5 %>: 
+			<%= f.collection_select :person_id_5, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_6 %>: 
+			<%= f.collection_select :person_id_6, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_7 %>: 
+			<%= f.collection_select :person_id_7, @persons, :id, :name, prompt: :true %><br>
+
+			<%= f.label :autor_8 %>: 
+			<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: :true %><br>
+
+		</div>
+
+	</div>
+<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
+	
+<% end %>	
+
+

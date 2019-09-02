@@ -10,6 +10,11 @@ class ProductsController < ApplicationController
 		@persons = Person.all
 	end
 
+	def new_isi
+		@product = Product.new
+		@persons = Person.all
+	end
+
 	def create
 		@product = Product.new
 		@product.titulo = params[:product][:titulo]

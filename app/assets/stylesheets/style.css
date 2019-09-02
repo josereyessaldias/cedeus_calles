@@ -8,3 +8,13 @@ th, td {
 th {
   text-align: left;
 }
+
+
+.navegador {
+	background-color: rgb(12,183,125);
+	padding: 3px 0 3px 0;
+}
+
+.link_nav {
+	color:white;
+}
