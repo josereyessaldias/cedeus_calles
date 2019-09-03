@@ -6,11 +6,7 @@ class ProductsController < ApplicationController
 	end
 	
 	def new
-		@product = Product.new
-		@persons = Person.all
-	end
-
-	def new_isi
+		@tipo = params[:tipo]
 		@product = Product.new
 		@persons = Person.all
 	end
@@ -19,7 +15,7 @@ class ProductsController < ApplicationController
 		@product = Product.new
 		@product.titulo = params[:product][:titulo]
 		@product.revista = params[:product][:revista]
-		@product.tipo = params[:product][:tipo]
+		@product.tipo = params[:tipo]
 		@product.year = params[:product][:year]
 		@product.save
 
