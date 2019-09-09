@@ -6,18 +6,61 @@
 	
 <%= form_with model: @product, url: products_path(:tipo => @tipo), method: :post, local: true do |f| %>
 	<div class="row">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-6" style="font-size: 12px">
 
 			<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" or @tipo == "libro" %>
 				<%= f.label :titulo %>: 
-				<%= f.text_field :titulo %>	<br>
+				<%= f.text_area :titulo %> <br>
 
 				<%= f.label :revista %>: 
-				<%= f.text_field :revista %>	<br>
+				<%= f.text_area :revista %> <br>
+
+				<%= f.label :volumen %>: 
+				<%= f.text_field :volume %> <br>
+
+				<%= f.label :páginas %>: 
+				<%= f.text_field :pages %> <br>
+
+				<%= f.label :DOI %>: 
+				<%= f.text_field :doi %> <br>
+
+				<%= f.label :Researchers %>: 
+				<%= f.check_box :partresearchers %> 
+
+				<%= f.label :Postdosc %>: 
+				<%= f.check_box :partpostdoc %> 
+
+				<%= f.label :Undergraduate %>: 
+				<%= f.check_box :partundergrad %> 
+
+				<%= f.label :Graduate %>: 
+				<%= f.check_box :partgrad %> <br>
+
+				<%= f.label :Fondap %>: 
+				<%= f.number_field :fundfondap %> 
+
+				<%= f.label :Fondecyt %>: 
+				<%= f.number_field :fundfondecyt %> <br>
+
+				<%= f.label :Fondef %>: 
+				<%= f.number_field :fundfondef %> 
+
+				<%= f.label :Basal %>: 
+				<%= f.number_field :fundbasal %> <br>
+
+				<%= f.label :ICM %>: 
+				<%= f.number_field :fundicm %> 
+
+				<%= f.label :Other %>: 
+				<%= f.number_field :fundother %>
+
+				<%= f.label :Especify %>: 
+				<%= f.text_field :fundspecify %> <br>
+
 			<% end %>
 
 			<%= f.label :year %>: 
-			<%= f.text_field :year %>	<br>
+			<%= f.text_field :year %>	<br><br>
 				
 		</div>
 
