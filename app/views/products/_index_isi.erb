@@ -2,28 +2,33 @@
 
 <br>
 <table>
-	<thead>
-		<th>Autores</th>
-		<th>Cluster</th>
-		<th>DOI</th>
-		<th>Título</th>
-		<th>Revista</th>
-		<th>Volumen</th>
-		<th>Páginas</th>
-		<th>Año</th>
-		<th>Researcher</th>
-		<th>Postdoc</th>
-		<th>Undergrad</th>
-		<th>Grad</th>
-		<th>Fondap</th>
-		<th>Fondecyt</th>
-		<th>Fondef</th>
-		<th>Basal</th>
-		<th>ICM</th>
-		<th>Other</th>
-		<th>Specify</th>
+	<tr>
+		<th rowspan="2">Autores</th>
+		<th rowspan="2">Cluster</th>
+		<th rowspan="2">DOI</th>
+		<th rowspan="2">Título</th>
+		<th rowspan="2">Revista</th>
+		<th rowspan="2">Volumen</th>
+		<th rowspan="2">Páginas</th>
+		<th rowspan="2">Año</th>
+		<th colspan="4" style="text-align: center">Participation</th>
+		<th colspan="7" style="text-align: center">Funding</th>
+	</tr>
+	<tr>
+		<th class="vertical">Researcher</th>
+		<th class="vertical">Postdoc</th>
+		<th class="vertical">Undergrad</th>
+		<th class="vertical">Grad</th>
+
+		<th class="vertical">Fondap</th>
+		<th class="vertical">Fondecyt</th>
+		<th class="vertical">Fondef</th>
+		<th class="vertical">Basal</th>
+		<th class="vertical">ICM</th>
+		<th class="vertical">Other</th>
+		<th class="vertical">Specify</th>
 		<th></th>
-	</thead>
+	</tr>
 
 	<% @products.each do |product| %>
 		<% if product.tipo == "revista_isi" %>
@@ -50,10 +55,10 @@
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
-				<td><%= product.partresearchers %></td>
-				<td><%= product.partpostdoc %></td>
-				<td><%= product.partundergrad %></td>
-				<td><%= product.partgrad %></td>
+				<td><%= boolean01(product.partresearchers) %></td>
+				<td><%= boolean01(product.partpostdoc) %></td>
+				<td><%= boolean01(product.partundergrad) %></td>
+				<td><%= boolean01(product.partgrad) %></td>
 				<td><%= product.fundfondap %></td>
 				<td><%= product.fundfondecyt %></td>
 				<td><%= product.fundfondef %></td>

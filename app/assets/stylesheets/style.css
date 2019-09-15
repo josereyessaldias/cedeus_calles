@@ -21,3 +21,14 @@ th {
 .link_nav {
 	color:white;
 }
+
+.vertical {
+	max-width:30px;
+	height: 100px;
+	transform: rotate(270deg);
+
+}
+
+
+
+

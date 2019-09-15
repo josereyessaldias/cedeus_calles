@@ -5,91 +5,219 @@
 	<div class="row">
 		<div class="col-12 col-md-6" style="font-size: 12px">
 
-			<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" or @tipo == "libro" %>
-				<%= f.label :titulo %>: 
-				<%= f.text_area :titulo %> <br>
+			<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" %>
+				
+				<div class="row">
+					<div class="col-md-2">
+						<%= f.label :titulo %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :titulo, size: "40x2" %>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-2">
+						<%= f.label :revista %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :revista, size: "40x2" %>
+					</div>
+				</div>
+				<br>
 
-				<%= f.label :revista %>: 
-				<%= f.text_area :revista %> <br>
+				<div class="row">
+					<div class="col-md-2">
+						<%= f.label :volumen %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :volume %>
+					</div>
+					<div class="col-md-2">
+						<%= f.label :páginas %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :pages %>
+					</div>
+				</div>
+				<br>
 
-				<%= f.label :volumen %>: 
-				<%= f.text_field :volume %> <br>
+				<div class="row">
+					<div class="col-md-2">
+						<%= f.label :DOI %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :doi %>
+					</div>
+					<div class="col-md-2">
+						<%= f.label :Año %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :year %>
+					</div>
+				</div>
+				<br>
 
-				<%= f.label :páginas %>: 
-				<%= f.text_field :pages %> <br>
+				<div class="row">
+					<div class="col-4">
+						<p>Participación de:</p>
 
-				<%= f.label :DOI %>: 
-				<%= f.text_field :doi %> <br>
+						<ul>
+							<li><%= f.check_box :partresearchers %>
+								<%= f.label :Researchers %></li>
 
-				<%= f.label :Researchers %>: 
-				<%= f.check_box :partresearchers %> 
+							<li><%= f.check_box :partpostdoc %>
+								<%= f.label :Postdosc %> </li>
 
-				<%= f.label :Postdosc %>: 
-				<%= f.check_box :partpostdoc %> 
+							<li><%= f.check_box :partundergrad %>
+								<%= f.label :Undergraduate %> </li>
 
-				<%= f.label :Undergraduate %>: 
-				<%= f.check_box :partundergrad %> 
+							<li><%= f.check_box :partgrad %>
+								<%= f.label :Graduate %> </li>
+						</ul>
+					</div>
 
-				<%= f.label :Graduate %>: 
-				<%= f.check_box :partgrad %> <br>
+					<div class="col-6">
+						<p>Financiamiento (en porcentaje):</p>
+						<div class="row">
+							<div class="col-4">
+								<%= f.label :Fondap %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundfondap, min: 0, max:100 %>
+							</div>
+							<div class="col-4">
+								<%= f.label :Fondecyt %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundfondecyt, min: 0, max:100 %>
+							</div>
+							<div class="col-4">
+								<%= f.label :Fondef %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundfondef, min: 0, max:100 %>
+							</div>
+							<div class="col-4">
+								<%= f.label :Basal %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundbasal, min: 0, max:100 %>
+							</div>
+							<div class="col-4">
+								<%= f.label :ICM %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundicm, min: 0, max:100 %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<%= f.label :Other %>: 
+							</div>
+							<div class="col-2">
+								<%= f.number_field :fundother, min: 0, max:100 %>
+							</div>
+							<div class="col-4">
+								<%= f.label :Especify %>: 
+							</div>
+							<div class="col-2">
+								<%= f.text_field :fundspecify %>
+							</div>
 
-				<%= f.label :Fondap %>: 
-				<%= f.number_field :fundfondap %> 
-
-				<%= f.label :Fondecyt %>: 
-				<%= f.number_field :fundfondecyt %> <br>
-
-				<%= f.label :Fondef %>: 
-				<%= f.number_field :fundfondef %> 
-
-				<%= f.label :Basal %>: 
-				<%= f.number_field :fundbasal %> <br>
-
-				<%= f.label :ICM %>: 
-				<%= f.number_field :fundicm %> 
-
-				<%= f.label :Other %>: 
-				<%= f.number_field :fundother %>
-
-				<%= f.label :Especify %>: 
-				<%= f.text_field :fundspecify %> <br>
+						</div>
+					</div>
+				</div>
+				<br>
 
 			<% end %>
+			<% if  @tipo == "revista_no_isi" %>
+				<div class="row">
+					<div class="col-md-2">
+						<%= f.label :Indexación %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :indexacion %>
+					</div>
+				</div>
+			<% end %>
 
-			<%= f.label :year %>: 
-			<%= f.text_field :year %>	<br><br>
+			<% if  @tipo == "libro" %>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Título_Libro %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :revista, size: "40x2" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Título_Capítulo %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :titulo, size: "40x2" %>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :páginas %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :pages %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Año %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :year %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Editorial_ciudad_país %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :editorial, size: "42" %>
+					</div>
+				</div>
+			<% end %>
+
+		<br>
 				
 		</div>
 
-		<div class="col-12 col-md-6">
-		
-			<%= f.label :autor_1 %>: 
-			<%= f.collection_select :person_id_1, @persons, :id, :name, prompt: @person_hash[0], selected: @person_id_hash[0] %><br>
+		<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" or @tipo == "libro"%>
 
-			<%= f.label :autor_2 %>: 
-			<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: @person_hash[1], selected: @person_id_hash[1] %><br>
+			<div class="col-12 col-md-6" style="font-size: 12px">
+			
+				<%= f.label :autor_1 %>: 
+				<%= f.collection_select :person_id_1, @persons, :id, :name, prompt: @person_hash[0], selected: @person_id_hash[0] %><br>
 
-			<%= f.label :autor_3 %>: 
-			<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: @person_hash[2], selected:@person_id_hash[2] %><br>
+				<%= f.label :autor_2 %>: 
+				<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: @person_hash[1], selected: @person_id_hash[1] %><br>
 
-			<%= f.label :autor_4 %>: 
-			<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: @person_hash[3], selected: @person_id_hash[3] %><br>
+				<%= f.label :autor_3 %>: 
+				<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: @person_hash[2], selected:@person_id_hash[2] %><br>
 
-			<%= f.label :autor_5 %>: 
-			<%= f.collection_select :person_id_5, @persons, :id, :name, prompt: @person_hash[4], selected: @person_id_hash[4] %><br>
+				<%= f.label :autor_4 %>: 
+				<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: @person_hash[3], selected: @person_id_hash[3] %><br>
 
-			<%= f.label :autor_6 %>: 
-			<%= f.collection_select :person_id_6, @persons, :id, :name, prompt: @person_hash[5], selected: @person_id_hash[5] %><br>
+				<%= f.label :autor_5 %>: 
+				<%= f.collection_select :person_id_5, @persons, :id, :name, prompt: @person_hash[4], selected: @person_id_hash[4] %><br>
 
-			<%= f.label :autor_7 %>: 
-			<%= f.collection_select :person_id_7, @persons, :id, :name, prompt: @person_hash[6], selected: @person_id_hash[6] %><br>
+				<%= f.label :autor_6 %>: 
+				<%= f.collection_select :person_id_6, @persons, :id, :name, prompt: @person_hash[5], selected: @person_id_hash[5] %><br>
 
-			<%= f.label :autor_8 %>: 
-			<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: @person_hash[7], selected: @person_id_hash[7] %><br>
+				<%= f.label :autor_7 %>: 
+				<%= f.collection_select :person_id_7, @persons, :id, :name, prompt: @person_hash[6], selected: @person_id_hash[6] %><br>
 
-		</div>
-		<% @person_hash.each do |i| %>
-			<%= i %>
+				<%= f.label :autor_8 %>: 
+				<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: @person_hash[7], selected: @person_id_hash[7] %><br>
+
+			</div>
 		<% end %>
 
 	</div>
