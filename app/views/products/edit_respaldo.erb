@@ -1,6 +1,7 @@
-<h3>Ingresar <%= @tipo.capitalize %></h3>
+<h3>Editar <%= @tipo.capitalize %></h3>
 
 <br>
+
 <%= form_with model: @product, local: true do |f| %>
 
 	<%= f.hidden_field :tipo, value: @tipo %>

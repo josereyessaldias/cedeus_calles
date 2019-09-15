@@ -1,12 +1,15 @@
-<h3>Ingresar <%= @tipo.capitalize %></h3>
+<h3>Editar <%= @tipo.capitalize %></h3>
 
 <br>
-<%= form_with model: @product, local: true do |f| %>
 
-	<%= f.hidden_field :tipo, value: @tipo %>
 
-	<div class="row">
-		<div class="col-12 col-md-6" style="font-size: 12px">
+<div class="row">
+	
+	<div class="col-12 col-md-6" style="font-size: 12px">
+
+		<%= form_with model: @product, local: true do |f| %>
+
+			<%= f.hidden_field :tipo, value: @tipo %>
 
 			<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" or @tipo == "libro" %>
 				<%= f.label :titulo %>: 
@@ -61,19 +64,25 @@
 
 			<%= f.label :year %>: 
 			<%= f.text_field :year %>	<br><br>
-				
-		</div>
-
-		<div class="col-12 col-md-6">
+			
+			<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
 		
+		<% end %>
+
+	</div>
+
+	<div class="col-12 col-md-6" style="font-size: 12px">
+		
+		<%= form_with model: @products, local: true do |f| %>
+
 			<%= f.label :autor_1 %>: 
 			<%= f.collection_select :person_id_1, @persons, :id, :name %><br>
 
 			<%= f.label :autor_2 %>: 
-			<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: :true %><br>
+			<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: @person_hash[1] %><br>
 
-			<%= f.label :autor_3 %>: 
-			<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: :true %><br>
+			<%= f.label :autor_3 %>:
+			<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: @person_hash[2] %><br>
 
 			<%= f.label :autor_4 %>: 
 			<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: :true %><br>
@@ -90,10 +99,11 @@
 			<%= f.label :autor_8 %>: 
 			<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: :true %><br>
 
-		</div>
+			<%= f.submit "Modificar autores", :class => 'btn btn-dark' %>
+
+		<% end %>
 
 	</div>
-	
-	<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
 
-<% end %>
+</div>
+

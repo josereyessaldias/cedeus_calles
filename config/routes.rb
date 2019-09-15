@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
  	resources :persons, only: [:index, :new, :create, :destroy]
  	resources :clusters, only: [:index, :new, :create, :destroy]
- 	resources :products, only: [:index, :new, :create, :destroy]
+ 	resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
 
 	root 'persons#index'  
 end
