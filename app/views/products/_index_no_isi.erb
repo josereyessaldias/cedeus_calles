@@ -1,0 +1,74 @@
+<h5>Revistas No ISI</h5>
+
+<br>
+<table>
+	<thead>
+		<th>Autores</th>
+		<th>Cluster</th>
+		<th>DOI</th>
+		<th>Título</th>
+		<th>Revista</th>
+		<th>Volumen</th>
+		<th>Páginas</th>
+		<th>Año</th>
+		<th>Researcher</th>
+		<th>Postdoc</th>
+		<th>Undergrad</th>
+		<th>Grad</th>
+		<th>Fondap</th>
+		<th>Fondecyt</th>
+		<th>Fondef</th>
+		<th>Basal</th>
+		<th>ICM</th>
+		<th>Other</th>
+		<th>Specify</th>
+		<th></th>
+	</thead>
+
+	<% @products.each do |product| %>
+		<% if product.tipo == "revista_no_isi" %>
+			<tr>
+				<td>
+					<% product.persons.each do |person| %>
+						<%= person.name %>,
+						<% person.clusters.each do |cluster| %>
+							<% if cluster.name != "Sin cluster" %>
+								<% @temp << cluster.name %>
+							<% end %>
+						<% end %> 
+					<% end %>
+				</td>
+
+				<td>
+					<% @temp.uniq.each do |i| %>
+						<%= i %>/ 
+					<% end %>
+				</td>
+				<td><%= product.doi %></td>
+				<td><%= product.titulo %></td>
+				<td><%= product.revista %> </td>
+				<td><%= product.volume %></td>
+				<td><%= product.pages %></td>
+				<td><%= product.year %></td>
+				<td><%= product.partresearchers %></td>
+				<td><%= product.partpostdoc %></td>
+				<td><%= product.partundergrad %></td>
+				<td><%= product.partgrad %></td>
+				<td><%= product.fundfondap %></td>
+				<td><%= product.fundfondecyt %></td>
+				<td><%= product.fundfondef %></td>
+				<td><%= product.fundbasal %></td>
+				<td><%= product.fundicm %></td>
+				<td><%= product.fundother %></td>
+				<td><%= product.fundspecify %></td>
+
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+			</tr>
+		<% end %>
+	<% end %>
+
+</table>
+<br>
+

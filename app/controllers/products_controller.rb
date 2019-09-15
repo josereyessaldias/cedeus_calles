@@ -16,28 +16,18 @@ class ProductsController < ApplicationController
 		@tipo = params[:tipo]
 		@product = Product.new
 		@persons = Person.all
+
+		@person_hash = []
+		@person_id_hash = []
+		8.times do |i|
+			@person_hash << 'seleccione autor'
+			@person_id_hash << nil
+		end
+		
 	end
 
 	def create
-		@product = Product.new
-		@product.titulo = params[:product][:titulo]
-		@product.revista = params[:product][:revista]
-		@product.tipo = params[:product][:tipo]
-		@product.year = params[:product][:year]
-		@product.doi = params[:product][:doi]
-		@product.volume = params[:product][:volume]
-		@product.pages = params[:product][:pages]
-		@product.partresearchers = params[:product][:partresearchers]
-		@product.partpostdoc = params[:product][:partpostdoc]
-		@product.partundergrad = params[:product][:partundergrad]
-		@product.partgrad = params[:product][:partgrad]
-		@product.fundfondap = params[:product][:fundfondap]
-		@product.fundfondecyt = params[:product][:fundfondecyt]
-		@product.fundfondef = params[:product][:fundfondef]
-		@product.fundbasal = params[:product][:fundbasal]
-		@product.fundicm = params[:product][:fundicm]
-		@product.fundother = params[:product][:fundother]
-		@product.fundspecify = params[:product][:fundspecify]
+		@product = Product.new(product_params)
 		@product.save
 
 		[:person_id_1,:person_id_2,:person_id_3,:person_id_4,:person_id_5,:person_id_6,:person_id_7,:person_id_8].each do |i|
@@ -77,25 +67,7 @@ class ProductsController < ApplicationController
 
 	def update
 		@product = Product.find(params[:id])
-		@product.update(titulo: params[:product][:titulo])
-		@product.update(revista: params[:product][:revista])
-		@product.update(tipo: params[:product][:tipo])
-		@product.update(year: params[:product][:year])
-		@product.update(doi: params[:product][:doi])
-		@product.update(volume: params[:product][:volume])
-		@product.update(pages: params[:product][:pages])
-		@product.update(partresearchers: params[:product][:partresearchers])
-		@product.update(partpostdoc: params[:product][:partpostdoc])
-		@product.update(partundergrad: params[:product][:partundergrad])
-		@product.update(partgrad: params[:product][:partgrad])
-		@product.update(fundfondap: params[:product][:fundfondap])
-		@product.update(fundfondecyt: params[:product][:fundfondecyt])
-		@product.update(fundfondef: params[:product][:fundfondef])
-		@product.update(fundbasal: params[:product][:fundbasal])
-		@product.update(fundicm: params[:product][:fundicm])
-		@product.update(fundother: params[:product][:fundother])
-		@product.update(fundspecify: params[:product][:fundspecify])
-
+		@product.update(product_params)
 
 		@person_product = PersonProduct.where(product_id: params[:id])
 		@person_product.destroy_all
@@ -120,4 +92,18 @@ class ProductsController < ApplicationController
 		@product.destroy
 		redirect_to products_path, notice: 'el producto fue borrado'
 	end
+
+
+
+	private
+
+	def product_params
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify)
+	end
+		
+
 end
+
+
+
+
