@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_224531) do
+ActiveRecord::Schema.define(version: 2019_09_16_175159) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2019_09_15_224531) do
     t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contact"
+    t.integer "rol"
     t.index ["person_id"], name: "index_person_products_on_person_id"
     t.index ["product_id"], name: "index_person_products_on_product_id"
   end

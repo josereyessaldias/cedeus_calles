@@ -194,29 +194,45 @@
 			<div class="col-12 col-md-6" style="font-size: 12px">
 			
 				<%= f.label :autor_1 %>: 
-				<%= f.collection_select :person_id_1, @persons, :id, :name, prompt: @person_hash[0], selected: @person_id_hash[0] %><br>
+				<%= f.collection_select :person_id_1, @persons, :id, :name, prompt: @person_array[0], selected: @person_id_array[0] %> 
+				<%= f.select :contact_1, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[0], selected: @contact_array[0] %>
 
+				<br>
 				<%= f.label :autor_2 %>: 
-				<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: @person_hash[1], selected: @person_id_hash[1] %><br>
+				<%= f.collection_select :person_id_2, @persons, :id, :name, prompt: @person_array[1], selected: @person_id_array[1] %>
+				<%= f.select :contact_2, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[1], selected: @contact_array[1] %>
 
+				<br>
 				<%= f.label :autor_3 %>: 
-				<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: @person_hash[2], selected:@person_id_hash[2] %><br>
+				<%= f.collection_select :person_id_3, @persons, :id, :name, prompt: @person_array[2], selected:@person_id_array[2] %>
+				<%= f.select :contact_3, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[2], selected: @contact_array[2] %>
 
+				<br>
 				<%= f.label :autor_4 %>: 
-				<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: @person_hash[3], selected: @person_id_hash[3] %><br>
+				<%= f.collection_select :person_id_4, @persons, :id, :name, prompt: @person_array[3], selected: @person_id_array[3] %>
+				<%= f.select :contact_4, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[3], selected: @contact_array[3] %>
 
+				<br>
 				<%= f.label :autor_5 %>: 
-				<%= f.collection_select :person_id_5, @persons, :id, :name, prompt: @person_hash[4], selected: @person_id_hash[4] %><br>
+				<%= f.collection_select :person_id_5, @persons, :id, :name, prompt: @person_array[4], selected: @person_id_array[4] %>
+				<%= f.select :contact_5, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[4], selected: @contact_array[4] %>
 
+				<br>
 				<%= f.label :autor_6 %>: 
-				<%= f.collection_select :person_id_6, @persons, :id, :name, prompt: @person_hash[5], selected: @person_id_hash[5] %><br>
+				<%= f.collection_select :person_id_6, @persons, :id, :name, prompt: @person_array[5], selected: @person_id_array[5] %>
+				<%= f.select :contact_6, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[5], selected: @contact_array[5] %>
 
+				<br>
 				<%= f.label :autor_7 %>: 
-				<%= f.collection_select :person_id_7, @persons, :id, :name, prompt: @person_hash[6], selected: @person_id_hash[6] %><br>
+				<%= f.collection_select :person_id_7, @persons, :id, :name, prompt: @person_array[6], selected: @person_id_array[6] %>
+				<%= f.select :contact_7, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[6], selected: @contact_array[6] %>
 
+				<br>
 				<%= f.label :autor_8 %>: 
-				<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: @person_hash[7], selected: @person_id_hash[7] %><br>
+				<%= f.collection_select :person_id_8, @persons, :id, :name, prompt: @person_array[7], selected: @person_id_array[7] %>
+				<%= f.select :contact_8, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[7], selected: @contact_array[7] %>
 
+				<br>
 			</div>
 		<% end %>
 

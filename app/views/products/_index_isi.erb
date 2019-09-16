@@ -36,7 +36,9 @@
 			<tr>
 				<td>
 					<% product.persons.each do |person| %>
-						<%= person.name %>,
+						<%= person.name %>
+						<% t = product.person_product.where(person_id: person.id).first.contact_before_type_cast %>
+						<sup><%= t if t > 0 %></sup>,
 						<% person.clusters.each do |cluster| %>
 							<% if cluster.name != "Sin cluster" %>
 								<% @temp << cluster.name %>
@@ -44,7 +46,6 @@
 						<% end %> 
 					<% end %>
 				</td>
-
 				<td>
 					<% @temp.uniq.each do |i| %>
 						<%= i %>/ 

@@ -1,6 +1,12 @@
 <h3>Productos</h3>
 <br>
 
+<%= link_to 'Ingresar Revista ISI', new_product_path(:tipo => "revista_isi"), :class => 'btn btn-sm btn-info' %>
+<%= link_to 'Ingresar Revista No ISI', new_product_path(:tipo => "revista_no_isi"), :class => 'btn btn-sm btn-info' %>
+<%= link_to 'Ingresar Libro', new_product_path(:tipo => "libro"), :class => 'btn btn-sm btn-info' %>
+<br><br>
+
+
 <%= render 'products/index_isi' %>
 <br>
 <%= render 'products/index_no_isi' %>
@@ -8,7 +14,4 @@
 <br>
 <%= render 'products/index_libro' %>
 <br>
-<%= link_to 'Ingresar Revista ISI', new_product_path(:tipo => "revista_isi"), :class => 'btn btn-sm btn-info' %>
-<%= link_to 'Ingresar Revista No ISI', new_product_path(:tipo => "revista_no_isi"), :class => 'btn btn-sm btn-info' %>
-<%= link_to 'Ingresar Libro', new_product_path(:tipo => "libro"), :class => 'btn btn-sm btn-info' %>
-<br><br>
+
