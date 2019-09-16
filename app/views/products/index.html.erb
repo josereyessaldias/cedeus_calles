@@ -1,9 +1,17 @@
 <h3>Productos</h3>
 <br>
 
-<%= link_to 'Ingresar Revista ISI', new_product_path(:tipo => "revista_isi"), :class => 'btn btn-sm btn-info' %>
-<%= link_to 'Ingresar Revista No ISI', new_product_path(:tipo => "revista_no_isi"), :class => 'btn btn-sm btn-info' %>
-<%= link_to 'Ingresar Libro', new_product_path(:tipo => "libro"), :class => 'btn btn-sm btn-info' %>
+<div>
+	<h5>Ingresar nuevo producto:</h5>
+	<%= link_to 'Revista ISI', new_product_path(:tipo => "revista_isi"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Revista No ISI', new_product_path(:tipo => "revista_no_isi"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Libro', new_product_path(:tipo => "libro"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Participación en Congreso', new_product_path(:tipo => "congreso"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Organización de Congreso', new_product_path(:tipo => "organizacion"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Colaboración Internacioanl', new_product_path(:tipo => "colaboracion"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Tesis', new_product_path(:tipo => "tesis"), :class => 'btn btn-sm btn-info' %>
+	<%= link_to 'Otras fuentes de Financiamiento', new_product_path(:tipo => "financiamiento"), :class => 'btn btn-sm btn-info' %>
+</div>
 <br><br>
 
 

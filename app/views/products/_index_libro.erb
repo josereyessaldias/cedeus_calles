@@ -15,20 +15,36 @@
 	</thead>
 
 	<% @products.each do |product| %>
+		<% @temp = [] %>
+		<% @autores = [] %>
+		<% @editores = [] %>
 		<% if product.tipo == "libro" %>
+	
+			<% product.persons.each do |person| %>
+				<% person.clusters.each do |cluster| %>
+					<% if cluster.name != "Sin cluster" %>
+						<% @temp << cluster.name %>
+					<% end %>
+				<% end %> 
+				<% if person.person_product.where(product_id: product).first.rol == "author" %>
+					<% @autores << person.name %>
+					<% @autores << ", " %>
+				<% else %>
+					<% @editores << person.name %>
+					<% @editores << ", " %>
+				<% end %>
+			<% end %>
+				
 			<tr>
 				<td>
-					<% product.persons.each do |person| %>
-						<%= person.name %>,
-						<% person.clusters.each do |cluster| %>
-							<% if cluster.name != "Sin cluster" %>
-								<% @temp << cluster.name %>
-							<% end %>
-						<% end %> 
+					<% @autores.each do |i| %>
+						<%= i %>
 					<% end %>
 				</td>
 				<td>
-			
+					<% @editores.each do |i| %>
+						<%= i %>
+					<% end %>
 				</td>
 
 				<td>

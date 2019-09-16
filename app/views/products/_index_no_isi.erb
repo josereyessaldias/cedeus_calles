@@ -33,6 +33,7 @@
 	</tr>
 
 	<% @products.each do |product| %>
+		<% @temp = [] %>
 		<% if product.tipo == "revista_no_isi" %>
 			<tr>
 				<td>
