@@ -4,6 +4,7 @@ Rails.application.routes.draw do
  	resources :persons, only: [:index, :new, :create, :destroy]
  	resources :clusters, only: [:index, :new, :create, :destroy]
  	resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
+ 	resources :person_products, only: [:destroy]
 
 	root 'persons#index'  
 end
