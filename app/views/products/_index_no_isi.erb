@@ -14,6 +14,7 @@
 		<th rowspan="2">Otra indexación</th>
 		<th colspan="4" style="text-align: center">Participation</th>
 		<th colspan="7" style="text-align: center">Funding</th>
+		<th rowspan="2">Respaldo</th>
 	</tr>
 	<tr>
 		<th class="vertical">Researcher</th>
@@ -68,6 +69,13 @@
 				<td><%= product.fundicm %></td>
 				<td><%= product.fundother %></td>
 				<td><%= product.fundspecify %></td>
+				<td>
+					<% if product.file? %>
+						<%= link_to 'Respaldo', asset_path(product.file), :target => '_blank' %>
+					<% else %>
+						Pendiente
+					<% end %>		
+				</td>
 
 				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
 					<%= link_to 'borrar', product_path(product), method: :delete %></td>
