@@ -1,0 +1,78 @@
+<h5>Participación en Congresos</h5>
+
+<table>
+	<tr>
+		<th rowspan="2">Tipo de Actividad</th>
+		<th rowspan="2">Cluster</th>
+		<th rowspan="2">Nombre Congreso</th>
+		<th rowspan="2">Título Ponencia</th>
+		<th rowspan="2">Participantes</th>
+		<th rowspan="2">Ciudad/País</th>
+		<th rowspan="2">Fecha</th>
+		<th colspan="4" style="text-align: center">Participation</th>
+		<th rowspan="2">Respaldo</th>
+	</tr>
+	<tr>
+		<th class="vertical">Researcher</th>
+		<th class="vertical">Postdoc</th>
+		<th class="vertical">Undergrad</th>
+		<th class="vertical">Grad</th>
+		<th></th>
+	</tr>
+
+	<% @products.each do |product| %>
+		<% @clust = [] %>
+		<% @persona = [] %>
+		<% if product.tipo == "congreso" %>
+			
+			<% product.persons.each do |person| %>
+
+				<% person.clusters.each do |cluster| %>	
+					<% if cluster.name != "Sin Cluster" %>
+						<% @clust << cluster.name %>
+					<% end %>
+				<% end %>
+				<% @persona << person.name %>
+			<% end %>
+
+			<tr>
+				<td>
+					<%= product.tipocongreso_before_type_cast %>
+				</td>
+				<td>
+					<% @clust.uniq.each do |i| %>
+						<%= i %>/ 
+					<% end %>
+				</td>
+				<td><%= product.congreso %> </td>
+				<td><%= product.titulo %></td>
+
+				<td><% @persona.each do |i| %>
+						<%= i %>, 
+					<% end %>						
+				</td>
+
+				<td><%= product.lugar %></td>
+				<td><%= product.year %></td>
+				<td><%= boolean01(product.partresearchers) %></td>
+				<td><%= boolean01(product.partpostdoc) %></td>
+				<td><%= boolean01(product.partundergrad) %></td>
+				<td><%= boolean01(product.partgrad) %></td>
+				<td>
+					<% if product.file? %>
+						<%= link_to 'Respaldo', asset_path(product.file), :target => '_blank' %>
+					<% else %>
+						Pendiente
+					<% end %>		
+				</td>
+
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+			</tr>
+		<% end %>
+	<% end %>
+
+</table>
+<br>
+
