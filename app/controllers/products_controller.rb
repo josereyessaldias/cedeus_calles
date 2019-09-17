@@ -95,10 +95,12 @@ class ProductsController < ApplicationController
 			end
 		end
 
-		@respaldo = Respaldo.new
-		@respaldo.product_id = @product.id
-		@respaldo.file = params[:product][:file]
-		@respaldo.save
+		if params[:product][:file] != nil
+			@respaldo = Respaldo.new
+			@respaldo.product_id = @product.id
+			@respaldo.file = params[:product][:file]
+			@respaldo.save
+		end
 
 		redirect_to products_path(), notice: 'el producto fue actualizado'
 	end 
