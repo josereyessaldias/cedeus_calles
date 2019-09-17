@@ -40,6 +40,11 @@ class ProductsController < ApplicationController
 			end
 		end
 
+		@respaldo = Respaldo.new
+		@respaldo.product_id = @product.id
+		@respaldo.file = params[:product][:file]
+		@respaldo.save
+
 		redirect_to products_path(), notice: 'el producto fue creado'
 	end
 	
@@ -90,6 +95,11 @@ class ProductsController < ApplicationController
 			end
 		end
 
+		@respaldo = Respaldo.new
+		@respaldo.product_id = @product.id
+		@respaldo.file = params[:product][:file]
+		@respaldo.save
+
 		redirect_to products_path(), notice: 'el producto fue actualizado'
 	end 
 
@@ -104,7 +114,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :file, :tipocongreso, :congreso, :lugar)
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart,)
 	end
 		
 

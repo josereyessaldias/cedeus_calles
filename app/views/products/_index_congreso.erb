@@ -59,11 +59,9 @@
 				<td><%= boolean01(product.partundergrad) %></td>
 				<td><%= boolean01(product.partgrad) %></td>
 				<td>
-					<% if product.file? %>
-						<%= link_to 'Respaldo', asset_path(product.file), :target => '_blank' %>
-					<% else %>
-						Pendiente
-					<% end %>		
+					<% product.respaldos.each_with_index do |respaldo,i| %>
+						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
+					<% end %>
 				</td>
 
 				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>

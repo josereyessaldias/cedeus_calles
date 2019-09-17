@@ -183,12 +183,11 @@
 						<%= f.text_field :editorial, size: "42" %>
 					</div>
 				</div>
-			<% end %>
-
-			<% if  @tipo == "congreso" %>
+			
+			<% elsif  @tipo == "congreso" %>
 				<div class="row">
 					<div class="col-md-3">
-						<%= f.label :Título_de_actividad %>:
+						<%= f.label :Tipo_de_actividad %>:
 					</div>
 					<div class="col-md-3">
 						<%= f.select :tipocongreso, Product.tipocongresos.keys.map { |w| [w.humanize, w] } %>
@@ -246,6 +245,48 @@
 					</div>
 				</div>
 				
+
+			<% elsif  @tipo == "organizacion" %>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Tipo_de_actividad %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.select :tipoorganizacion, Product.tipoorganizacions.keys.map { |w| [w.humanize, w] } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Nombre_Congreso %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :titulo, size: "40x2" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Nº_participantes %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.number_field :numpart %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Ciudad_y_País %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :lugar %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<%= f.label :Fecha %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :year %>
+					</div>
+				</div><br>
 			<% end %>
 
 		<br>
@@ -407,9 +448,21 @@
 		<% end %>
 
 	</div>
+	<br>
+	<div style="font-size: 12px">
+		<p>Respaldos:</p>
+		<% @product.respaldos.each_with_index do |respaldo,i| %>
+			<ul>
+				<li><%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %> | 
+					<%= link_to "Borrar respaldo", respaldo_path(respaldo.id), method: :delete %>
+				</li>
+			</ul>
+		<% end %><br>
+		<%= f.label :Agregar_Respaldo %>: 
+		<%= f.file_field :file %><br>
 
-	<%= f.label :Respaldo %>: 
-	<%= f.file_field :file %><br><br>
+	</div>
+	<br><br>
 	
 	<%= f.submit "Crear Producto", :class => 'btn btn-dark' %>
 
