@@ -3,8 +3,8 @@
 <br>
 <table>
 	<tr>
-		<th rowspan="2">Autores</th>
 		<th rowspan="2">Cluster</th>
+		<th rowspan="2">Autores</th>
 		<th rowspan="2">DOI</th>
 		<th rowspan="2">Título</th>
 		<th rowspan="2">Revista</th>
@@ -33,23 +33,40 @@
 	</tr>
 
 	<% @products.each do |product| %>
-		<% @temp = [] %>
+		<% @clust = [] %>
+		<% @person = [] %>
+
 		<% if product.tipo == "revista_no_isi" %>
+			
+			<% product.persons.each do |person| %>
+
+				<% person.clusters.each do |cluster| %>	
+					<% if cluster.name != "Sin Cluster" %>
+						<% @clust << cluster.name %>
+					<% end %>
+				<% end %>
+
+				<% @par = [] %>
+				<% @par << person.name %>
+				<% t = product.person_product.where(person_id: person.id).first.contact_before_type_cast %>
+				<% if t > 0 %>
+					<% @par << t %>
+				<% end %>	
+				<% @par << "," %>
+				<% @person << @par %>
+			<% end %>
+
 			<tr>
 				<td>
-					<% product.persons.each do |person| %>
-						<%= person.name %>,
-						<% person.clusters.each do |cluster| %>
-							<% if cluster.name != "Sin cluster" %>
-								<% @temp << cluster.name %>
-							<% end %>
-						<% end %> 
+					<% @clust.uniq.each do |i| %>
+						<%= i %>/ 
 					<% end %>
 				</td>
-
 				<td>
-					<% @temp.uniq.each do |i| %>
-						<%= i %>/ 
+					<% @person.each do |i| %>
+						<%= i[0] %> 
+						<sup><%= i[1] %></sup>
+						<%= i[2] %>
 					<% end %>
 				</td>
 				<td><%= product.doi %></td>

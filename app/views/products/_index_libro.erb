@@ -2,9 +2,9 @@
 
 <table>
 	<thead>
+		<th>Cluster</th>
 		<th>Autores</th>
 		<th>Editores</th>
-		<th>Cluster</th>
 		<th>Título Libro</th>
 		<th>Título Capítulo</th>
 		<th>Páginas</th>
@@ -22,7 +22,7 @@
 	
 			<% product.persons.each do |person| %>
 				<% person.clusters.each do |cluster| %>
-					<% if cluster.name != "Sin cluster" %>
+					<% if cluster.name != "Sin Cluster" %>
 						<% @temp << cluster.name %>
 					<% end %>
 				<% end %> 
@@ -34,8 +34,14 @@
 					<% @editores << ", " %>
 				<% end %>
 			<% end %>
-				
+
 			<tr>
+			<td>
+					<% @temp.uniq.each do |i| %>
+						<%= i %>/ 
+					<% end %>
+				</td>
+			
 				<td>
 					<% @autores.each do |i| %>
 						<%= i %>
@@ -44,12 +50,6 @@
 				<td>
 					<% @editores.each do |i| %>
 						<%= i %>
-					<% end %>
-				</td>
-
-				<td>
-					<% @temp.uniq.each do |i| %>
-						<%= i %>/ 
 					<% end %>
 				</td>
 				<td><%= product.revista %> </td>
