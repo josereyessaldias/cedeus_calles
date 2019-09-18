@@ -40,10 +40,12 @@ class ProductsController < ApplicationController
 			end
 		end
 
-		@respaldo = Respaldo.new
-		@respaldo.product_id = @product.id
-		@respaldo.file = params[:product][:file]
-		@respaldo.save
+		if params[:product][:file] != nil
+			@respaldo = Respaldo.new
+			@respaldo.product_id = @product.id
+			@respaldo.file = params[:product][:file]
+			@respaldo.save
+		end
 
 		redirect_to products_path(), notice: 'el producto fue creado'
 	end
@@ -116,7 +118,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart,)
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion)
 	end
 		
 

@@ -287,11 +287,47 @@
 						<%= f.text_field :year %>
 					</div>
 				</div><br>
+
+				<% elsif  @tipo == "colaboracion" %>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Tipo_de_actividad %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.select :tipocolaboracion, Product.tipocolaboracions.keys.map { |w| [w.humanize, w] } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :País_origen_o_destino %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :lugar, size: 40 %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Institución %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :institution, size: 40 %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Fecha_de_inicio_y_termino %>: 
+					</div>
+					<div class="col-md-4">
+						<%= f.text_field :year, size: 40 %>
+					</div>
+				</div>
+				<br>
 			<% end %>
 
-		<br>
-				
+			<br>
+
 		</div>
+
 
 		<% if @tipo == "revista_isi" or @tipo == "revista_no_isi" %>
 
@@ -400,7 +436,7 @@
 				<br>
 			</div>
 
-		<% elsif @tipo == "congreso" %>
+		<% elsif @tipo == "congreso" or @tipo == "colaboracion" %>
 
 			<div class="col-12 col-md-6" style="font-size: 12px">
 			

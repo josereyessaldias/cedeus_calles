@@ -1,0 +1,61 @@
+<h5>Colaboración Internacional</h5>
+
+<table>
+	<tr>
+		<th>Cluster</th>
+		<th>Tipo de Actividad</th>
+		<th>Investigador</th>
+		<th>País de Origen/Destino</th>
+		<th>Institución en donde se realiza</th>
+		<th>Fecha de incio y término</th>
+		<th>Respaldo</th>
+	</tr>
+
+	<% @products.each do |product| %>
+		<% @clust = [] %>
+		<% @persona = [] %>
+		<% if product.tipo == "colaboracion" %>
+			
+			<% product.persons.each do |person| %>
+
+				<% person.clusters.each do |cluster| %>	
+					<% if cluster.name != "Sin Cluster" %>
+						<% @clust << cluster.name %>
+					<% end %>
+				<% end %>
+				<% @persona << person.name %>
+			<% end %>
+
+			<tr>
+				<td>
+					<% @clust.uniq.each do |i| %>
+						<%= i %>/ 
+					<% end %>
+				</td>
+				<td>
+					<%= product.tipocolaboracion_before_type_cast %>
+				</td>
+				<td>
+					<% @persona.each do |i| %>
+						<%= i %>, 
+					<% end %>
+				</td>
+				<td><%= product.lugar %></td>
+				<td><%= product.institution %></td>
+				<td><%= product.year %></td>
+				<td>
+					<% product.respaldos.each_with_index do |respaldo,i| %>
+						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
+					<% end %>
+				</td>
+
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+			</tr>
+		<% end %>
+	<% end %>
+
+</table>
+<br>
+
