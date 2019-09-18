@@ -1,0 +1,35 @@
+<h5>Fuentes de Financiamiento</h5>
+
+<table>
+	<tr>
+		<th>Fuente de Fondos</th>
+		<th>Año de Inicio</th>
+		<th>Año de Término</th>
+		<th>Monto</th>
+		<th>Respaldo</th>
+	</tr>
+
+	<% @products.each do |product| %>
+		<% if product.tipo == "financiamiento" %>
+			
+			<tr>
+				<td><%= product.titulo %></td>
+				<td><%= product.inicio %></td>
+				<td><%= product.termino %></td>
+				<td><%= number_to_currency(product.monto, strip_insignificant_zeros: true) %></td>
+				<td>
+					<% product.respaldos.each_with_index do |respaldo,i| %>
+						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
+					<% end %>
+				</td>
+
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+			</tr>
+		<% end %>
+	<% end %>
+
+</table>
+<br>
+

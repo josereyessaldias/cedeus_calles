@@ -118,7 +118,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa)
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto)
 	end
 		
 

@@ -405,6 +405,41 @@
 					</div>
 				</div>
 
+			<% elsif  @tipo == "financiamiento" %>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Fuente_de_Fondos %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :titulo, size: "40x2" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Año_de_Inicio %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :inicio %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Año_de_Termino %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :termino %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Monto %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.number_field :monto %>
+					</div>
+				</div>
+				<br>
+
 				<br>
 			<% end %>
 
