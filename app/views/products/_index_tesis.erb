@@ -1,0 +1,73 @@
+<h5>Tesis de Estudiantes</h5>
+
+<table>
+	<tr>
+		<th>Cluster</th>
+		<th>Etapa</th>
+		<th>Estudiante</th>
+		<th>RUT</th>
+		<th>Género</th>
+		<th>Título Tesis</th>
+		<th>Grado</th>
+		<th>Guía</th>
+		<th>Institución</th>
+		<th>Fecha incio programa</th>
+		<th>Fecha incio tesis</th>
+		<th>Fecha finalización tesis</th>
+		<th>Respaldo</th>
+	</tr>
+
+	<% @products.each do |product| %>
+		<% @clust = [] %>
+		<% @persona = [] %>
+		<% if product.tipo == "tesis" %>
+			
+			<% product.persons.each do |person| %>
+
+				<% person.clusters.each do |cluster| %>	
+					<% if cluster.name != "Sin Cluster" %>
+						<% @clust << cluster.name %>
+					<% end %>
+				<% end %>
+				<% @persona << person.name %>
+			<% end %>
+
+			<tr>
+				<td>
+					<% @clust.uniq.each do |i| %>
+						<%= i %>/ 
+					<% end %>
+				</td>
+				<td>
+					<%= product.etapa_before_type_cast %>
+				</td>
+				<td><%= product.estudiante %></td>
+				<td><%= product.rut %></td>
+				<td><%= product.genero %></td>
+				<td><%= product.titulo %></td>
+				<td><%= product.grado_before_type_cast %></td>
+				<td>
+					<% @persona.each do |i| %>
+						<%= i %>, 
+					<% end %>
+				</td>
+				<td><%= product.institution %></td>
+				<td><%= product.year %></td>
+				<td><%= product.inicio %></td>
+				<td><%= product.termino %></td>
+				<td>
+					<% product.respaldos.each_with_index do |respaldo,i| %>
+						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
+					<% end %>
+				</td>
+
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+
+			</tr>
+		<% end %>
+	<% end %>
+
+</table>
+<br>
+

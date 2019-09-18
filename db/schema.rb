@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_194413) do
+ActiveRecord::Schema.define(version: 2019_09_18_203310) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2019_09_18_194413) do
     t.string "fundspecify"
     t.string "indexacion"
     t.string "editorial"
-    t.string "file"
     t.integer "tipocongreso"
     t.string "congreso"
     t.string "lugar"
@@ -75,6 +74,13 @@ ActiveRecord::Schema.define(version: 2019_09_18_194413) do
     t.integer "tipoorganizacion"
     t.string "institution"
     t.string "tipocolaboracion"
+    t.string "estudiante"
+    t.integer "genero"
+    t.string "rut"
+    t.integer "grado"
+    t.string "inicio"
+    t.string "termino"
+    t.integer "etapa"
   end
 
   create_table "respaldos", force: :cascade do |t|

@@ -288,7 +288,7 @@
 					</div>
 				</div><br>
 
-				<% elsif  @tipo == "colaboracion" %>
+			<% elsif  @tipo == "colaboracion" %>
 				<div class="row">
 					<div class="col-md-4">
 						<%= f.label :Tipo_de_actividad %>:
@@ -321,6 +321,90 @@
 						<%= f.text_field :year, size: 40 %>
 					</div>
 				</div>
+				<br>
+
+			<% elsif  @tipo == "tesis" %>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Etapa %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.select :etapa, Product.etapas.keys.map { |w| [w.humanize, w] } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Nombre_Estudiante %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :estudiante, size: 40 %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :RUT %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :rut %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Género %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.select :genero, Product.generos.keys.map { |w| [w.humanize, w] } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Título_tesis %>: 
+					</div>
+					<div class="col-md-3">
+						<%= f.text_area :titulo, size: "40x2" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :grado %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.select :grado, Product.grados.keys.map { |w| [w.humanize, w] } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Institución %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :institution, size: 40 %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Año_inicio_programa %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :year %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Año_inicio_tesis %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :inicio %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<%= f.label :Año_finaliza_tesis %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.text_field :termino %>
+					</div>
+				</div>
+
 				<br>
 			<% end %>
 
@@ -436,10 +520,13 @@
 				<br>
 			</div>
 
-		<% elsif @tipo == "congreso" or @tipo == "colaboracion" %>
+		<% elsif @tipo == "congreso" or @tipo == "colaboracion" or @tipo == "tesis" %>
 
 			<div class="col-12 col-md-6" style="font-size: 12px">
-			
+				<% if @tipo == 'tesis' %>
+					<h6>Profesores Guías</h6><br>
+				<% end %>
+
 				<%= f.label :autor_1 %>: 
 				<%= f.collection_select :person_id_1, @persons, :id, :name, prompt: @person_array[0], selected: @person_id_array[0] %> 
 				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete if @person_id_array[0] != nil %>
