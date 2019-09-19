@@ -2,6 +2,7 @@
 
 <table>
 	<tr>
+		<th>Periodo</th>
 		<th>Fuente de Fondos</th>
 		<th>Año de Inicio</th>
 		<th>Año de Término</th>
@@ -13,6 +14,7 @@
 		<% if product.tipo == "financiamiento" %>
 			
 			<tr>
+				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.titulo %></td>
 				<td><%= product.inicio %></td>
 				<td><%= product.termino %></td>

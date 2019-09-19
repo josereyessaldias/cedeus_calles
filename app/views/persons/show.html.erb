@@ -1,6 +1,18 @@
 <h3><%= @person.completename %></h3>
-
 <br>
+
+<% @person_tipos.each do |tipos| %>
+	<h5><%= tipos.humanize %></h5>
+	<% @person.products.each do |product| %>
+		<% if product.tipo == tipos %>
+			<%= product.titulo %>
+			<br>
+		<% end %>
+	<% end %>
+	<br>
+<% end %>
+
+
 
 <br>
 

@@ -38,6 +38,15 @@ class PersonsController < ApplicationController
 
 	def show
 		@person = Person.find(params[:id])
+		@person_tipos = []
+		Product.tipos.keys.each do |type|
+			@person.products.each do |product|
+				if product.tipo == type
+					@person_tipos << type
+				end
+			end
+		end
+		@person_tipos = @person_tipos.uniq
 	end
 
 	def destroy

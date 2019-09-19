@@ -2,6 +2,7 @@
 
 <table>
 	<tr>
+		<th rowspan="2">Periodo</th>
 		<th rowspan="2">Tipo de Actividad</th>
 		<th rowspan="2">Cluster</th>
 		<th rowspan="2">Nombre Congreso</th>
@@ -35,9 +36,8 @@
 			<% end %>
 
 			<tr>
-				<td>
-					<%= product.tipocongreso_before_type_cast %>
-				</td>
+				<td><strong><%= product.registro %></strong></td>
+				<td><%= product.tipocongreso_before_type_cast %></td>
 				<td>
 					<% @clust.uniq.each do |i| %>
 						<%= i %>/ 

@@ -2,6 +2,7 @@
 
 <table>
 	<tr>
+		<th>Periodo</th>
 		<th>Cluster</th>
 		<th>Tipo de Actividad</th>
 		<th>Investigador</th>
@@ -27,6 +28,7 @@
 			<% end %>
 
 			<tr>
+				<td><strong><%= product.registro %></strong></td>
 				<td>
 					<% @clust.uniq.each do |i| %>
 						<%= i %>/ 
