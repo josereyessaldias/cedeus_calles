@@ -13,6 +13,9 @@ class PersonsController < ApplicationController
 	def create
 		@person = Person.new
 		@person.name = params[:person][:name]
+		@person.surname = params[:person][:surname]
+		@person.cedeusname = @person.surname + ", " + @person.name.capitalize[0] + "."
+		@person.completename = @person.name + " " + @person.surname
 		@person.save
 		@cluster = ClusterPerson.new
 		@cluster.person_id = Person.last.id
@@ -31,6 +34,10 @@ class PersonsController < ApplicationController
 			@cluster.save
 		end
 		redirect_to persons_path, notice: 'el investigador fue creado'
+	end
+
+	def show
+		@person = Person.find(params[:id])
 	end
 
 	def destroy

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_212535) do
+ActiveRecord::Schema.define(version: 2019_09_19_044212) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2019_09_18_212535) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "surname"
+    t.string "completename"
+    t.string "cedeusname"
   end
 
   create_table "person_products", force: :cascade do |t|
@@ -82,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_212535) do
     t.string "termino"
     t.integer "etapa"
     t.integer "monto"
+    t.integer "registro"
   end
 
   create_table "respaldos", force: :cascade do |t|

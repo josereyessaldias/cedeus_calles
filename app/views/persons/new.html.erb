@@ -8,6 +8,9 @@
 	<%= f.label :nombre %>: 
 	<%= f.text_field :name %><br>
 
+	<%= f.label :apellido %>: 
+	<%= f.text_field :surname %><br>
+
 	<%= f.label :cluster_1 %>: 
 	<%= f.collection_select :cluster_id_1, @clusters, :id, :name %><br>
 

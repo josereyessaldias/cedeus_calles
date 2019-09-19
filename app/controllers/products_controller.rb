@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
 		@rol_array = []
 		8.times do |i|
 			if @person_products[i] != nil
-				@person_array << @person_products[i].person.name
+				@person_array << @person_products[i].person.completename
 				@contact_array << @person_products[i].contact
 				@person_id_array << @person_products[i].person.id
 				@rol_array << @person_products[i].rol
@@ -118,7 +118,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto)
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto, :registro)
 	end
 		
 

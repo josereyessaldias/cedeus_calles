@@ -10,7 +10,7 @@
 	
 	<% @persons.each do |person| %>
 		<tr>
-			<td><%= person.name %></td>
+			<td><%= link_to person.cedeusname, person_path(person) %></td>
 			<td>
 				<% person.clusters.each do |cluster| %>
 					<%= cluster.name %>, 

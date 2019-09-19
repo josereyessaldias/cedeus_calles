@@ -26,10 +26,10 @@
 					<% end %>
 				<% end %> 
 				<% if person.person_product.where(product_id: product).first.rol == "author" %>
-					<% @autores << person.name %>
+					<% @autores << person.cedeusname %>
 					<% @autores << ", " %>
 				<% else %>
-					<% @editores << person.name %>
+					<% @editores << person.cedeusname %>
 					<% @editores << ", " %>
 				<% end %>
 			<% end %>

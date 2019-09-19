@@ -45,7 +45,7 @@
 				<% end %>
 
 				<% @par = [] %>
-				<% @par << person.name %>
+				<% @par << person.cedeusname %>
 				<% t = product.person_product.where(person_id: person.id).first.contact_before_type_cast %>
 				<% if t > 0 %>
 					<% @par << t %>
@@ -63,7 +63,11 @@
 				<td>
 					<% @person.each do |i| %>
 						<%= i[0] %> 
-						<sup><%= i[1] %></sup>
+						<% if i[1].is_a? Integer %>
+							<sup><%= i[1] %></sup>
+						<% else %>
+							<%= i[1] %>
+						<% end %>
 						<%= i[2] %>
 					<% end %>
 				</td>
