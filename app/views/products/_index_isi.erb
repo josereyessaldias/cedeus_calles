@@ -2,7 +2,7 @@
 
 <table>
 	<tr>
-		<th rowspan="2">Periodo</th>
+		<th rowspan="2" class="vertical">Periodo</th>
 		<th rowspan="2">Cluster</th>
 		<th rowspan="2">Autores</th>
 		<th rowspan="2">DOI</th>
@@ -60,7 +60,7 @@
 						<%= i %>/ 
 					<% end %>
 				</td>
-				<td>
+				<td style="width:100px"><strong>
 					<% @person.each do |i| %>
 						<%= i[0] %> 
 						<% if i[1].is_a? Integer %>
@@ -69,11 +69,11 @@
 							<%= i[1] %>
 						<% end %>
 						<%= i[2] %>
-					<% end %>
+					<% end %></strong>
 				</td>
-				<td><%= product.doi %></td>
-				<td><%= product.titulo %></td>
-				<td><%= product.revista %> </td>
+				<td style="max-width:70px;word-wrap: break-word"><%= product.doi %></td>
+				<td style="width:350px;"><strong><%= product.titulo %></strong></td>
+				<td><i><%= product.revista %></i></td>
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
@@ -87,14 +87,14 @@
 				<td><%= product.fundbasal %></td>
 				<td><%= product.fundicm %></td>
 				<td><%= product.fundother %></td>
-				<td><%= product.fundspecify %></td>
-				<td>
+				<td><div style="overflow: scroll; max-width: 100px; max-height: 100px;"><%= product.fundspecify %></div></td>
+				<td style="max-width: 30px">
 					<% product.respaldos.each_with_index do |respaldo,i| %>
 						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
 					<% end %>
 				</td>
 
-				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
+				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %> 
 					<%= link_to 'borrar', product_path(product), method: :delete %></td>
 
 			</tr>
