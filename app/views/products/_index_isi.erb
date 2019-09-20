@@ -17,17 +17,17 @@
 
 	</tr>
 	<tr>
-		<th class="vertical">Researcher</th>
-		<th class="vertical">Postdoc</th>
-		<th class="vertical">Undergrad</th>
-		<th class="vertical">Grad</th>
+		<th class="vertical" style="max-width: 22px">Researcher</th>
+		<th class="vertical" style="max-width: 22px">Postdoc</th>
+		<th class="vertical" style="max-width: 22px">Undergrad</th>
+		<th class="vertical" style="max-width: 22px">Grad</th>
 
-		<th class="vertical">Fondap</th>
-		<th class="vertical">Fondecyt</th>
-		<th class="vertical">Fondef</th>
-		<th class="vertical">Basal</th>
-		<th class="vertical">ICM</th>
-		<th class="vertical">Other</th>
+		<th class="vertical" style="max-width: 22px">Fondap</th>
+		<th class="vertical" style="max-width: 22px">Fondecyt</th>
+		<th class="vertical" style="max-width: 22px">Fondef</th>
+		<th class="vertical" style="max-width: 22px">Basal</th>
+		<th class="vertical" style="max-width: 22px">ICM</th>
+		<th class="vertical" style="max-width: 22px">Other</th>
 		<th class="vertical">Specify</th>
 	</tr>
 
@@ -73,7 +73,7 @@
 				</td>
 				<td style="max-width:70px;word-wrap: break-word"><%= product.doi %></td>
 				<td style="width:350px;"><strong><%= product.titulo %></strong></td>
-				<td><i><%= product.revista %></i></td>
+				<td style="max-width: 100px"><i><%= product.revista %></i></td>
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
@@ -87,7 +87,7 @@
 				<td><%= product.fundbasal %></td>
 				<td><%= product.fundicm %></td>
 				<td><%= product.fundother %></td>
-				<td><div style="overflow: scroll; max-width: 100px; max-height: 100px;"><%= product.fundspecify %></div></td>
+				<td><div style="overflow: scroll; max-width: 70px; max-height: 80px;"><%= product.fundspecify %></div></td>
 				<td style="max-width: 30px">
 					<% product.respaldos.each_with_index do |respaldo,i| %>
 						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>

@@ -11,7 +11,7 @@ require 'csv'
 
 noti = []
 
-def abrir_seed(seed)
+def abrir_seed(seed,base)
 	archivo = File.open(Rails.root.join('lib',seed), 'r:iso-8859-1')
 	notas = archivo.readlines
 	archivo.close
@@ -25,28 +25,35 @@ def abrir_seed(seed)
 		i[-1].delete!("\n")
 	end
 
-	noti.each do |i|
-		Product.create(
-					tipo:"revista_isi",
-					registro: i[0],
-					doi: i[2],
-					titulo:i[4],
-					revista:i[5],
-					volume: i[6],
-					pages: i[7],
-					year: i[8],
-					partresearchers: i[9],
-					partpostdoc: i[10],
-					partundergrad: i[11],
-					partgrad: i[12],
-					fundfondap: i[13],
-					fundfondecyt: i[14],
-					fundfondef: i[15],
-					fundbasal: i[16],
-					fundicm: i[17],
-					fundother: i[18],
-					fundspecify: i[19])
-	end		
+	# if base = Product
+	# 	noti.each do |i|
+	# 		base.create(
+	# 					tipo:"revista_isi",
+	# 					registro: i[0],
+	# 					doi: i[2],
+	# 					titulo:i[4],
+	# 					revista:i[5],
+	# 					volume: i[6],
+	# 					pages: i[7],
+	# 					year: i[8],
+	# 					partresearchers: i[9],
+	# 					partpostdoc: i[10],
+	# 					partundergrad: i[11],
+	# 					partgrad: i[12],
+	# 					fundfondap: i[13],
+	# 					fundfondecyt: i[14],
+	# 					fundfondef: i[15],
+	# 					fundbasal: i[16],
+	# 					fundicm: i[17],
+	# 					fundother: i[18],
+	# 					fundspecify: i[19])
+	# 	end		
+	if base = Person
+		noti.each do |i|
+			base.create(name: i[0], surname: i[1],completename: i[0].to_s + " " + i[1].to_s,cedeusname: i[1].to_s + ", " + i[0].to_s.capitalize[0] + ".")
+		end
+	end
 end
 
-abrir_seed('seed_isi.csv')
+#abrir_seed('seed_isi.csv',Product)
+abrir_seed('seed_person.csv',Product)

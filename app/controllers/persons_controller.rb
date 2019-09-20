@@ -2,7 +2,7 @@ class PersonsController < ApplicationController
 
 	def index
 		@persons = Person.all
-		@clusters_persons = ClusterPerson.all
+
 	end
 	
 	def new
