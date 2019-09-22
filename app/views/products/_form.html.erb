@@ -269,6 +269,14 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3">
+						<%= f.label :Research_line %>:
+					</div>
+					<div class="col-md-3">
+						<%= f.collection_select :cluster_id, @clusters, :id, :name %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
 						<%= f.label :Nombre_Congreso %>:
 					</div>
 					<div class="col-md-3">

@@ -30,11 +30,10 @@
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.tipoorganizacion_before_type_cast %></td>
-				<td>
-					<% @clust.uniq.each do |i| %>
-						<%= i %>/ 
+				<td><% if product.cluster != nil %>
+						<%= product.cluster.name %>
 					<% end %>
-				</td>
+					</td>
 				<td><%= product.titulo %></td>
 				<td><%= product.numpart %></td>
 				<td><%= product.lugar %></td>

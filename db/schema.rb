@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_205742) do
+ActiveRecord::Schema.define(version: 2019_09_22_163609) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2019_09_20_205742) do
     t.integer "etapa"
     t.integer "monto"
     t.integer "registro"
+    t.integer "cluster_id"
+    t.index ["cluster_id"], name: "index_products_on_cluster_id"
   end
 
   create_table "respaldos", force: :cascade do |t|

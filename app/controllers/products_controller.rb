@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 		@tipo = params[:tipo]
 		@product = Product.new
 		@persons = Person.all
+		@clusters = Cluster.all
 
 		@person_array = []
 		@person_id_array = []
@@ -55,6 +56,7 @@ class ProductsController < ApplicationController
 		@tipo = params[:tipo]
 		@product = Product.find(params[:id])
 		@persons = Person.all
+		@clusters = Cluster.all
 		@person_products = PersonProduct.where(product_id: params[:id])
 		@person_array = []
 		@person_id_array = []
@@ -118,7 +120,7 @@ class ProductsController < ApplicationController
 	private
 
 	def product_params
-		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto, :registro)
+		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto, :registro, :cluster_id)
 	end
 		
 
