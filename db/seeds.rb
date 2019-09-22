@@ -9,6 +9,7 @@
 
 Person.destroy_all
 Product.destroy_all
+Cluster.destroy_all
 
 require 'csv'
 
@@ -157,13 +158,34 @@ def abrir_seed(seed,base,clase)
 				cedeusname: i[1].to_s + ", " + i[0].to_s.capitalize[0] + ".",
 				proyecto: i[2])
 		end
+
+	elsif base == Cluster
+		noti.each do |i|
+			base.create(name: i[0])
+		end
+
+	elsif base == ClusterPerson
+		noti.each do |i|
+			base.create(person_id: i[0].to_i,
+						cluster_id: i[1].to_i)
+		end
+
+	elsif base == PersonProduct
+		noti.each do |i|
+			base.create(product_id: i[0].to_i,
+						person_id: i[1].to_i,
+						rol: i[2].to_i)
+		end
 	end
 end
 
+abrir_seed('seed_cluster.csv',Cluster,"")
 abrir_seed('seed_person.csv',Person,"")
+abrir_seed('seed_cluster_person.csv',ClusterPerson,"")
 abrir_seed('seed_isi.csv',Product,"revista_isi")
 abrir_seed('seed_no_isi.csv',Product,"revista_no_isi")
 abrir_seed('seed_libro.csv',Product,"libro")
 abrir_seed('seed_congreso.csv',Product,"congreso")
 abrir_seed('seed_organizacion.csv',Product,"organizacion")
 abrir_seed('seed_tesis.csv',Product,"tesis")
+abrir_seed('seed_person_product.csv',PersonProduct,"")
