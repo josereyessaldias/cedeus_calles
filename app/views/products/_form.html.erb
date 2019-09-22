@@ -467,49 +467,49 @@
 				<%= f.label :autor_1 %>: 
 				<%= f.collection_select :person_id_1, @persons, :id, :completename, prompt: @person_array[0], selected: @person_id_array[0] %> 
 				<%= f.select :contact_1, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[0], selected: @contact_array[0] %> 
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete if @person_id_array[0] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[0]}'?"}  if @person_id_array[0] != nil %>
 
 				<br>
 				<%= f.label :autor_2 %>: 
 				<%= f.collection_select :person_id_2, @persons, :id, :completename, prompt: @person_array[1], selected: @person_id_array[1] %>
 				<%= f.select :contact_2, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[1], selected: @contact_array[1] %> 
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete if @person_id_array[1] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[1]}'?"} if @person_id_array[1] != nil %>
 
 				<br>
 				<%= f.label :autor_3 %>: 
 				<%= f.collection_select :person_id_3, @persons, :id, :completename, prompt: @person_array[2], selected:@person_id_array[2] %>
 				<%= f.select :contact_3, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[2], selected: @contact_array[2] %> 
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete if @person_id_array[2] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[2]}'?"} if @person_id_array[2] != nil %>
 
 				<br>
 				<%= f.label :autor_4 %>: 
 				<%= f.collection_select :person_id_4, @persons, :id, :completename, prompt: @person_array[3], selected: @person_id_array[3] %>
 				<%= f.select :contact_4, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[3], selected: @contact_array[3] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete if @person_id_array[3] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[3]}'?"} if @person_id_array[3] != nil %>
 
 				<br>
 				<%= f.label :autor_5 %>: 
 				<%= f.collection_select :person_id_5, @persons, :id, :completename, prompt: @person_array[4], selected: @person_id_array[4] %>
 				<%= f.select :contact_5, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[4], selected: @contact_array[4] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete if @person_id_array[4] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[4]}'?"} if @person_id_array[4] != nil %>
 
 				<br>
 				<%= f.label :autor_6 %>: 
 				<%= f.collection_select :person_id_6, @persons, :id, :completename, prompt: @person_array[5], selected: @person_id_array[5] %>
 				<%= f.select :contact_6, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[5], selected: @contact_array[5] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete if @person_id_array[5] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[5]}'?"} if @person_id_array[5] != nil %>
 
 				<br>
 				<%= f.label :autor_7 %>: 
 				<%= f.collection_select :person_id_7, @persons, :id, :completename, prompt: @person_array[6], selected: @person_id_array[6] %>
 				<%= f.select :contact_7, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[6], selected: @contact_array[6] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete if @person_id_array[6] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[6]}'?"} if @person_id_array[6] != nil %>
 
 				<br>
 				<%= f.label :autor_8 %>: 
 				<%= f.collection_select :person_id_8, @persons, :id, :completename, prompt: @person_array[7], selected: @person_id_array[7] %>
 				<%= f.select :contact_8, PersonProduct.contacts.keys.map { |w| [w.humanize, w] }, prompt: @contact_array[7], selected: @contact_array[7] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete if @person_id_array[7] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[7]}'?"} if @person_id_array[7] != nil %>
 
 				<br>
 			</div>
@@ -520,49 +520,49 @@
 				<%= f.label :autor_1 %>: 
 				<%= f.collection_select :person_id_1, @persons, :id, :completename, prompt: @person_array[0], selected: @person_id_array[0] %> 
 				<%= f.select :rol_1, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[0], selected: @rol_array[0] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete if @person_id_array[0] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[0]}'?"} if @person_id_array[0] != nil %>
 
 				<br>
 				<%= f.label :autor_2 %>: 
 				<%= f.collection_select :person_id_2, @persons, :id, :completename, prompt: @person_array[1], selected: @person_id_array[1] %>
 				<%= f.select :rol_2, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[1], selected: @rol_array[1] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete if @person_id_array[1] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[1]}'?"} if @person_id_array[1] != nil %>
 
 				<br>
 				<%= f.label :autor_3 %>: 
 				<%= f.collection_select :person_id_3, @persons, :id, :completename, prompt: @person_array[2], selected:@person_id_array[2] %>
 				<%= f.select :rol_3, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[2], selected: @rol_array[2] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete if @person_id_array[2] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[2]}'?"} if @person_id_array[2] != nil %>
 
 				<br>
 				<%= f.label :autor_4 %>: 
 				<%= f.collection_select :person_id_4, @persons, :id, :completename, prompt: @person_array[3], selected: @person_id_array[3] %>
 				<%= f.select :rol_4, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[3], selected: @rol_array[3] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete if @person_id_array[3] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[3]}'?"} if @person_id_array[3] != nil %>
 
 				<br>
 				<%= f.label :autor_5 %>: 
 				<%= f.collection_select :person_id_5, @persons, :id, :completename, prompt: @person_array[4], selected: @person_id_array[4] %>
 				<%= f.select :rol_5, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[4], selected: @rol_array[4] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete if @person_id_array[4] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[4]}'?"} if @person_id_array[4] != nil %>
 
 				<br>
 				<%= f.label :autor_6 %>: 
 				<%= f.collection_select :person_id_6, @persons, :id, :completename, prompt: @person_array[5], selected: @person_id_array[5] %>
 				<%= f.select :rol_6, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[5], selected: @rol_array[5] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete if @person_id_array[5] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[5]}'?"} if @person_id_array[5] != nil %>
 
 				<br>
 				<%= f.label :autor_7 %>: 
 				<%= f.collection_select :person_id_7, @persons, :id, :completename, prompt: @person_array[6], selected: @person_id_array[6] %>
 				<%= f.select :rol_7, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[6], selected: @rol_array[6] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete if @person_id_array[6] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[6]}'?"} if @person_id_array[6] != nil %>
 
 				<br>
 				<%= f.label :autor_8 %>: 
 				<%= f.collection_select :person_id_8, @persons, :id, :completename, prompt: @person_array[7], selected: @person_id_array[7] %>
 				<%= f.select :rol_8, PersonProduct.rols.keys.map { |w| [w.humanize, w] }, prompt: @rol_array[7], selected: @rol_array[7] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete if @person_id_array[7] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[7]}'?"} if @person_id_array[7] != nil %>
 
 				<br>
 			</div>
@@ -576,42 +576,42 @@
 
 				<%= f.label :autor_1 %>: 
 				<%= f.collection_select :person_id_1, @persons, :id, :completename, prompt: @person_array[0], selected: @person_id_array[0] %> 
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete if @person_id_array[0] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[0]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[0]}'?"} if @person_id_array[0] != nil %>
 
 				<br>
 				<%= f.label :autor_2 %>: 
 				<%= f.collection_select :person_id_2, @persons, :id, :completename, prompt: @person_array[1], selected: @person_id_array[1] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete if @person_id_array[1] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[1]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[1]}'?"} if @person_id_array[1] != nil %>
 
 				<br>
 				<%= f.label :autor_3 %>: 
 				<%= f.collection_select :person_id_3, @persons, :id, :completename, prompt: @person_array[2], selected:@person_id_array[2] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete if @person_id_array[2] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[2]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[2]}'?"} if @person_id_array[2] != nil %>
 
 				<br>
 				<%= f.label :autor_4 %>: 
 				<%= f.collection_select :person_id_4, @persons, :id, :completename, prompt: @person_array[3], selected: @person_id_array[3] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete if @person_id_array[3] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[3]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[3]}'?"} if @person_id_array[3] != nil %>
 
 				<br>
 				<%= f.label :autor_5 %>: 
 				<%= f.collection_select :person_id_5, @persons, :id, :completename, prompt: @person_array[4], selected: @person_id_array[4] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete if @person_id_array[4] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[4]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[4]}'?"} if @person_id_array[4] != nil %>
 
 				<br>
 				<%= f.label :autor_6 %>: 
 				<%= f.collection_select :person_id_6, @persons, :id, :completename, prompt: @person_array[5], selected: @person_id_array[5] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete if @person_id_array[5] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[5]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[5]}'?"} if @person_id_array[5] != nil %>
 
 				<br>
 				<%= f.label :autor_7 %>: 
 				<%= f.collection_select :person_id_7, @persons, :id, :completename, prompt: @person_array[6], selected: @person_id_array[6] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete if @person_id_array[6] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[6]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[6]}'?"} if @person_id_array[6] != nil %>
 
 				<br>
 				<%= f.label :autor_8 %>: 
 				<%= f.collection_select :person_id_8, @persons, :id, :completename, prompt: @person_array[7], selected: @person_id_array[7] %>
-				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete if @person_id_array[7] != nil %>
+				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[7]}'?"} if @person_id_array[7] != nil %>
 
 				<br>
 			</div>
@@ -624,7 +624,7 @@
 		<% @product.respaldos.each_with_index do |respaldo,i| %>
 			<ul>
 				<li><%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %> | 
-					<%= link_to "Borrar respaldo", respaldo_path(respaldo.id), method: :delete %>
+					<%= link_to "Borrar respaldo", respaldo_path(respaldo.id), method: :delete, data: { confirm: "¿Está seguro de borrar el respaldo '#{i+1}'?"} %>
 				</li>
 			</ul>
 		<% end %><br>

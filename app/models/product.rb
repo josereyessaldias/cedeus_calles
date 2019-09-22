@@ -16,5 +16,5 @@ class Product < ApplicationRecord
 
 	enum grado: {Pregado: 1, Magister: 2, Doctorado: 3}
 
-	enum etapa:  {Terminada: 1, En_Preparacion: 2}
+	enum etapa: {Terminada: 1, En_Preparacion: 2}
 end

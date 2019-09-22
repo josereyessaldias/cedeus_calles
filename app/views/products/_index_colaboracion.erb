@@ -52,7 +52,7 @@
 				</td>
 
 				<td><%= link_to 'editar', edit_product_path(product.id, :tipo => product.tipo) %>
-					<%= link_to 'borrar', product_path(product), method: :delete %></td>
+					<%= link_to 'borrar', product_path(product), method: :delete, data: { confirm: "¿Está seguro de borrar el registro '#{product.titulo}'?"} %></td>
 
 			</tr>
 		<% end %>

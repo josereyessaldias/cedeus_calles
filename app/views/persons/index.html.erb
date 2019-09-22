@@ -2,22 +2,33 @@
 <br>
 <%= link_to 'Crear nuevo investigador', new_person_path, :class => 'btn btn-info btn-sm' %>
 <br><br>
-<table>
-	<thead>
-		<th>Nombre Investigador</th>
-		<th>Cluster</th>
-		<th></th>
-	</thead>
-	
-	<% @persons.each do |person| %>
-		<tr>
-			<td><%= link_to person.cedeusname, person_path(person) %></td>
-			<td>
-				<% person.clusters.each do |cluster| %>
-					<%= cluster.name %>, 
-				<% end %>
-			</td>
-			 <td><%= link_to 'borrar', person_path(person), method: :delete %></td>
-		</tr>
-	<% end %>
-</table>
+
+<div class="row">
+	<div class="col-6">
+		<table>
+			<thead>
+				<th>Nombre Investigador</th>
+				<th>Proyecto</th>
+				<th>Research Line</th>
+				<th></th>
+			</thead>
+			
+			<% @persons.each do |person| %>
+				<tr>
+					<td><%= link_to person.completename, person_path(person) %></td>
+					<td><%= person.proyecto %></td>
+					<td>
+						<% person.clusters.each do |cluster| %>
+							<%= cluster.name %>, 
+						<% end %>
+					</td>
+					 <td><%= link_to 'borrar', person_path(person), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{person.completename}'?"} %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class="col-6">
+		<%= line_chart Product.group(:registro).count %>
+	</div>
+</div>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_044212) do
+ActiveRecord::Schema.define(version: 2019_09_20_205742) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_09_19_044212) do
     t.string "surname"
     t.string "completename"
     t.string "cedeusname"
+    t.integer "proyecto"
   end
 
   create_table "person_products", force: :cascade do |t|
