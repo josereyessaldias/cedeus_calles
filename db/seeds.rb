@@ -14,7 +14,7 @@ require 'csv'
 
 noti = []
 
-def abrir_seed(seed,base)
+def abrir_seed(seed,base,clase)
 	archivo = File.open(Rails.root.join('lib',seed), 'r:iso-8859-1')
 	notas = archivo.readlines
 	archivo.close
@@ -29,28 +29,126 @@ def abrir_seed(seed,base)
 	end
 
 	if base == Product
-		noti.each do |i|
-			base.create(
-						tipo:"revista_isi",
-						registro: i[0],
-						doi: i[2],
-						titulo:i[4],
-						revista:i[5],
-						volume: i[6],
-						pages: i[7],
-						year: i[8],
-						partresearchers: i[9],
-						partpostdoc: i[10],
-						partundergrad: i[11],
-						partgrad: i[12],
-						fundfondap: i[13],
-						fundfondecyt: i[14],
-						fundfondef: i[15],
-						fundbasal: i[16],
-						fundicm: i[17],
-						fundother: i[18],
-						fundspecify: i[19])
-		end		
+		if clase == "revista_isi"
+			noti.each do |i|
+				base.create(
+							tipo:clase,
+							registro: i[0],
+							doi: i[2],
+							titulo:i[4],
+							revista:i[5],
+							volume: i[6],
+							pages: i[7],
+							year: i[8],
+							partresearchers: i[9],
+							partpostdoc: i[10],
+							partundergrad: i[11],
+							partgrad: i[12],
+							fundfondap: i[13],
+							fundfondecyt: i[14],
+							fundfondef: i[15],
+							fundbasal: i[16],
+							fundicm: i[17],
+							fundother: i[18],
+							fundspecify: i[19])
+			end
+		elsif clase == "revista_no_isi"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							doi: i[2],
+							titulo:i[4],
+							revista:i[5],
+							volume: i[6],
+							pages: i[7],
+							year: i[8],
+							indexacion: i[9],
+							partresearchers: i[10],
+							partpostdoc: i[11],
+							partundergrad: i[12],
+							partgrad: i[13],
+							fundfondap: i[14],
+							fundfondecyt: i[15],
+							fundfondef: i[16],
+							fundbasal: i[17],
+							fundicm: i[18],
+							fundother: i[19],
+							fundspecify: i[20])
+			end
+
+		elsif clase == "libro"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							revista: i[4],
+							titulo: i[5],
+							pages: i[6],
+							editorial: i[7],
+							year: i[8])
+			end
+
+		elsif clase == "congreso"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							tipocongreso: i[1].to_i,
+							congreso: i[3],
+							titulo: i[4],
+							lugar: i[6],
+							year: i[7],
+							partresearchers: i[8],
+							partpostdoc: i[9],
+							partundergrad: i[10],
+							partgrad: i[11])
+			end
+
+		elsif clase == "organizacion"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							tipoorganizacion: i[1].to_i,
+							titulo: i[3],
+							numpart: i[4].to_i,
+							year: i[5],
+							lugar: i[6])
+			end
+
+		elsif clase == "colaboracion"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							tipocolaboracion: i[2],
+							lugar: i[4],
+							institution: i[5],
+							year: i[6])
+			end
+
+		elsif clase == "tesis"
+			noti.each do |i|
+				base.create(tipo:clase,
+							registro: i[0],
+							etapa: i[2].to_i,
+							estudiante: i[3],
+							rut: i[4],
+							genero: i[5],
+							titulo: i[6],
+							grado: i[7].to_i,
+							institution: i[9],
+							year: i[10],
+							inicio: i[11],
+							termino: i[12])
+			end
+		elsif clase == "financiamiento"
+			noti.each do |i|
+				base.create(tipo:clase,
+							titulo: i[0],
+							inicio: i[1],
+							termino: i[2],
+							monto: i[3].to_i)
+			end
+
+		end
+
 	elsif base == Person
 		noti.each do |i|
 			base.create(name: i[0],
@@ -62,5 +160,10 @@ def abrir_seed(seed,base)
 	end
 end
 
-abrir_seed('seed_isi.csv',Product)
-abrir_seed('seed_person.csv',Person)
+abrir_seed('seed_person.csv',Person,"")
+abrir_seed('seed_isi.csv',Product,"revista_isi")
+abrir_seed('seed_no_isi.csv',Product,"revista_no_isi")
+abrir_seed('seed_libro.csv',Product,"libro")
+abrir_seed('seed_congreso.csv',Product,"congreso")
+abrir_seed('seed_organizacion.csv',Product,"organizacion")
+abrir_seed('seed_tesis.csv',Product,"tesis")

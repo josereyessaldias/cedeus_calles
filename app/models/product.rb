@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
 	enum tipocolaboracion: {Visita_a_Chile: 1, Visita_al_extranjero: 2 }
 
-	enum genero: {Femenino: 1, Masculino: 2 }
+	enum genero: {F: 1, M: 2 }
 
 	enum grado: {Pregado: 1, Magister: 2, Doctorado: 3}
 

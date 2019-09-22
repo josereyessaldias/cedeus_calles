@@ -36,8 +36,8 @@
 					</td>
 				<td><%= product.titulo %></td>
 				<td><%= product.numpart %></td>
-				<td><%= product.lugar %></td>
 				<td><%= product.year %></td>
+				<td><%= product.lugar %></td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>
 						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
