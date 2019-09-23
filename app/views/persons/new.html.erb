@@ -11,13 +11,16 @@
 	<%= f.label :apellido %>: 
 	<%= f.text_field :surname %><br>
 
-	<%= f.label :cluster_1 %>: 
+	<%= f.label :proyecto %>: 
+	<%= f.select :proyecto, Person.proyectos.keys.map { |w| [w.humanize, w] } %><br>
+
+	<%= f.label :Research_Line_1 %>: 
 	<%= f.collection_select :cluster_id_1, @clusters, :id, :name %><br>
 
-	<%= f.label :cluster_2 %>: 
+	<%= f.label :Research_Line_2 %>: 
 	<%= f.collection_select :cluster_id_2, @clusters, :id, :name, :prompt => true %><br>
 
-	<%= f.label :cluster_3 %>: 
+	<%= f.label :Research_Line_3 %>: 
 	<%= f.collection_select :cluster_id_3, @clusters, :id, :name, :prompt => true %><br>
 
 	<br>

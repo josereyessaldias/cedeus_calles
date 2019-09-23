@@ -16,6 +16,7 @@ class PersonsController < ApplicationController
 		@person.surname = params[:person][:surname]
 		@person.cedeusname = @person.surname + ", " + @person.name.capitalize[0] + "."
 		@person.completename = @person.name + " " + @person.surname
+		@person.proyecto = params[:person][:proyecto]
 		@person.save
 		@cluster = ClusterPerson.new
 		@cluster.person_id = Person.last.id
@@ -64,6 +65,7 @@ class PersonsController < ApplicationController
 		@person.update(surname: params[:person][:surname])
 		@person.update(cedeusname: @person.surname + ", " + @person.name.capitalize[0] + ".")
 		@person.update(completename: @person.name + " " + @person.surname)
+		@person.update(proyecto: params[:person][:proyecto])
 
 		@cluster_person = ClusterPerson.where(person_id: @person.id)
 		@cluster_person.destroy_all

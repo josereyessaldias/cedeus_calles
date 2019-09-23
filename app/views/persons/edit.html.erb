@@ -13,13 +13,16 @@
 	<%= f.label :apellido %>: 
 	<%= f.text_field :surname %><br>
 
-	<%= f.label :cluster_1 %>: 
+	<%= f.label :proyecto %>: 
+	<%= f.select :proyecto, Person.proyectos.keys.map { |w| [w.humanize, w] } %><br>
+
+	<%= f.label :Research_Line_1 %>: 
 	<%= f.collection_select :cluster_id_1, @clusters, :id, :name, prompt: @cluster_array[0], selected: @cluster_id_array[0] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[0]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[0]}'?"} if @cluster_id_array[0] != nil %><br>
 
-	<%= f.label :cluster_2 %>: 
+	<%= f.label :Research_Line_2 %>: 
 	<%= f.collection_select :cluster_id_2, @clusters, :id, :name, prompt: @cluster_array[1], selected: @cluster_id_array[1] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[1]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[1]}'?"} if @cluster_id_array[1] != nil %><br>
 
-	<%= f.label :cluster_3 %>: 
+	<%= f.label :Research_Line_3 %>: 
 	<%= f.collection_select :cluster_id_3, @clusters, :id, :name, prompt: @cluster_array[2], selected: @cluster_id_array[2] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[2]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[2]}'?"} if @cluster_id_array[2] != nil %><br>
 
 	<br>
