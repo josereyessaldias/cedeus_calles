@@ -1,0 +1,28 @@
+<h3>Editar Investigador</h3>
+
+<% @cluster_person.each do |i| %>
+	<%= i.cluster.name %> ,
+<% end %>
+<br>
+
+<%= form_with model: @person, local: true do |f| %>
+	
+	<%= f.label :nombre %>: 
+	<%= f.text_field :name %><br>
+
+	<%= f.label :apellido %>: 
+	<%= f.text_field :surname %><br>
+
+	<%= f.label :cluster_1 %>: 
+	<%= f.collection_select :cluster_id_1, @clusters, :id, :name, prompt: @cluster_array[0], selected: @cluster_id_array[0] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[0]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[0]}'?"} if @cluster_id_array[0] != nil %><br>
+
+	<%= f.label :cluster_2 %>: 
+	<%= f.collection_select :cluster_id_2, @clusters, :id, :name, prompt: @cluster_array[1], selected: @cluster_id_array[1] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[1]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[1]}'?"} if @cluster_id_array[1] != nil %><br>
+
+	<%= f.label :cluster_3 %>: 
+	<%= f.collection_select :cluster_id_3, @clusters, :id, :name, prompt: @cluster_array[2], selected: @cluster_id_array[2] %> <%= link_to "Borrar Research Line", cluster_person_path(ClusterPerson.where(person_id: @person.id,cluster_id: @cluster_id_array[2]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar la Research Line '#{@cluster_array[2]}'?"} if @cluster_id_array[2] != nil %><br>
+
+	<br>
+	<%= f.submit "Crear/Editar Persona", :class => 'btn btn-dark btn-sm' %>
+
+<% end %>

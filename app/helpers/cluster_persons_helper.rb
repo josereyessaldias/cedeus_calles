@@ -1,0 +1,2 @@
+module ClusterPersonsHelper
+end

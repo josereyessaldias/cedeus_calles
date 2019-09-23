@@ -36,6 +36,57 @@ class PersonsController < ApplicationController
 		redirect_to persons_path, notice: 'el investigador fue creado'
 	end
 
+	def edit
+		@person = Person.find(params[:id])
+		@clusters = Cluster.all
+		@cluster_person = ClusterPerson.where(person_id: params[:id])
+
+		@cluster_array = []
+		@cluster_id_array = []
+
+		3.times do |i|
+			if @cluster_person[i] != nil
+				@cluster_array << @cluster_person[i].cluster.name
+				@cluster_id_array << @cluster_person[i].cluster_id
+			else
+				@cluster_array << 'Seleccione Otro Cluster'
+				@cluster_id_array << nil
+			end
+		end
+
+
+
+	end
+
+	def update
+		@person = Person.find(params[:id])
+		@person.update(name: params[:person][:name])
+		@person.update(surname: params[:person][:surname])
+		@person.update(cedeusname: @person.surname + ", " + @person.name.capitalize[0] + ".")
+		@person.update(completename: @person.name + " " + @person.surname)
+
+		@cluster_person = ClusterPerson.where(person_id: @person.id)
+		@cluster_person.destroy_all
+
+		@cluster = ClusterPerson.new
+		@cluster.person_id = @person.id
+		@cluster.cluster_id = params[:person][:cluster_id_1]
+		@cluster.save
+		if params[:person][:cluster_id_2] != nil
+			@cluster = ClusterPerson.new
+			@cluster.person_id = @person.id
+			@cluster.cluster_id = params[:person][:cluster_id_2]
+			@cluster.save
+		end
+		if params[:person][:cluster_id_3] != nil
+			@cluster = ClusterPerson.new
+			@cluster.person_id = @person.id
+			@cluster.cluster_id = params[:person][:cluster_id_3]
+			@cluster.save
+		end
+		redirect_to persons_path, notice: 'el investigador fue editado'
+	end
+
 	def show
 		@person = Person.find(params[:id])
 		@person_tipos = []

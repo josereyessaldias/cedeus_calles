@@ -22,7 +22,8 @@
 							<%= cluster.name %>, 
 						<% end %>
 					</td>
-					 <td><%= link_to 'borrar', person_path(person), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{person.completename}'?"} %></td>
+					 <td><%= link_to 'Editar', edit_person_path(person) %>
+					 	<%= link_to 'Borrar', person_path(person), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{person.completename}'?"} %></td>
 				</tr>
 			<% end %>
 		</table>
