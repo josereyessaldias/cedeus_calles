@@ -2,6 +2,17 @@ class PersonsController < ApplicationController
 
 	def index
 		@persons = Person.all
+		@persons_calles = Person.where(proyecto: "Calles")
+		@products_calles = []
+		@persons_calles.each do |person|
+			person.products.each do |product|
+				@products_calles << product
+			end
+
+		@products_calles = @products_calles.uniq.sort_by { |product| -product.registro } 
+
+		end
+		@products_calles2 = Product.where.not(tipo: ["congreso","tesis"]).order(registro: :desc)
 
 	end
 	
@@ -88,6 +99,7 @@ class PersonsController < ApplicationController
 		end
 		redirect_to persons_path, notice: 'el investigador fue editado'
 	end
+
 
 	def show
 		@person = Person.find(params[:id])

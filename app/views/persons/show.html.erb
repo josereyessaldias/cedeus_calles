@@ -6,8 +6,36 @@
 		<h5><%= tipos.humanize %></h5>
 		<% @person.products.each do |product| %>
 			<% if product.tipo == tipos %>
-				<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.revista %>
-				<br>
+				<% if tipos == "revista_isi" or tipos == "revista_no_isi" %>
+					<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.revista %>
+					<br>
+
+				<% elsif tipos == "libro" %>
+					<% if product.person_product.where(person_id: @person.id).first.rol == "autor" %>
+						<%= product.registro %> <strong><%= product.titulo %></strong> | 
+						<i><%= product.revista %></i>
+						<br>
+					<% elsif product.person_product.where(person_id: @person.id).first.rol == "editor" %>
+						<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | Editor
+						<br>
+					<% end %>
+
+				<% elsif tipos == "congreso" %>
+					<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.congreso %>
+					<br>
+
+				<% elsif tipos == "colaboracion" %>
+					<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.congreso %>
+					<br>
+
+				<% elsif tipos == "tesis" %>
+					<%= product.inicio %> <strong><i><%= product.titulo %></i></strong> | <%= product.estudiante %> - 
+					<i><%= product.etapa.humanize %></i>
+					<br>
+
+
+
+				<% end %>
 			<% end %>
 		<% end %>
 		<br>
@@ -17,4 +45,4 @@
 
 <br>
 
-<%= link_to 'Crear nuevo investigador', new_person_path, :class => 'btn btn-info btn-sm' %>
+<%= link_to 'Volver', persons_path, :class => 'btn btn-info btn-sm' %>

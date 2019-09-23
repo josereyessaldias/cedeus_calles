@@ -1,8 +1,5 @@
 <h3>Editar Investigador</h3>
 
-<% @cluster_person.each do |i| %>
-	<%= i.cluster.name %> ,
-<% end %>
 <br>
 
 <%= form_with model: @person, local: true do |f| %>

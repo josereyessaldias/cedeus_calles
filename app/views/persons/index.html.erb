@@ -29,7 +29,32 @@
 		</table>
 	</div>
 	<div class="col-6">
-		<%= line_chart Product.group(:registro).count %>
+		<%= line_chart @products_calles2.group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
+		<br>
+		
+		<h5>Revistas ISI Proyecto Calles</h5>
+		<div style="font-size: 12px">
+			<h6><%= temp = 2019 %></h6>
+			<% @products_calles.each do |product| %>
+				<% if product.registro != temp %>
+					<br>
+					<% temp -= 1 %>
+					<h6><%= temp %></h6>
+				<% end %>
+				<% if product.tipo == "revista_isi" %>
+					<div style="padding-bottom: 3px">
+						<strong><i><%= product.titulo %></i></strong> | <%= product.revista %> | 
+						<% product.persons.each do |person| %>
+							<%= person.cedeusname %>,
+						<% end %>
+					<br>
+					</div>
+					
+				<% end %>
+			<% end %>
+		</div>
+
+
 	</div>
 </div>
 
