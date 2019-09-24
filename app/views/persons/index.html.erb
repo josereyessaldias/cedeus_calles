@@ -29,13 +29,13 @@
 		</table>
 	</div>
 	<div class="col-6">
-		<%= line_chart @products_calles2.group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
+		<%= line_chart @products_calles.group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
 		<br>
 		
 		<h5>Revistas ISI Proyecto Calles</h5>
 		<div style="font-size: 12px">
 			<h6><%= temp = 2019 %></h6>
-			<% @products_calles.each do |product| %>
+			<% @products_calles.order(registro: :desc).each do |product| %>
 				<% if product.registro != temp %>
 					<br>
 					<% temp -= 1 %>

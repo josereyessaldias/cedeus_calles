@@ -2,17 +2,9 @@ class PersonsController < ApplicationController
 
 	def index
 		@persons = Person.all
-		@persons_calles = Person.where(proyecto: "Calles")
-		@products_calles = []
-		@persons_calles.each do |person|
-			person.products.each do |product|
-				@products_calles << product
-			end
+		@products_calles = Product.where.not(tipo: ["congreso","tesis"])
+		@products_calles = @products_calles.where(calles: true)
 
-		@products_calles = @products_calles.uniq.sort_by { |product| -product.registro } 
-
-		end
-		@products_calles2 = Product.where.not(tipo: ["congreso","tesis"]).order(registro: :desc)
 
 	end
 	

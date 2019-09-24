@@ -41,6 +41,8 @@ class ProductsController < ApplicationController
 			end
 		end
 
+		calles
+
 		if params[:product][:file] != nil
 			@respaldo = Respaldo.new
 			@respaldo.product_id = @product.id
@@ -99,6 +101,8 @@ class ProductsController < ApplicationController
 			end
 		end
 
+		calles
+
 		if params[:product][:file] != nil
 			@respaldo = Respaldo.new
 			@respaldo.product_id = @product.id
@@ -123,6 +127,19 @@ class ProductsController < ApplicationController
 		params.require(:product).permit(:titulo, :revista, :tipo, :year, :doi, :volume, :pages, :partresearchers, :partpostdoc, :partundergrad, :partgrad, :fundfondap, :fundfondecyt, :fundfondef, :fundbasal, :fundicm, :fundother, :fundspecify, :indexacion, :editorial, :tipocongreso, :congreso, :lugar, :tipoorganizacion, :numpart, :institution, :tipocolaboracion, :estudiante, :genero, :rut, :grado, :inicio, :termino, :etapa, :monto, :registro, :cluster_id)
 	end
 		
+
+	def calles
+		[:person_id_1,:person_id_2,:person_id_3,:person_id_4,:person_id_5,:person_id_6,:person_id_7].each do |i|
+			if params[:product][i].to_i == 0
+				break
+			else 
+				if Person.find(params[:product][i]).proyecto == "Calles"
+					@product.calles = true
+					@product.save
+				end
+			end
+		end
+	end
 
 end
 

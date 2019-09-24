@@ -19,4 +19,6 @@ class Product < ApplicationRecord
 	enum etapa: {Terminada: 1, En_Preparacion: 2}
 
 	belongs_to :cluster, optional: true
+
+
 end

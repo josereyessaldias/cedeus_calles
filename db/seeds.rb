@@ -189,3 +189,12 @@ abrir_seed('seed_congreso.csv',Product,"congreso")
 abrir_seed('seed_organizacion.csv',Product,"organizacion")
 abrir_seed('seed_tesis.csv',Product,"tesis")
 abrir_seed('seed_person_product.csv',PersonProduct,"")
+
+Product.all.each do |product|
+	product.persons.each do |person|
+		if person.proyecto == "Calles"
+			product.calles = true
+			product.save
+		end
+	end
+end
