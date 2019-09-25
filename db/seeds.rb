@@ -111,7 +111,8 @@ def abrir_seed(seed,base,clase)
 							titulo: i[3],
 							numpart: i[4].to_i,
 							year: i[5],
-							lugar: i[6])
+							lugar: i[6],
+							cluster_id: i[7].to_i)
 			end
 
 		elsif clase == "colaboracion"
