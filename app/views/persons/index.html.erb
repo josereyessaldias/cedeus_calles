@@ -43,9 +43,16 @@
 				<% end %>
 				<% if product.tipo == "revista_isi" %>
 					<div style="padding-bottom: 3px">
-						<strong><i><%= product.titulo %></i></strong> | <%= product.revista %> | 
+						<strong><i>
+						<% if product.respaldos.first != nil %>
+							<%= link_to product.titulo, asset_path(product.respaldos.first.file, :target => "_blank") %>
+						<% else %>
+							<%= product.titulo %>
+						<% end %>
+
+							</i></strong> | <%= product.revista %> | 
 						<% product.persons.each do |person| %>
-							<%= person.cedeusname %>,
+							<%= link_to person.cedeusname, person_path(person) %>,
 						<% end %>
 					<br>
 					</div>

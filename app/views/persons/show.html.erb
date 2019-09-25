@@ -7,7 +7,14 @@
 		<% @person.products.each do |product| %>
 			<% if product.tipo == tipos %>
 				<% if tipos == "revista_isi" or tipos == "revista_no_isi" %>
-					<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.revista %>
+					<%= product.registro %> <strong><i>
+						<% if product.respaldos.first != nil %>
+							<%= link_to product.titulo, asset_path(product.respaldos.first.file, :target => "_blank") %>
+						<% else %>
+							<%= product.titulo %>
+						<% end %>
+							
+						</i></strong> | <%= product.revista %>
 					<br>
 
 				<% elsif tipos == "libro" %>

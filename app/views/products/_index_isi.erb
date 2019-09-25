@@ -62,7 +62,7 @@
 				</td>
 				<td style="width:100px"><strong>
 					<% @person.each do |i| %>
-						<%= i[0] %> 
+						<%= link_to i[0], person_path(Person.find_by cedeusname: i[0]) %> 
 						<% if i[1].is_a? Integer %>
 							<sup><%= i[1] %></sup>
 						<% else %>
