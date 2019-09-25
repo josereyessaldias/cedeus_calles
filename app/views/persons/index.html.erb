@@ -29,7 +29,7 @@
 		</table>
 	</div>
 	<div class="col-6">
-		<%= line_chart @products_calles.group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
+		<%= line_chart @products_calles.order(registro: :asc).group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
 		<br>
 		
 		<h5>Revistas ISI Proyecto Calles</h5>
