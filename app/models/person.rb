@@ -7,6 +7,6 @@ class Person < ApplicationRecord
 	has_many :person_product, dependent: :destroy
  	has_many :products, through: :person_product
 
- 	enum proyecto: {Energía: 1, Cuencas: 2, Accesibilidades: 3, Territorios: 4, Calles: 5}
+ 	enum proyecto: { _: 0, Energía: 1, Cuencas: 2, Accesibilidades: 3, Territorios: 4, Calles: 5}
 
 end
