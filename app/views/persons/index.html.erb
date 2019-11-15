@@ -1,34 +1,25 @@
-<h3>Investigadores</h3>
+<h3>Investigadores Access and Mobility</h3>
 <br>
 <%= link_to 'Crear nuevo investigador', new_person_path, :class => 'btn btn-info btn-sm' %>
 <br><br>
 
 <div class="row">
-	<div class="col-6">
+	<div class="col-3">
 		<table>
 			<thead>
 				<th>Nombre Investigador</th>
 				<th>Proyecto</th>
-				<th>Research Line</th>
-				<th></th>
 			</thead>
 			
 			<% @persons.each do |person| %>
 				<tr>
 					<td><%= link_to person.completename, person_path(person) %></td>
 					<td><%= person.proyecto %></td>
-					<td>
-						<% person.clusters.each do |cluster| %>
-							<%= cluster.name %>, 
-						<% end %>
-					</td>
-					 <td><%= link_to 'Editar', edit_person_path(person) %>
-					 	<%= link_to 'Borrar', person_path(person), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{person.completename}'?"} %></td>
 				</tr>
 			<% end %>
 		</table>
 	</div>
-	<div class="col-6">
+	<div class="col-9">
 		<%= line_chart @products_calles.order(registro: :asc).group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
 		<br>
 		
