@@ -16,7 +16,7 @@
 				<tr>
 					<td><%= link_to person.completename, person_path(person) %></td>
 					<td><%= person.proyecto %></td>
-					<td><%= link_to "Borrar", person_path(person), method: :delete %></td>
+					<td><%= link_to "Borrar", person_path(person), method: :delete, data: { confirm: "¿Borrar investigador?" }  %></td>
 				</tr>
 			<% end %>
 		</table>
