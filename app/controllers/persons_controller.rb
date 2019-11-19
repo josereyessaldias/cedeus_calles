@@ -1,7 +1,8 @@
 class PersonsController < ApplicationController
 
 	def index
-		@persons = Person.joins(:clusters).where(:clusters => {:name => "Access and Mobility"})
+		@persons = Person.all
+		#@persons = Person.joins(:clusters).where(:clusters => {:name => "Access and Mobility"})
 		@products_calles = Product.where.not(tipo: ["congreso","tesis"])
 		
 

@@ -9,12 +9,14 @@
 			<thead>
 				<th>Nombre Investigador</th>
 				<th>Proyecto</th>
+				<th></th>
 			</thead>
 			
 			<% @persons.each do |person| %>
 				<tr>
 					<td><%= link_to person.completename, person_path(person) %></td>
 					<td><%= person.proyecto %></td>
+					<td><%= link_to "Borrar", person_path(person), method: :delete %></td>
 				</tr>
 			<% end %>
 		</table>
