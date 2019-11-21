@@ -18,7 +18,7 @@
 					<br>
 
 				<% elsif tipos == "libro" %>
-					<% if product.person_product.where(person_id: @person.id).first.rol == "autor" %>
+					<% if product.person_product.where(person_id: @person.id).first.rol == "author" %>
 						<%= product.registro %> <strong><%= product.titulo %></strong> | 
 						<i><%= product.revista %></i>
 						<br>
