@@ -9,23 +9,22 @@
 			<thead>
 				<th>Nombre Investigador</th>
 				<th>Proyecto</th>
-				<th></th>
+
 			</thead>
 			
 			<% @persons.each do |person| %>
 				<tr>
 					<td><%= link_to person.completename, person_path(person) %></td>
 					<td><%= person.proyecto %></td>
-					<td><%= link_to "Borrar", person_path(person), method: :delete, data: { confirm: "¿Borrar investigador?" }  %></td>
 				</tr>
 			<% end %>
 		</table>
 	</div>
 	<div class="col-9">
-		<%= line_chart @products_calles.order(registro: :asc).group(:tipo).group(:registro).count, title: "Productos Proyecto Calles", width: "80%", discrete: true %>
+		<%= line_chart @products_calles.order(registro: :asc).group(:tipo).group(:registro).count, title: "Productos Acceso y Movilidad", width: "80%", discrete: true %>
 		<br>
 		
-		<h5>Revistas ISI Proyecto Calles</h5>
+		<h5>Revistas ISI Acceso y Movilidad</h5>
 		<div style="font-size: 12px">
 			<h6><%= temp = 2019 %></h6>
 			<% @products_calles.order(registro: :desc).each do |product| %>
