@@ -28,7 +28,7 @@
 							<br>
 						<% end %>
 
-					<% elsif tipos == "congreso" and product.registro == 2019%>
+					<% elsif tipos == "congreso" and product.registro == 2019 %>
 						<%= product.registro %> <strong><i>
 							<% if product.respaldos.first != nil %>
 								<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
@@ -39,8 +39,8 @@
 
 						<br>
 
-					<% elsif tipos == "colaboracion" and product.registro == 2019%>
-						<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.congreso %>
+					<% elsif tipos == "colaboracion" and product.registro == 2019 %>
+						<%= product.registro %> <strong><i><%= product.institution %></i></strong> | <%= product.congreso %>
 						<br>
 
 					<% elsif tipos == "tesis" %>
