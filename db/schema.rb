@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_064801) do
+ActiveRecord::Schema.define(version: 2019_11_22_070833) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2019_09_24_064801) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.index ["person_id"], name: "index_comments_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|

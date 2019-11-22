@@ -1,61 +1,81 @@
 <h3><%= @person.completename %></h3>
 <br>
 
-<div style="font-size: 12px">
-	<% @person_tipos.each do |tipos| %>
-		<h5><%= tipos.humanize %></h5>
-		<% @person.products.each do |product| %>
-			<% if product.tipo == tipos %>
-				<% if (tipos == "revista_isi" or tipos == "revista_no_isi") and product.registro == 2019 %>
-					<%= product.registro %> <strong><i>
-						<% if product.respaldos.first != nil and product.registro == 2019 %>
-							<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
-						<% else %>
-							<%= product.titulo %>
-						<% end %>
-							
-						</i></strong> | <%= product.revista %>
-					<br>
+<div class="row">
+	<div style="font-size: 12px" class="col-9">
+		<% @person_tipos.each do |tipos| %>
+			<h5><%= tipos.humanize %></h5>
+			<% @person.products.each do |product| %>
+				<% if product.tipo == tipos %>
+					<% if (tipos == "revista_isi" or tipos == "revista_no_isi") and product.registro == 2019 %>
+						<%= product.registro %> <strong><i>
+							<% if product.respaldos.first != nil and product.registro == 2019 %>
+								<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
+							<% else %>
+								<%= product.titulo %>
+							<% end %>
+								
+							</i></strong> | <%= product.revista %>
+						<br>
 
-				<% elsif tipos == "libro" and product.registro == 2019 %>
-					<% if product.person_product.where(person_id: @person.id).first.rol == "author" %>
-						<%= product.registro %> <strong><%= product.titulo %></strong> | 
-						<i><%= product.revista %></i>
+					<% elsif tipos == "libro" and product.registro == 2019 %>
+						<% if product.person_product.where(person_id: @person.id).first.rol == "author" %>
+							<%= product.registro %> <strong><%= product.titulo %></strong> | 
+							<i><%= product.revista %></i>
+							<br>
+						<% elsif product.person_product.where(person_id: @person.id).first.rol == "editor" %>
+							<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | Editor
+							<br>
+						<% end %>
+
+					<% elsif tipos == "congreso" and product.registro == 2019%>
+						<%= product.registro %> <strong><i>
+							<% if product.respaldos.first != nil %>
+								<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
+							<% else %>
+								<%= product.titulo %>
+							<% end %>
+						</i></strong> | <%= product.congreso %>
+
 						<br>
-					<% elsif product.person_product.where(person_id: @person.id).first.rol == "editor" %>
-						<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | Editor
+
+					<% elsif tipos == "colaboracion" and product.registro == 2019%>
+						<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.congreso %>
 						<br>
+
+					<% elsif tipos == "tesis" %>
+						<%= product.inicio %> <strong><i><%= product.titulo %></i></strong> | <%= product.estudiante %> - 
+						<i><%= product.etapa.humanize %></i>
+						<br>
+
+
+
 					<% end %>
-
-				<% elsif tipos == "congreso" and product.registro == 2019%>
-					<%= product.registro %> <strong><i>
-						<% if product.respaldos.first != nil %>
-							<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
-						<% else %>
-							<%= product.titulo %>
-						<% end %>
-					</i></strong> | <%= product.congreso %>
-
-					<br>
-
-				<% elsif tipos == "colaboracion" and product.registro == 2019%>
-					<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | <%= product.congreso %>
-					<br>
-
-				<% elsif tipos == "tesis" %>
-					<%= product.inicio %> <strong><i><%= product.titulo %></i></strong> | <%= product.estudiante %> - 
-					<i><%= product.etapa.humanize %></i>
-					<br>
-
-
-
 				<% end %>
 			<% end %>
+			<br>
 		<% end %>
-		<br>
-	<% end %>
-</diV>
+	</div>
+	<div class="col-3" style="font-size: 12px">
+		<ul>
+			<% @person.comments.each do |comment| %>
+				<li><%= comment.text %></li>
+			<% end %>
+			
+			<br>
+			<%= form_with model: @comment, url: comments_path , local: true do |f| %>
 
+			<%= f.hidden_field :person_id, value: @person.id %>
+
+			<%= f.label :Ingresar_comentario %>: 
+			<%= f.text_area :text, rows: "5", cols: "25" %><br>
+
+			<%= f.submit "Crear Comentario", :class => 'btn btn-dark btn-sm' %>
+
+			<% end %>
+		</ul>
+	</div>
+</div>
 
 <br>
 
