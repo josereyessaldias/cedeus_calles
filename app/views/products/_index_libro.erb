@@ -20,17 +20,17 @@
 		<% @editores = [] %>
 		<% if product.tipo == "libro" %>
 	
-			<% product.persons.each do |person| %>
-				<% person.clusters.each do |cluster| %>
+			<% product.person_product.order(:id).each do |person_prod| %>
+				<% person_prod.person.clusters.each do |cluster| %>
 					<% if cluster.name != "Sin Cluster" %>
 						<% @temp << cluster.name %>
 					<% end %>
 				<% end %> 
-				<% if person.person_product.where(product_id: product).first.rol == "author" %>
-					<% @autores << person.cedeusname %>
+				<% if person_prod.person.person_product.where(product_id: product).first.rol == "author" %>
+					<% @autores << person_prod.person.cedeusname %>
 					<% @autores << ", " %>
 				<% else %>
-					<% @editores << person.cedeusname %>
+					<% @editores << person_prod.person.cedeusname %>
 					<% @editores << ", " %>
 				<% end %>
 			<% end %>

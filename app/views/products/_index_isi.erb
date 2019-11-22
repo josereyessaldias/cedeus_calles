@@ -37,17 +37,17 @@
 
 		<% if product.tipo == "revista_isi" %>
 			
-			<% product.persons.each do |person| %>
+			<% product.person_product.order(:id).each do |person_prod| %>
 
-				<% person.clusters.each do |cluster| %>	
+				<% person_prod.person.clusters.each do |cluster| %>	
 					<% if cluster.name != "Sin Cluster" %>
 						<% @clust << cluster.name %>
 					<% end %>
 				<% end %>
 
 				<% @par = [] %>
-				<% @par << person.cedeusname %>
-				<% t = product.person_product.where(person_id: person.id).first.contact_before_type_cast %>
+				<% @par << person_prod.person.cedeusname %>
+				<% t = product.person_product.where(person_id: person_prod.person.id).first.contact_before_type_cast %>
 				<% @par << t if t > 0 %>
 				<% @par << "," %>
 				<% @person << @par %>

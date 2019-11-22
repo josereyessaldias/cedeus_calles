@@ -43,8 +43,8 @@
 						<% end %>
 
 							</i></strong> | <%= product.revista %> | 
-						<% product.persons.each do |person| %>
-							<%= link_to person.cedeusname, person_path(person) %>,
+						<% product.person_product.order(:id).each do |person_prod| %>
+							<%= link_to person_prod.person.cedeusname, person_path(person_prod.person) %>,
 						<% end %>
 					<br>
 					</div>

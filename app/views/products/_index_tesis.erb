@@ -23,14 +23,14 @@
 		<% @persona = [] %>
 		<% if product.tipo == "tesis" %>
 			
-			<% product.persons.each do |person| %>
+			<% product.person_product.order(:id).each do |person_prod| %>
 
-				<% person.clusters.each do |cluster| %>	
+				<% person_prod.person.clusters.each do |cluster| %>	
 					<% if cluster.name != "Sin Cluster" %>
 						<% @clust << cluster.name %>
 					<% end %>
 				<% end %>
-				<% @persona << person.cedeusname %>
+				<% @persona << person_prod.person.cedeusname %>
 			<% end %>
 
 			<tr>
