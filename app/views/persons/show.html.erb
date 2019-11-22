@@ -57,11 +57,17 @@
 		<% end %>
 	</div>
 	<div class="col-3" style="font-size: 12px">
-		<ul>
+		<% if @person.comments.count > 0 %>
+			<strong><u>Comentarios:</u></strong>
+		<% end %>
+
+		<ul class="pl-0">
 			<% @person.comments.each do |comment| %>
-				<li><%= comment.text %></li>
+				<li><%= comment.text %> 
+					<%= link_to "borrar", comment_path(comment.id,:person_id => @person.id), method: :delete %> 
+				</li>
 			<% end %>
-			
+		</ul>
 			<br>
 			<%= form_with model: @comment, url: comments_path , local: true do |f| %>
 
@@ -73,7 +79,7 @@
 			<%= f.submit "Crear Comentario", :class => 'btn btn-dark btn-sm' %>
 
 			<% end %>
-		</ul>
+		
 	</div>
 </div>
 

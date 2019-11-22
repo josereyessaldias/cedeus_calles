@@ -7,4 +7,10 @@ class CommentsController < ApplicationController
 		@comment.save
 		redirect_to person_path(params[:person_id])
 	end
+
+	def destroy
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		redirect_to person_path(params[:person_id])
+	end
 end

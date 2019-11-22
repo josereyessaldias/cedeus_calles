@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  	resources :person_products, only: [:destroy]
  	resources :cluster_persons, only: [:destroy]
  	resources :respaldos, only: [:destroy]
- 	resources :comments, only: [:create]
+ 	resources :comments, only: [:create, :destroy]
 
 	root 'persons#index'  
 end
