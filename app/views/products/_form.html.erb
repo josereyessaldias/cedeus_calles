@@ -72,73 +72,21 @@
 
 				<div class="row">
 					<div class="col-4">
-						<p>Participación de:</p>
+						<p>Publicación Pertenece a:</p>
 
 						<ul>
-							<li><%= f.check_box :partresearchers %>
-								<%= f.label :Researchers %></li>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
 
-							<li><%= f.check_box :partpostdoc %>
-								<%= f.label :Postdosc %> </li>
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
 
-							<li><%= f.check_box :partundergrad %>
-								<%= f.label :Undergraduate %> </li>
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
 
-							<li><%= f.check_box :partgrad %>
-								<%= f.label :Graduate %> </li>
 						</ul>
 					</div>
 
-					<div class="col-6">
-						<p>Financiamiento (en porcentaje):</p>
-						<div class="row">
-							<div class="col-4">
-								<%= f.label :Fondap %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundfondap, min: 0, max:100 %>
-							</div>
-							<div class="col-4">
-								<%= f.label :Fondecyt %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundfondecyt, min: 0, max:100 %>
-							</div>
-							<div class="col-4">
-								<%= f.label :Fondef %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundfondef, min: 0, max:100 %>
-							</div>
-							<div class="col-4">
-								<%= f.label :Basal %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundbasal, min: 0, max:100 %>
-							</div>
-							<div class="col-4">
-								<%= f.label :ICM %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundicm, min: 0, max:100 %>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-4">
-								<%= f.label :Other %>: 
-							</div>
-							<div class="col-2">
-								<%= f.number_field :fundother, min: 0, max:100 %>
-							</div>
-							<div class="col-4">
-								<%= f.label :Especify %>: 
-							</div>
-							<div class="col-2">
-								<%= f.text_field :fundspecify %>
-							</div>
-
-						</div>
-					</div>
 				</div>
 				<br>
 
@@ -195,6 +143,27 @@
 						<%= f.text_field :editorial, size: "42" %>
 					</div>
 				</div>
+				<br>
+
+				<div class="row">
+					<div class="col-4">
+						<p>Publicación Pertenece a:</p>
+
+						<ul>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
+
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
+
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
+
+						</ul>
+					</div>
+
+				</div>
+				<br>
 			
 			<% elsif  @tipo == "congreso" %>
 				<div class="row">
@@ -239,22 +208,21 @@
 				</div><br>
 				<div class="row">
 					<div class="col-4">
-						<p>Participación de:</p>
+						<p>Publicación Pertenece a:</p>
 
 						<ul>
-							<li><%= f.check_box :partresearchers %>
-								<%= f.label :Researchers %></li>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
 
-							<li><%= f.check_box :partpostdoc %>
-								<%= f.label :Postdosc %> </li>
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
 
-							<li><%= f.check_box :partundergrad %>
-								<%= f.label :Undergraduate %> </li>
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
 
-							<li><%= f.check_box :partgrad %>
-								<%= f.label :Graduate %> </li>
 						</ul>
 					</div>
+
 				</div>
 				
 
@@ -308,6 +276,26 @@
 					</div>
 				</div><br>
 
+				<div class="row">
+					<div class="col-4">
+						<p>Publicación Pertenece a:</p>
+
+						<ul>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
+
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
+
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
+
+						</ul>
+					</div>
+
+				</div>
+				<br>
+
 			<% elsif  @tipo == "colaboracion" %>
 				<div class="row">
 					<div class="col-md-4">
@@ -341,6 +329,27 @@
 						<%= f.text_field :year, size: 40 %>
 					</div>
 				</div>
+				<br>
+
+				<div class="row">
+					<div class="col-4">
+						<p>Publicación Pertenece a:</p>
+
+						<ul>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
+
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
+
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
+
+						</ul>
+					</div>
+
+				</div>
+
 				<br>
 
 			<% elsif  @tipo == "tesis" %>
@@ -425,6 +434,27 @@
 					</div>
 				</div>
 
+				<br>
+				<div class="row">
+					<div class="col-4">
+						<p>Publicación Pertenece a:</p>
+
+						<ul>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
+
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
+
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
+
+						</ul>
+					</div>
+
+				</div>
+				<br>
+
 			<% elsif  @tipo == "financiamiento" %>
 				<div class="row">
 					<div class="col-md-4">
@@ -459,6 +489,25 @@
 					</div>
 				</div>
 				<br>
+
+				<div class="row">
+					<div class="col-4">
+						<p>Publicación Pertenece a:</p>
+
+						<ul>
+							<li><%= f.check_box :ditl_check %>
+								<%= f.label :DITL %></li>
+
+							<li><%= f.check_box :brt_check %>
+								<%= f.label :BRT %> </li>
+
+							<li><%= f.check_box :cedeus_check %>
+								<%= f.label :Cedeus %> </li>
+
+						</ul>
+					</div>
+
+				</div>
 
 				<br>
 			<% end %>
@@ -622,8 +671,19 @@
 				<%= link_to "Borrar autor", person_product_path(PersonProduct.where(product_id: @product.id,person_id: @person_id_array[7]).first.id), method: :delete, data: { confirm: "¿Está seguro de borrar al investigador '#{@person_array[7]}'?"} if @person_id_array[7] != nil %>
 
 				<br>
+
+				<% if @tipo == "congreso" %>
+					<div style="font-size: 12px">
+						<%= f.label :Otros_Autores %>:
+						<%= f.text_field :otros_autores, size: 40 %>
+					</div>
+				<% end %>
 			</div>
+
+			
 		<% end %>
+
+		
 
 	</div>
 	<br>

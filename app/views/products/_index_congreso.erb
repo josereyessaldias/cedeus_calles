@@ -10,14 +10,13 @@
 		<th rowspan="2">Participantes</th>
 		<th rowspan="2">Ciudad/País</th>
 		<th rowspan="2">Fecha</th>
-		<th colspan="4" style="text-align: center">Participation</th>
+		<th colspan="3" style="text-align: center">Afiliación</th>
 		<th rowspan="2">Respaldo</th>
 	</tr>
 	<tr>
-		<th class="vertical">Researcher</th>
-		<th class="vertical">Postdoc</th>
-		<th class="vertical">Undergrad</th>
-		<th class="vertical">Grad</th>
+		<th class="vertical" style="max-width: 22px">DTIL</th>
+		<th class="vertical" style="max-width: 22px">BRT+</th>
+		<th class="vertical" style="max-width: 22px">CEDEUS</th>
 	</tr>
 
 	<% @products.each do |product| %>
@@ -53,10 +52,9 @@
 
 				<td><%= product.lugar %></td>
 				<td><%= product.year %></td>
-				<td><%= boolean01(product.partresearchers) %></td>
-				<td><%= boolean01(product.partpostdoc) %></td>
-				<td><%= boolean01(product.partundergrad) %></td>
-				<td><%= boolean01(product.partgrad) %></td>
+				<td><%= boolean01(product.ditl_check) %></td>
+				<td><%= boolean01(product.brt_check) %></td>
+				<td><%= boolean01(product.cedeus_check) %></td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>
 						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
