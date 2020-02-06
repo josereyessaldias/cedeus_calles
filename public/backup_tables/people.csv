@@ -1,0 +1,152 @@
+id,name,created_at,updated_at,surname,completename,cedeusname,proyecto
+1,Rosanna,2019-09-25 13:01:37.047616,2019-09-25 13:01:37.047616,Forray,Rosanna Forray,"Forray, R.",5
+2,Ricardo,2019-09-25 13:01:37.054852,2019-09-25 13:01:37.054852,Giesen,Ricardo Giesen,"Giesen, R.",5
+3,Ricardo,2019-09-25 13:01:37.060861,2019-09-25 13:01:37.060861,Hurtubia,Ricardo Hurtubia,"Hurtubia, R.",5
+4,Rodrigo,2019-09-25 13:01:37.066158,2019-09-25 13:01:37.066158,Mora,Rodrigo Mora,"Mora, R.",5
+5,Juan Carlos,2019-09-25 13:01:37.072882,2019-09-25 13:01:37.072882,Muñoz,Juan Carlos Muñoz,"Muñoz, J.",5
+6,Sebastián,2019-09-25 13:01:37.078183,2019-09-25 13:01:37.078183,Raveau,Sebastián Raveau,"Raveau, S.",5
+7,Lake,2019-09-25 13:01:37.083379,2019-09-25 13:01:37.083379,Sagaris,Lake Sagaris,"Sagaris, L.",5
+8,Stefan,2019-09-25 13:01:37.088372,2019-09-25 13:01:37.088372,Steiniger,Stefan Steiniger,"Steiniger, S.",5
+9,Giovanni,2019-09-25 13:01:37.093698,2019-09-25 13:01:37.093698,Vecchio,Giovanni Vecchio,"Vecchio, G.",5
+11,Juan Antonio,2019-09-25 13:01:37.104432,2019-09-25 13:01:37.104432,Carrasco,Juan Antonio Carrasco,"Carrasco, J.",3
+12,Hugo,2019-09-25 13:01:37.109397,2019-09-25 13:01:37.109397,Silva,Hugo Silva,"Silva, H.",3
+13,Patricia,2019-09-25 13:01:37.11487,2019-09-25 13:01:37.11487,Galilea,Patricia Galilea,"Galilea, P.",
+14,Juan de Dios,2019-09-25 13:01:37.120061,2019-09-25 13:01:37.120061,Ortúzar,Juan de Dios Ortúzar,"Ortúzar, J.",
+15,Jaime,2019-09-25 13:01:37.125485,2019-09-25 13:01:37.125485,Allen,Jaime Allen,"Allen, J.",
+16,Jordi,2019-09-25 13:01:37.13305,2019-09-25 13:01:37.13305,Rosell,Jordi Rosell,"Rosell, J.",
+17,Luca,2019-09-25 13:01:37.139243,2019-09-25 13:01:37.139243,Tricarico,Luca Tricarico,"Tricarico, L.",
+18,Iván,2019-09-25 13:01:37.144648,2019-09-25 13:01:37.144648,Múñiz,Iván Múñiz,"Múñiz, I.",
+19,Omar,2019-09-25 13:01:37.154042,2019-09-25 13:01:37.154042,Ibarra-Rojas,Omar Ibarra-Rojas,"Ibarra-Rojas, O.",
+20,Elizabeth,2019-09-25 13:01:37.160235,2019-09-25 13:01:37.160235,Peña,Elizabeth Peña,"Peña, E.",
+21,Jaime,2019-09-25 13:01:37.165973,2019-09-25 13:01:37.165973,Soza-Parra,Jaime Soza-Parra,"Soza-Parra, J.",
+22,Arturo,2019-09-25 13:01:37.171101,2019-09-25 13:01:37.171101,Didier,Arturo Didier,"Didier, A.",
+23,Constanza,2019-09-25 13:01:37.176824,2019-09-25 13:01:37.176824,Silva,Constanza Silva,"Silva, C.",
+24,Felipe,2019-09-25 13:01:37.184184,2019-09-25 13:01:37.184184,González,Felipe González,"González, F.",
+25,Francisco Javier,2019-09-25 13:01:37.190326,2019-09-25 13:01:37.190326,Martínez,Francisco Javier Martínez,"Martínez, F.",
+26,Michael,2019-09-25 13:01:37.19606,2019-09-25 13:01:37.19606,Bierlaiere,Michael Bierlaiere,"Bierlaiere, M.",
+27,Tomás,2019-09-25 13:01:37.201928,2019-09-25 13:01:37.201928,Rossetti,Tomás Rossetti,"Rossetti, T.",
+28,Verónica,2019-09-25 13:01:37.207752,2019-09-25 13:01:37.207752,Saud,Verónica Saud,"Saud, V.",
+29,Ignacio,2019-09-25 13:01:37.213618,2019-09-25 13:01:37.213618,Oliva,Ignacio Oliva,"Oliva, I.",
+30,Ignacio,2019-09-25 13:01:37.232141,2019-09-25 13:01:37.232141,Guimpert,Ignacio Guimpert,"Guimpert, I.",
+31,Isidora,2019-09-25 13:01:37.239477,2019-09-25 13:01:37.239477,Navarro,Isidora Navarro,"Navarro, I.",
+32,Rocío,2019-09-25 13:01:37.247379,2019-09-25 13:01:37.247379,Hidalgo,Rocío Hidalgo,"Hidalgo, R.",
+33,Angelo,2019-09-25 13:01:37.254469,2019-09-25 13:01:37.254469,Guevara,Angelo Guevara,"Guevara, A.",
+34,Ignacio,2019-09-25 13:01:37.260259,2019-09-25 13:01:37.260259,Tiznado-Aitken,Ignacio Tiznado-Aitken,"Tiznado-Aitken, I.",
+35,Juan,2019-09-25 13:01:37.265577,2019-09-25 13:01:37.265577,Munizaga,Juan Munizaga,"Munizaga, J.",
+36,Alejandro,2019-09-25 13:01:37.270665,2019-09-25 13:01:37.270665,Schmidt,Alejandro Schmidt,"Schmidt, A.",
+37,Jaime,2019-09-25 13:01:37.276312,2019-09-25 13:01:37.276312,Moya,Jaime Moya,"Moya, J.",
+38,D,2019-09-25 13:01:37.283954,2019-09-25 13:01:37.283954,Cruz,D Cruz,"Cruz, D.",
+39,Chiara,2019-09-25 13:01:37.289185,2019-09-25 13:01:37.289185,Calastri,Chiara Calastri,"Calastri, C.",
+40,Alejandro,2019-09-25 13:01:37.294705,2019-09-25 13:01:37.294705,Tudela,Alejandro Tudela,"Tudela, A.",
+41,Pedro ,2019-09-25 13:01:37.302041,2019-09-25 13:01:37.302041,Lizana,Pedro  Lizana,"Lizana, P.",
+42,Paul,2019-09-25 13:01:37.309772,2019-09-25 13:01:37.309772,Basnak,Paul Basnak,"Basnak, P.",
+43,Carlos,2019-09-25 13:01:37.31478,2019-09-25 13:01:37.31478,Bueno,Carlos Bueno,"Bueno, C.",
+44,Luis Ángel,2019-09-25 13:01:37.321191,2019-09-25 13:01:37.321191,Cantillo,Luis Ángel Cantillo,"Cantillo, L.",
+45,Yerly,2019-09-25 13:01:37.326674,2019-09-25 13:01:37.326674,Martínez,Yerly Martínez,"Martínez, Y.",
+46,Hans,2019-09-25 13:01:37.332107,2019-09-25 13:01:37.332107,Löbel,Hans Löbel,"Löbel, H.",
+47,Thomas,2019-09-25 13:01:37.337713,2019-09-25 13:01:37.337713,Guerrero,Thomas Guerrero,"Guerrero, T.",
+48,Víctor,2019-09-25 13:01:37.343297,2019-09-25 13:01:37.343297,Rocco,Víctor Rocco,"Rocco, V.",
+49,Leonardo,2019-09-25 13:01:37.348576,2019-09-25 13:01:37.348576,Basso,Leonardo Basso,"Basso, L.",
+50,Francisco,2019-09-25 13:01:37.353682,2019-09-25 13:01:37.353682,De la Barrera,Francisco De la Barrera,"De la Barrera, F.",
+51,Felipe,2019-09-25 13:01:37.358723,2019-09-25 13:01:37.358723,Delgado,Felipe Delgado,"Delgado, F.",
+52,Paula,2019-09-25 13:01:37.36411,2019-09-25 13:01:37.36411,Iglesias,Paula Iglesias,"Iglesias, P.",
+53,Sebastián,2019-09-25 13:01:37.370354,2019-09-25 13:01:37.370354,Tamblay,Sebastián Tamblay,"Tamblay, S.",
+54,Homero,2019-09-25 13:01:37.3757,2019-09-25 13:01:37.3757,Larraín,Homero Larraín,"Larraín, H.",
+55,Pablo,2019-09-25 13:01:37.381978,2019-09-25 13:01:37.381978,Guarda,Pablo Guarda,"Guarda, P.",
+62,Jorge,2019-09-25 13:53:04.544281,2019-09-25 13:53:04.544281,Gironás,Jorge Gironás,"Gironás, J.",2
+65,Margarita,2019-09-25 14:14:43.529066,2019-09-25 14:14:43.529066,Greene,Margarita Greene,"Greene, M.",4
+56,Oded,2019-09-25 13:12:44.938029,2019-09-25 14:51:20.11718,Cats,Oded Cats,"Cats, O.",0
+57,Pedro,2019-09-25 13:31:21.720434,2019-09-25 14:51:34.476681,Gazmuri,Pedro Gazmuri,"Gazmuri, P.",0
+58,Diego,2019-09-25 13:31:30.319902,2019-09-25 14:51:41.7138,Morales,Diego Morales,"Morales, D.",0
+59,Paul,2019-09-25 13:35:50.553033,2019-09-25 14:51:48.492528,Knapp,Paul Knapp,"Knapp, P.",0
+60,Vicente,2019-09-25 13:39:10.095818,2019-09-25 14:51:58.123012,Iglesias,Vicente Iglesias,"Iglesias, V.",0
+61,Francisca,2019-09-25 13:39:19.939297,2019-09-25 14:52:09.419913,Giraldez,Francisca Giraldez,"Giraldez, F.",0
+63,Anahí,2019-09-25 13:53:26.744389,2019-09-25 14:52:43.890736,Ocampo-Melgar,Anahí Ocampo-Melgar,"Ocampo-Melgar, A.",0
+66,Alexis,2019-09-25 14:15:11.208843,2019-09-25 14:52:51.145046,Reyes,Alexis Reyes,"Reyes, A.",0
+64,Carlos,2019-09-25 14:04:34.289672,2019-09-25 14:52:57.987237,Brunner,Carlos Brunner,"Brunner, C.",0
+67,Pablo,2019-09-25 14:18:48.434365,2019-09-25 14:53:06.180029,Morán,Pablo Morán,"Morán, P.",0
+68,Rebeca,2019-09-25 14:19:47.290225,2019-09-25 14:53:14.715404,Gaspar,Rebeca Gaspar,"Gaspar, R.",0
+69,Prateek,2019-11-15 14:40:45.597227,2019-11-15 14:40:45.597227,Bansal,Prateek Bansal,"Bansal, P.",0
+70,Alejandro,2019-11-15 14:41:03.368308,2019-11-15 14:41:03.368308,Tirachini,Alejandro Tirachini,"Tirachini, A.",0
+71,Ricardo,2019-11-15 14:41:15.603748,2019-11-15 14:41:15.603748,Daziano,Ricardo Daziano,"Daziano, R.",0
+72,Robin,2019-11-15 16:39:43.788459,2019-11-15 16:39:43.788459,Lindsey,Robin Lindsey,"Lindsey, R.",0
+73,Andre,2019-11-15 16:39:56.601949,2019-11-15 16:39:56.601949,de Palma,Andre de Palma,"de Palma, A.",0
+74,Marcela,2019-11-18 13:34:09.830919,2019-11-18 13:34:09.830919,Martínez,Marcela Martínez,"Martínez, M.",0
+75,Helen,2019-11-18 13:36:01.015034,2019-11-18 13:36:01.015034,De la Fuente,Helen De la Fuente,"De la Fuente, H.",0
+76,Andrés,2019-11-18 13:36:17.046448,2019-11-18 13:36:17.046448,Schäfer,Andrés Schäfer,"Schäfer, A.",0
+77,Felipe,2019-11-18 13:36:29.970927,2019-11-18 13:36:29.970927,Aguilera,Felipe Aguilera,"Aguilera, F.",0
+78,Gloria ,2019-11-18 13:36:42.832829,2019-11-18 13:36:42.832829,Fuentes,Gloria  Fuentes,"Fuentes, G.",0
+79,Consuelo,2019-11-18 13:36:59.818492,2019-11-18 13:36:59.818492,Peyrín,Consuelo Peyrín,"Peyrín, C.",0
+80,Paola,2019-11-18 14:32:06.947149,2019-11-18 14:32:06.947149,Pucci,Paola Pucci,"Pucci, P.",0
+81,J,2019-11-18 15:02:54.780857,2019-11-18 15:02:54.780857,Ruiz-Tagle,J Ruiz-Tagle,"Ruiz-Tagle, J.",0
+82,G,2019-11-18 15:03:07.818978,2019-11-18 15:03:07.818978,Labbe,G Labbe,"Labbe, G.",0
+84,JP,2019-11-18 15:03:32.796225,2019-11-18 15:03:32.796225,Schuster,JP Schuster,"Schuster, J.",0
+85,Daniel,2019-11-18 16:04:03.368978,2019-11-18 16:04:03.368978,Lanfranco,Daniel Lanfranco,"Lanfranco, D.",0
+86,Lucía,2019-11-19 14:00:22.485417,2019-11-19 14:00:22.485417,Bocchimuzzi,Lucía Bocchimuzzi,"Bocchimuzzi, L.",0
+87,Giovanni,2019-11-19 14:00:36.884364,2019-11-19 14:00:36.884364,Lanza,Giovanni Lanza,"Lanza, G.",0
+88,Ivonne,2019-11-19 14:23:49.637313,2019-11-19 14:23:49.637313,Rueda-Seguel,Ivonne Rueda-Seguel,"Rueda-Seguel, I.",0
+89,Patricia,2019-11-19 14:24:52.488036,2019-11-19 14:24:52.488036,Virano,Patricia Virano,"Virano, P.",0
+90,Mathias,2019-11-19 14:27:53.747629,2019-11-19 14:27:53.747629,Klapp,Mathias Klapp,"Klapp, M.",0
+91,Fernando,2019-11-19 14:47:18.292109,2019-11-19 14:47:18.292109,Feres,Fernando Feres,"Feres, F.",0
+92,César ,2019-11-19 14:52:46.324177,2019-11-19 14:52:46.324177,Henao,César  Henao,"Henao, C.",0
+93,Juan Carlos,2019-11-19 14:53:00.632862,2019-11-19 14:53:00.632862,Ferrer,Juan Carlos Ferrer,"Ferrer, J.",0
+94,Maximiliano,2019-11-19 15:05:07.681692,2019-11-19 15:05:07.681692,Lizana,Maximiliano Lizana,"Lizana, M.",0
+95,Grazia,2019-11-19 15:20:39.367018,2019-11-19 15:20:39.367018,Concilio,Grazia Concilio,"Concilio, G.",0
+97,Carlos,2019-11-22 03:37:39.133657,2019-11-22 03:37:39.133657,Céspedes,Carlos Céspedes,"Céspedes, C.",0
+98,Juan Carlos,2019-11-22 03:46:29.866867,2019-11-22 03:46:29.866867,Herrera,Juan Carlos Herrera,"Herrera, J.",0
+99,Rodrigo,2019-11-22 04:20:36.135026,2019-11-22 04:20:36.135026,Victoriano,Rodrigo Victoriano,"Victoriano, R.",0
+100,Antonio,2019-11-22 04:20:58.754569,2019-11-22 04:20:58.754569,Páez,Antonio Páez,"Páez, A.",0
+101,Tomás,2019-11-22 04:24:39.944078,2019-11-22 04:24:39.944078,Echiburú,Tomás Echiburú,"Echiburú, T.",0
+102,Hemant,2019-11-22 04:51:14.983429,2019-11-22 04:51:14.983429,Suman,Hemant Suman,"Suman, H.",0
+103,Joaquín,2019-11-22 04:58:09.719629,2019-11-22 04:58:09.719629,Poblete,Joaquín Poblete,"Poblete, J.",0
+104,Alejandra,2019-11-22 04:58:54.956441,2019-11-22 04:58:54.956441,Chaparro,Alejandra Chaparro,"Chaparro, A.",0
+105,Richard,2019-11-22 05:00:52.932728,2019-11-22 05:00:52.932728,Mix,Richard Mix,"Mix, R.",0
+106,Tomás,2019-11-22 05:02:18.564829,2019-11-22 05:02:18.564829,Ramírez,Tomás Ramírez,"Ramírez, T.",0
+107,Álvaro,2019-11-22 05:03:43.047093,2019-11-22 05:03:43.047093,Toledo,Álvaro Toledo,"Toledo, Á.",0
+108,Tomás,2019-11-22 05:08:03.384249,2019-11-22 05:08:03.384249,Cox,Tomás Cox,"Cox, T.",0
+109,Cristián,2019-11-22 05:10:29.35745,2019-11-22 05:10:29.35745,Domarchi,Cristián Domarchi,"Domarchi, C.",0
+110,Margareth,2019-11-22 05:12:42.655137,2019-11-22 05:12:42.655137,Gutiérrez,Margareth Gutiérrez,"Gutiérrez, M.",0
+111,Felipe,2019-11-22 05:14:29.324183,2019-11-22 05:14:29.324183,Moreno,Felipe Moreno,"Moreno, F.",0
+112,Kenzo,2019-11-22 05:16:59.770446,2019-11-22 05:16:59.770446,Asahi,Kenzo Asahi,"Asahi, K.",0
+113,Andrea,2019-11-22 05:17:10.608404,2019-11-22 05:17:10.608404,Herrera,Andrea Herrera,"Herrera, A.",0
+114,Carlos,2019-11-22 05:18:34.295924,2019-11-22 05:18:34.295924,Olivos,Carlos Olivos,"Olivos, C.",0
+115,Sofía,2019-11-22 05:22:25.69335,2019-11-22 05:22:25.69335,Hernández,Sofía Hernández,"Hernández, S.",0
+116,Bryan,2019-11-22 05:23:33.789279,2019-11-22 05:23:33.789279,Carrasco,Bryan Carrasco,"Carrasco, B.",0
+117,Martín,2019-11-22 05:23:57.454514,2019-11-22 05:23:57.454514,Álvarez,Martín Álvarez,"Álvarez, M.",0
+118,Roxana,2019-11-22 05:24:23.978175,2019-11-22 05:24:23.978175,Ríos,Roxana Ríos,"Ríos, R.",0
+119,Magdalena,2019-11-22 05:24:41.208705,2019-11-22 05:24:41.208705,Rivera,Magdalena Rivera,"Rivera, M.",0
+120,Paola,2019-11-22 05:26:01.920639,2019-11-22 05:26:01.920639,Jirón,Paola Jirón,"Jirón, P.",0
+121,Walter,2019-11-22 05:26:37.324322,2019-11-22 05:26:37.324322,Imilan,Walter Imilan,"Imilan, W.",0
+122,Ariel,2019-11-22 05:26:56.194504,2019-11-22 05:26:56.194504,López,Ariel López,"López, A.",0
+123,Lautaro,2019-11-22 05:27:07.221634,2019-11-22 05:27:07.221634,Ojeda,Lautaro Ojeda,"Ojeda, L.",0
+124,Victoria,2019-11-22 05:27:23.930477,2019-11-22 05:27:23.930477,De la Barra,Victoria De la Barra,"De la Barra, V.",0
+125,Nicolás,2019-11-22 19:22:39.375313,2019-11-22 19:22:39.375313,Badiola,Nicolás Badiola,"Badiola, N.",0
+126,Janus,2019-11-26 15:19:55.400317,2019-11-26 15:19:55.400317,Leonhardt,Janus Leonhardt,"Leonhardt, J.",0
+127,Jim,2019-11-27 03:49:31.516481,2019-11-27 03:49:31.516481,Walker,Jim Walker,"Walker, J.",0
+128,Nicolás,2019-11-27 04:33:33.513019,2019-11-27 04:33:33.513019,Esperguiel,Nicolás Esperguiel,"Esperguiel, N.",0
+129,Owen,2019-11-27 04:36:44.458832,2019-11-27 04:36:44.458832,Bull,Owen Bull,"Bull, O.",0
+131,Francisco,2019-12-02 18:34:10.919177,2019-12-02 18:34:10.919177,Garrido-Valenzuela,Francisco Garrido-Valenzuela,"Garrido-Valenzuela, F.",0
+132,J. B.,2019-12-02 18:41:05.479603,2019-12-02 18:41:05.479603, Ingvardson,J. B.  Ingvardson," Ingvardson, J.",0
+133,M,2019-12-02 18:41:22.217387,2019-12-02 18:41:22.217387,Thorhauge,M Thorhauge,"Thorhauge, M.",0
+134,S,2019-12-02 18:41:33.122867,2019-12-02 18:41:33.122867,Kaplan,S Kaplan,"Kaplan, S.",0
+135,O. A,2019-12-02 18:41:59.404374,2019-12-02 18:41:59.404374,Nielsen,O. A Nielsen,"Nielsen, O.",0
+136,Mitsuyoshi,2019-12-02 18:44:34.334112,2019-12-02 18:44:34.334112,Fukushi,Mitsuyoshi Fukushi,"Fukushi, M.",0
+137,Cristian,2019-12-02 23:36:19.802985,2019-12-02 23:36:19.802985,Fuentes,Cristian Fuentes,"Fuentes, C.",0
+138,Daniel,2019-12-02 23:36:35.798273,2019-12-02 23:36:35.798273,Flores,Daniel Flores,"Flores, D.",0
+139,James,2019-12-03 00:40:13.79307,2019-12-03 00:40:13.79307,Walker,James Walker,"Walker, J.",0
+140,Grace,2019-12-05 04:10:32.488489,2019-12-05 04:10:32.488489,Mallea,Grace Mallea,"Mallea, G.",0
+10,Carolina,2019-09-25 13:01:37.099151,2019-12-05 04:11:12.083531,Rojas,Carolina Rojas,"Rojas, C.",3
+141,Fernando,2019-12-05 04:23:45.118843,2019-12-05 04:23:45.118843,Meneses,Fernando Meneses,"Meneses, F.",0
+142,Michael,2019-12-05 04:24:06.76152,2019-12-05 04:24:06.76152,Widener,Michael Widener,"Widener, M.",0
+130,Sebastián,2019-11-27 04:45:26.92531,2019-12-05 13:21:37.29226,Astroza,Sebastián Astroza,"Astroza, S.",3
+143,Karen,2019-12-16 13:42:59.858707,2019-12-16 13:42:59.858707,Lucas,Karen Lucas,"Lucas, K.",0
+144,Gislaine,2019-12-16 14:07:36.342943,2019-12-16 14:07:36.342943,Granfeldt,Gislaine Granfeldt,"Granfeldt, G.",0
+145,D,2019-12-16 14:07:53.866301,2019-12-16 14:07:53.866301,Zapata,D Zapata,"Zapata, D.",0
+146,P,2019-12-16 14:08:05.377586,2019-12-16 14:08:05.377586,Allende,P Allende,"Allende, P.",0
+147,C,2019-12-16 14:08:20.97826,2019-12-16 14:08:20.97826,Márquez,C Márquez,"Márquez, C.",0
+148,B,2019-12-16 14:08:36.573281,2019-12-16 14:08:36.573281,Cid - Aguayo,B Cid - Aguayo,"Cid - Aguayo, B.",0
+149,M,2019-12-16 14:08:50.543353,2019-12-16 14:08:50.543353,Rebolledo,M Rebolledo,"Rebolledo, M.",0
+150,Sebastián,2019-12-30 18:59:21.761651,2019-12-30 18:59:21.761651,Díaz,Sebastián Díaz,"Díaz, S.",0
+151,Marie Geraldine,2020-01-10 13:19:46.305903,2020-01-10 13:19:46.305903,Herrmann-Lunecke,Marie Geraldine Herrmann-Lunecke,"Herrmann-Lunecke, M.",0
+152,Otros,2020-01-15 14:55:26.684869,2020-01-15 14:55:26.684869,"",Otros ,", O.",0
+153,Luis,2020-01-24 13:14:09.537672,2020-01-24 13:14:09.537672,Fuentes,Luis Fuentes,"Fuentes, L.",4
