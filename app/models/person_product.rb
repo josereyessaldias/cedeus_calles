@@ -2,7 +2,7 @@ class PersonProduct < ApplicationRecord
   belongs_to :person
   belongs_to :product
 
-  enum contact: { No_Aplica: 0, principal_author: 1, corresponding_author: 2, principal_and_corresponding_author: 3 }
+  enum contact: { Sin_Información: 0, Presentó_Paper: 1, Sólo_Asisitió: 2, Coautor_No_Asistió: 3, Otro: 4 }
   enum rol: { author: 0, editor: 1, }
 
   attribute :contact, :integer, default: :No_Aplica

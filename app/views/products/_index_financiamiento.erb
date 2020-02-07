@@ -2,20 +2,13 @@
 
 <table>
 	<tr>
-		<th rowspan="2" class="vertical">Periodo</th>
-		<th rowspan="2">Fuente de Fondos</th>
-		<th rowspan="2">Año de Inicio</th>
-		<th rowspan="2">Año de Término</th>
-		<th rowspan="2">Monto</th>
-		<th colspan="3" style="text-align: center">Afiliación</th>
-		<th rowspan="2">Respaldo</th>
-	</tr>
-
-	<tr>
-		<th class="vertical" style="max-width: 22px">DTIL</th>
-		<th class="vertical" style="max-width: 22px">BRT+</th>
-		<th class="vertical" style="max-width: 22px">CEDEUS</th>
-
+		<th class="vertical">Periodo</th>
+		<th>Fuente de Fondos</th>
+		<th>Año de Inicio</th>
+		<th>Año de Término</th>
+		<th>Monto</th>
+		<th>Afiliación</th>
+		<th>Respaldo</th>
 	</tr>
 
 	<% @products.each do |product| %>
@@ -27,9 +20,12 @@
 				<td><%= product.inicio %></td>
 				<td><%= product.termino %></td>
 				<td><%= number_to_currency(product.monto, strip_insignificant_zeros: true) %></td>
-				<td><%= boolean01(product.ditl_check) %></td>
-				<td><%= boolean01(product.brt_check) %></td>
-				<td><%= boolean01(product.cedeus_check) %></td>
+				<td>
+					<strong><%= "DITL" if product.ditl_check %>
+					<%= "BRT+" if product.brt_check  %>
+					<%= "CEDEUS" if product.cedeus_check %></strong>
+				</td>
+
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>
 						<%= link_to "Respaldo #{i+1}", asset_path(respaldo.file), :target => '_blank' %>
