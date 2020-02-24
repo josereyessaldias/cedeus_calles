@@ -1,0 +1,13 @@
+<h3>Seguimiento de Papers</h3>
+<br>
+
+<table>
+	<tr>
+		<th>Nombre</th>
+	</tr>	
+	<% @persons.each do |person| %>
+		<tr>
+			<td><%= link_to person.completename, creation_path(person) %></td>
+		</tr>
+	<% end %>
+</table>

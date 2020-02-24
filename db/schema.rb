@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_204308) do
+ActiveRecord::Schema.define(version: 2020_02_07_202658) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_02_06_204308) do
     t.datetime "updated_at", null: false
     t.string "text"
     t.index ["person_id"], name: "index_comments_on_person_id"
+  end
+
+  create_table "creations", force: :cascade do |t|
+    t.integer "product_id"
+    t.datetime "date"
+    t.integer "stage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_creations_on_product_id"
   end
 
   create_table "people", force: :cascade do |t|

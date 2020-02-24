@@ -8,6 +8,7 @@ Rails.application.routes.draw do
  	resources :cluster_persons, only: [:destroy]
  	resources :respaldos, only: [:destroy]
  	resources :comments, only: [:create, :destroy]
+ 	resources :creations, only: [:index, :show]
 
 	root 'persons#index'  
 end

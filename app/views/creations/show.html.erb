@@ -1,0 +1,16 @@
+<h5><%= @person.completename %></h5>
+<br>
+<table>
+	<tr>
+		<th>Título</th>
+	</tr>
+
+	<% @person_products.each do |product| %>
+		<tr>
+			<td><%= product.titulo %></td>
+		</tr>
+	<% end %>
+
+
+
+</table>

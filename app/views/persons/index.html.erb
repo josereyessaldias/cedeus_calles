@@ -26,8 +26,8 @@
 		
 		<h5>Revistas ISI Acceso y Movilidad</h5>
 		<div style="font-size: 12px">
-			<h6><%= temp = 2019 %></h6>
-			<% @products_calles.order(registro: :desc).each do |product| %>
+			<h6><% temp = 2021 %></h6>
+			<% @products_calles.order(registro: :desc).where(tipo: "revista_isi").each do |product| %>
 				<% if product.registro != temp %>
 					<br>
 					<% temp -= 1 %>
