@@ -10,6 +10,9 @@
 	<%= f.label :apellido %>: 
 	<%= f.text_field :surname %><br>
 
+	<%= f.label :ditl %>: 
+	<%= f.select :ditl_check, Person.ditl_checks.keys.map { |w| [w.humanize, w] } %><br>
+
 	<%= f.label :proyecto %>: 
 	<%= f.select :proyecto, Person.proyectos.keys.map { |w| [w.humanize, w] } %><br>
 

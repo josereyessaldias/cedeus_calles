@@ -11,7 +11,8 @@ Rails.application.routes.draw do
  	resources :comments, only: [:create, :destroy]
  	resources :creations, only: [:index, :show]
 
- 	get 'pages/ditl'
+ 	get 'pages/ditl', as: 'ditl'
+ 	get 'pages/ditl_show/:id', to: 'pages#ditl_show', as: 'ditl_show'
 
 	root 'persons#index'  
 end

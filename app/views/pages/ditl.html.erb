@@ -5,20 +5,9 @@
 	<div class="col-12 col-md-3">
 		<strong>Nombre Investigador</strong>
 		<ul>
-			<li>Juan Enrique Coeymans</li>
-			<li>Felipe Delgado</li>
-			<li>Patricia Galilea</li>
-			<li>Ricardo Giesen</li>
-			<li>Juan Carlos Herrera</li>
-			<li>Ricardo Hurtubia</li>
-			<li>Mathias Klapp</li>
-			<li>Homero Larraín</li>
-			<li>Hans Löbel</li>
-			<li>Juan Carlos Muñoz</li>
-			<li>Juan de Dios Ortúzar</li>
-			<li>Sebastián Raveau</li>
-			<li>Luis Rizzi</li>
-			<li>Hugo Silva</li>
+			<% @ditl_people.order(:surname).each do |person| %>
+				<li><%= link_to person.completename, ditl_show_path(person) %></li>
+			<% end %>
 		</ul>
 	</div>
 	<div class="col-12 col-md-9">
