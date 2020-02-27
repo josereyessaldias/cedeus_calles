@@ -17,17 +17,18 @@
 
 
     <div class="navegador row sticky-top">
-        <div class="col-9 row">
-            <div class="col-5">
-              Productos | <%= link_to 'DITL', '#', :class => 'link_nav' %></div>
+        <div class="col-10 row">
+            <div class="col-4">
+              Productos | <%= link_to 'DITL', pages_ditl_path, :class => 'link_nav' %></div>
 
-            <div class="nav-item dropdown col-5">
+            <div class="nav-item dropdown col-4">
                 <a class="dropdown-toggle link_nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CEDEUS</a>
                 <div class="dropdown-menu">
                     <%= link_to 'Tabla Cedeus', products_path, :class => 'link_nav dropdown-item' %>
                     <%= link_to 'Investigadores', persons_path, :class => 'link_nav dropdown-item' %>
                 </div>
             </div>
+            <div class="col-4"><%= link_to 'Lista Completa', products_path, :class => 'link_nav' %></div>
             
             
     </div>
