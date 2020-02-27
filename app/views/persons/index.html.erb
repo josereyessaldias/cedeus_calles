@@ -37,7 +37,7 @@
 					<div style="padding-bottom: 3px">
 						<strong><i>
 						<% if product.respaldos.first != nil %>
-							<%= link_to product.titulo, asset_path(product.respaldos.first.file, target: "_blank") %>
+							<%= link_to product.titulo, asset_path(product.respaldos.first.file), target: "_blank" %>
 						<% else %>
 							<%= product.titulo %>
 						<% end %>
