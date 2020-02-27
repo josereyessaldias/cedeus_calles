@@ -31,7 +31,11 @@
 					<% temp -= 1 %>
 					<h6><%= temp %></h6>
 				<% end %>
-				<%= paper.titulo %><br>
+				<% if paper.respaldos.first != nil %>
+					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file, target: "_blank") %>
+				<% else %>
+					<%= paper.titulo %><br>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
