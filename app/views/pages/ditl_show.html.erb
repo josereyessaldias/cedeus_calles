@@ -1,2 +1,57 @@
 <h3><%= @person.completename %></h3>
+<br><br>
 
+<div style="font-size: 12px" class="col-9">
+	<% @person_tipos.each do |tipos| %>
+		<h5><%= tipos.humanize %></h5>
+		<% @person.products.where(ditl_check: true).each do |product| %>
+			<% if product.tipo == tipos %>
+				<% if (tipos == "revista_isi" or tipos == "revista_no_isi") and product.registro == 2019 %>
+					<%= product.registro %> <strong><i>
+						<% if product.respaldos.first != nil and product.registro == 2019 %>
+							<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
+						<% else %>
+							<%= product.titulo %>
+						<% end %>
+							
+						</i></strong> | <%= product.revista %>
+					<br>
+
+				<% elsif tipos == "libro" and product.registro == 2019 %>
+					<% if product.person_product.where(person_id: @person.id).first.rol == "author" %>
+						<%= product.registro %> <strong><%= product.titulo %></strong> | 
+						<i><%= product.revista %></i>
+						<br>
+					<% elsif product.person_product.where(person_id: @person.id).first.rol == "editor" %>
+						<%= product.registro %> <strong><i><%= product.titulo %></i></strong> | Editor
+						<br>
+					<% end %>
+
+				<% elsif tipos == "congreso" and product.registro == 2019 %>
+					<%= product.registro %> <strong><i>
+						<% if product.respaldos.first != nil %>
+							<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
+						<% else %>
+							<%= product.titulo %>
+						<% end %>
+					</i></strong> | <%= product.congreso %>
+
+					<br>
+
+				<% elsif tipos == "colaboracion" and product.registro == 2019 %>
+					<%= product.registro %> <strong><i><%= product.institution %></i></strong> | <%= product.congreso %>
+					<br>
+
+				<% elsif tipos == "tesis" %>
+					<%= product.inicio %> <strong><i><%= product.titulo %></i></strong> | <%= product.estudiante %> - 
+					<i><%= product.etapa.humanize %></i>
+					<br>
+
+
+
+				<% end %>
+			<% end %>
+		<% end %>
+		<br>
+	<% end %>
+</div>
