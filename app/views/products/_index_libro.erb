@@ -62,7 +62,8 @@
 				<td>
 					<strong><%= "DITL" if product.ditl_check %>
 					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS" if product.cedeus_check %></strong>
+					<%= "CEDEUS(A&M)" if product.cedeus_check %>
+					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
 				</td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>

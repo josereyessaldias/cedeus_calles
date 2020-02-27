@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_07_202658) do
+ActiveRecord::Schema.define(version: 2020_02_27_170733) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_02_07_202658) do
     t.boolean "brt_check"
     t.boolean "ditl_check"
     t.string "otros_autores"
+    t.boolean "cedeuscalles_check"
     t.index ["cluster_id"], name: "index_products_on_cluster_id"
   end
 
