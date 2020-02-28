@@ -52,24 +52,27 @@
 		  		<h5>Publicaciones WoS</h5>
 				<div style="font-size: 12px">
 					<h6><% temp = 2021 %></h6>
-					<% @paper_wos.each do |paper| %>
-						<% if paper.registro != temp %>
-							<br>
-							<% temp -= 1 %>
-							<h6><%= temp %></h6>
-						<% end %>
-						<strong><% if paper.respaldos.first != nil %>
-							<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
-						<% else %>
-							<%= paper.titulo %>
-						<% end %></strong>
-						<div class="mb-1">
-							<i><%= paper.revista %></i> |
-							<% paper.person_product.order(:id).each do |person_prod| %>
-								<%= person_prod.person.cedeusname %>,
+					<ol class="pl-3">
+						<% @paper_wos.each do |paper| %>
+							<% if paper.registro != temp %>
+								</ol>
+								<% temp -= 1 %>
+								<h6><%= temp %></h6>
+								<ol class="pl-3">
 							<% end %>
-						</div>
-					<% end %>
+							<strong><% if paper.respaldos.first != nil %>
+								<li><%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
+							<% else %>
+								<li><%= paper.titulo %>
+							<% end %></strong>
+							<div class="mb-1">
+								<i><%= paper.revista %></i> |
+								<% paper.person_product.order(:id).each do |person_prod| %>
+									<%= person_prod.person.cedeusname %>,
+								<% end %>
+							</div></li>
+						<% end %>
+					</ol>
 				</div>
 			</div>
 
