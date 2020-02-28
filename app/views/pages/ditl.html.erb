@@ -2,7 +2,8 @@
 <br><br>
 
 <div class="row">
-	<div class="col-12 col-md-3">
+
+	<div class="col-12 col-md-3" style="font-size: 12px">
 		<strong>Nombre Investigador</strong>
 		<ul>
 			<% @ditl_people.order(:surname).each do |person| %>
@@ -10,21 +11,28 @@
 			<% end %>
 		</ul>
 	</div>
+
 	<div class="col-12 col-md-9">
 		<h5>Revistas WoS - DITL</h5>
 		<div style="font-size: 12px">
 			<h6><% temp = 2021 %></h6>
-			<% @paper_wos.order(registro: :desc).each do |paper| %>
+			<% @paper_wos.each do |paper| %>
 				<% if paper.registro != temp %>
 					<br>
 					<% temp -= 1 %>
 					<h6><%= temp %></h6>
 				<% end %>
-				<% if paper.respaldos.first != nil %>
+				<strong><% if paper.respaldos.first != nil %>
 					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
 				<% else %>
-					<%= paper.titulo %><br>
+					<%= paper.titulo %>
+				<% end %></strong> |
+				<i><%= paper.revista %></i> |
+				<% paper.person_product.order(:id).each do |person_prod| %>
+					<%= person_prod.person.cedeusname %>,
 				<% end %>
+				<br>
+
 			<% end %>
 		</div>
 	</div>
