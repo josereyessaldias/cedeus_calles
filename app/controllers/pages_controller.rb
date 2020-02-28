@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   
   def ditl
-  	@ditl_people = Person.where(ditl_check: "ditl_planta")
+  	@ditl_people = Person.where(ditl_check: "ditl_planta").order(:surname)
+    @ditl_otros = Person.where(ditl_check: "ditl_otros").order(:surname)
+    @ditl_estudiantes = Person.where(ditl_check: "ditl_estudiante").order(:surname)
   	@products = Product.where(ditl_check: true)
   	@paper_wos = @products.where(tipo: "revista_isi").order(registro: :desc)
   end

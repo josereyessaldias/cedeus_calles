@@ -4,9 +4,21 @@
 <div class="row">
 
 	<div class="col-12 col-md-3" style="font-size: 12px">
-		<strong>Nombre Investigador</strong>
+		<strong>Académico Planta DITL</strong>
 		<ul>
-			<% @ditl_people.order(:surname).each do |person| %>
+			<% @ditl_people.each do |person| %>
+				<li><%= link_to person.completename, ditl_show_path(person) %></li>
+			<% end %>
+		</ul>
+		<strong>Otros investigadores DITL</strong>
+		<ul>
+			<% @ditl_otros.each do |person| %>
+				<li><%= link_to person.completename, ditl_show_path(person) %></li>
+			<% end %>
+		</ul>
+		<strong>Estudiantes y ex estudiantes DITL</strong>
+		<ul>
+			<% @ditl_estudiantes.each do |person| %>
 				<li><%= link_to person.completename, ditl_show_path(person) %></li>
 			<% end %>
 		</ul>
