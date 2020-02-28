@@ -23,7 +23,7 @@
 					<h6><%= temp %></h6>
 				<% end %>
 				<strong><% if paper.respaldos.first != nil %>
-					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
+					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %>
 				<% else %>
 					<%= paper.titulo %>
 				<% end %></strong> |
