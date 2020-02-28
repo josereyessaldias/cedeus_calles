@@ -23,15 +23,17 @@
 					<h6><%= temp %></h6>
 				<% end %>
 				<strong><% if paper.respaldos.first != nil %>
-					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %>
+					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
 				<% else %>
 					<%= paper.titulo %>
-				<% end %></strong> |
-				<i><%= paper.revista %></i> |
-				<% paper.person_product.order(:id).each do |person_prod| %>
-					<%= person_prod.person.cedeusname %>,
-				<% end %>
-				<br>
+				<% end %></strong>
+				<div class="mb-1">
+					<i><%= paper.revista %></i> |
+					<% paper.person_product.order(:id).each do |person_prod| %>
+						<%= person_prod.person.cedeusname %>,
+					<% end %>
+				</div>
+				
 
 			<% end %>
 		</div>
