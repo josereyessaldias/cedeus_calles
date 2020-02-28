@@ -5,9 +5,9 @@
 	<% @person_tipos.each do |tipos| %>
 		
 		<% if tipos == "revista_isi" %>
-			<h5>Paper WoS</h5>
+			<h5>Publicaciones WoS</h5>
 		<% elsif tipos == "revista_no_isi" %>
-			<h5>Otros Papers</h5>
+			<h5>Otras Publicaciones</h5>
 		<% else %>
 			<h5><%= tipos.humanize %></h5>
 		<% end %>

@@ -4,7 +4,7 @@
 <div class="row">
 
 	<div class="col-12 col-md-3" style="font-size: 12px">
-		<strong>Académico Planta DITL</strong>
+		<strong>Académicos Planta DITL</strong>
 		<ul>
 			<% @ditl_people.each do |person| %>
 				<li><%= link_to person.completename, ditl_show_path(person) %></li>
@@ -24,31 +24,73 @@
 		</ul>
 	</div>
 
+
+
 	<div class="col-12 col-md-9">
-		<h5>Revistas WoS - DITL</h5>
-		<div style="font-size: 12px">
-			<h6><% temp = 2021 %></h6>
-			<% @paper_wos.each do |paper| %>
-				<% if paper.registro != temp %>
-					<br>
-					<% temp -= 1 %>
-					<h6><%= temp %></h6>
-				<% end %>
-				<strong><% if paper.respaldos.first != nil %>
-					<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
-				<% else %>
-					<%= paper.titulo %>
-				<% end %></strong>
-				<div class="mb-1">
-					<i><%= paper.revista %></i> |
-					<% paper.person_product.order(:id).each do |person_prod| %>
-						<%= person_prod.person.cedeusname %>,
+
+		<ul class="nav nav-tabs" id="myTab" role="tablist" style="font-size: 12px">
+		 	<li class="nav-item">
+		    	<a class="nav-link active" id="publicaciones-tab" data-toggle="tab" href="#publicaciones" role="tab" aria-controls="publicaciones" aria-selected="true">Publicaciones</a>
+		 	</li>
+		 	<li class="nav-item">
+		    	<a class="nav-link" id="participacion-tab" data-toggle="tab" href="#participacion" role="tab" aria-controls="participacion" aria-selected="false">Participación Actividades</a>
+		 	</li>
+		 	<li class="nav-item">
+		    	<a class="nav-link" id="organizacion-tab" data-toggle="tab" href="#organizacion" role="tab" aria-controls="organizacion" aria-selected="false">Organización Eventos</a>
+		 	</li>
+		 	<li class="nav-item">
+		    	<a class="nav-link" id="tesis-tab" data-toggle="tab" href="#tesis" role="tab" aria-controls="tesis" aria-selected="false">Tesistas</a>
+		 	</li>
+		 	<li class="nav-item">
+		    	<a class="nav-link" id="proyectos-tab" data-toggle="tab" href="#proyectos" role="tab" aria-controls="proyectos" aria-selected="false">Proyectos Adjudicados</a>
+		 	</li>
+		</ul>
+		
+		<div class="tab-content" id="myTabContent">
+		 	<div class="tab-pane fade show active" id="publicaciones" role="tabpanel" aria-labelledby="publicaciones-tab">
+		  		<br>
+		  		<h5>Publicaciones WoS</h5>
+				<div style="font-size: 12px">
+					<h6><% temp = 2021 %></h6>
+					<% @paper_wos.each do |paper| %>
+						<% if paper.registro != temp %>
+							<br>
+							<% temp -= 1 %>
+							<h6><%= temp %></h6>
+						<% end %>
+						<strong><% if paper.respaldos.first != nil %>
+							<%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
+						<% else %>
+							<%= paper.titulo %>
+						<% end %></strong>
+						<div class="mb-1">
+							<i><%= paper.revista %></i> |
+							<% paper.person_product.order(:id).each do |person_prod| %>
+								<%= person_prod.person.cedeusname %>,
+							<% end %>
+						</div>
 					<% end %>
 				</div>
-				
+			</div>
 
-			<% end %>
+		  	<div class="tab-pane fade" id="participacion" role="tabpanel" aria-labelledby="participacion-tab">
+		  		<br>
+		  		BBB
+		 	</div>
+		  	<div class="tab-pane fade" id="organizacion" role="tabpanel" aria-labelledby="organizacion-tab">
+		  		<br>
+		  		CCC
+		  	</div>
+		  	<div class="tab-pane fade" id="tesis" role="tabpanel" aria-labelledby="tesis-tab">
+		  		<br>
+		  		DDD
+		  	</div>
+		  	<div class="tab-pane fade" id="proyectos" role="tabpanel" aria-labelledby="proyectos-tab">
+		  		<br>
+		  		EEE
+		  	</div>
 		</div>
+
 	</div>
 </div>
 
