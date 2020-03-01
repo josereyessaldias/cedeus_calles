@@ -6,6 +6,8 @@ class PagesController < ApplicationController
     @ditl_estudiantes = Person.where(ditl_check: "ditl_estudiante").order(:surname)
   	@products = Product.where(ditl_check: true)
   	@paper_wos = @products.where(tipo: "revista_isi").order(registro: :desc)
+    @participacion = @products.where(tipo: "congreso").order(registro: :desc)
+    @proyectos = @products.where(tipo: "financiamiento").order(registro: :desc)
   end
 
   def ditl_show
