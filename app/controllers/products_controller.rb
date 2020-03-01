@@ -66,6 +66,7 @@ class ProductsController < ApplicationController
 		@person_array = []
 		@person_id_array = []
 		@contact_array = []
+		@rol_array = []
 		@role_project_array = []
 
 		8.times do |i|
