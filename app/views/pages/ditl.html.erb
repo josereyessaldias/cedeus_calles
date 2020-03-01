@@ -93,11 +93,11 @@
 								<li><%= link_to congreso.titulo, asset_path(congreso.respaldos.first.file), :target => "_blank" %><br>
 							<% else %>
 								<li><%= congreso.titulo %>
-							<% end %></strong>
+							<% end %></strong> |
+							<i><%= congreso.congreso %></i>
 							<div class="mb-1">
-								<i><%= congreso.revista %></i> |
 								<% congreso.person_product.order(:id).each do |person_prod| %>
-									<%= person_prod.person.cedeusname %>,
+									<%= person_prod.person.cedeusname %> [<i><%= person_prod.contact %></i>],
 								<% end %>
 							</div></li>
 						<% end %>
@@ -132,9 +132,9 @@
 								<li><%= proyecto.titulo %>
 							<% end %></strong>
 							<div class="mb-1">
-								<i><%= proyecto.revista %></i> |
+								<i><%= proyecto.revista %></i>
 								<% proyecto.person_product.order(:id).each do |person_prod| %>
-									<%= person_prod.person.cedeusname %> <i>(<%= person_prod.role_project %>)</i>,
+									<%= person_prod.person.cedeusname %> [<i><%= person_prod.role_project %></i>],
 								<% end %>
 							</div></li>
 						<% end %>
