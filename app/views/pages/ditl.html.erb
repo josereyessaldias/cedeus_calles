@@ -134,7 +134,7 @@
 							<div class="mb-1">
 								<i><%= proyecto.revista %></i> |
 								<% proyecto.person_product.order(:id).each do |person_prod| %>
-									<%= person_prod.person.cedeusname %>,
+									<%= person_prod.person.cedeusname %> <i>(<%= person_prod.role_project %>)</i>,
 								<% end %>
 							</div></li>
 						<% end %>

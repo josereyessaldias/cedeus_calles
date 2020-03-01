@@ -4,6 +4,7 @@
 	<tr>
 		<th class="vertical">Periodo</th>
 		<th>Fuente de Fondos</th>
+		<th>Investigadores</th>
 		<th>Año de Inicio</th>
 		<th>Año de Término</th>
 		<th>Monto</th>
@@ -13,10 +14,27 @@
 
 	<% @products.each do |product| %>
 		<% if product.tipo == "financiamiento" %>
+
+			<% @person = [] %>
+			<% product.person_product.order(:id).each do |person_prod| %>
+				<% @person << person_prod.person.cedeusname %>
+			<% end %>
 			
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.titulo %></td>
+				
+				<td style="width:100px"><strong>
+					<% @person.each_with_index do |i,index| %>
+						<% if index < @person.length - 1 %>
+							<%= link_to i, person_path(Person.find_by cedeusname: i) %>,
+						<% else %>
+							<%= link_to i, person_path(Person.find_by cedeusname: i) %>
+						<% end %>
+					<% end %>
+				</strong>
+				</td>
+
 				<td><%= product.inicio %></td>
 				<td><%= product.termino %></td>
 				<td><%= number_to_currency(product.monto, strip_insignificant_zeros: true) %></td>

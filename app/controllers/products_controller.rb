@@ -14,11 +14,13 @@ class ProductsController < ApplicationController
 		@person_id_array = []
 		@contact_array = []
 		@rol_array = []
+		@role_project_array = []
 		8.times do |i|
 			@person_array << 'Seleccione Investigador'
 			@contact_array << 0
 			@person_id_array << nil
 			@rol_array << 0
+			@role_project_array << 0
 		end
 		
 	end
@@ -27,7 +29,7 @@ class ProductsController < ApplicationController
 		@product = Product.new(product_params)
 		@product.save
 
-		[[:person_id_1,:contact_1, :rol_1],[:person_id_2,:contact_2, :rol_2],[:person_id_3,:contact_3, :rol_3],[:person_id_4,:contact_4, :rol_4],[:person_id_5,:contact_5, :rol_5],[:person_id_6,:contact_6, :rol_6],[:person_id_7,:contact_7, :rol_7],[:person_id_8,:contact_8, :rol_8]].each do |i|
+		[[:person_id_1,:contact_1, :rol_1, :role_project_1],[:person_id_2,:contact_2, :rol_2, :role_project_2],[:person_id_3,:contact_3, :rol_3, :role_project_3],[:person_id_4,:contact_4, :rol_4, :role_project_4],[:person_id_5,:contact_5, :rol_5, :role_project_5],[:person_id_6,:contact_6, :rol_6, :role_project_6],[:person_id_7,:contact_7, :rol_7, :role_project_7],[:person_id_8,:contact_8, :rol_8, :role_project_8]].each do |i|
 			
 			if params[:product][i[0]].to_i == 0
 				break
@@ -37,6 +39,7 @@ class ProductsController < ApplicationController
 				@person_product.person_id = params[:product][i[0]]
 				@person_product.contact = params[:product][i[1]]
 				@person_product.rol = params[:product][i[2]]
+				@person_product.role_project = params[:product][i[3]]
 				@person_product.save
 			end
 		end
@@ -63,13 +66,15 @@ class ProductsController < ApplicationController
 		@person_array = []
 		@person_id_array = []
 		@contact_array = []
-		@rol_array = []
+		@role_project_array = []
+
 		8.times do |i|
 			if @person_products[i] != nil
 				@person_array << @person_products[i].person.completename
 				@contact_array << @person_products[i].contact
 				@person_id_array << @person_products[i].person.id
 				@rol_array << @person_products[i].rol
+				@role_project_array << @person_products[i].role_project
 			else
 				@person_array << 'Seleccione Investigador'
 				@person_id_array << nil
@@ -87,7 +92,7 @@ class ProductsController < ApplicationController
 		@person_product = PersonProduct.where(product_id: params[:id])
 		@person_product.destroy_all
 
-		[[:person_id_1,:contact_1, :rol_1],[:person_id_2,:contact_2, :rol_2],[:person_id_3,:contact_3, :rol_3],[:person_id_4,:contact_4, :rol_4],[:person_id_5,:contact_5, :rol_5],[:person_id_6,:contact_6, :rol_6],[:person_id_7,:contact_7, :rol_7],[:person_id_8,:contact_8, :rol_8]].each do |i|
+		[[:person_id_1,:contact_1, :rol_1, :role_project_1],[:person_id_2,:contact_2, :rol_2, :role_project_2],[:person_id_3,:contact_3, :rol_3, :role_project_3],[:person_id_4,:contact_4, :rol_4, :role_project_4],[:person_id_5,:contact_5, :rol_5, :role_project_5],[:person_id_6,:contact_6, :rol_6, :role_project_6],[:person_id_7,:contact_7, :rol_7, :role_project_7],[:person_id_8,:contact_8, :rol_8, :role_project_8]].each do |i|
 			
 			if params[:product][i[0]].to_i == 0
 				break
@@ -97,6 +102,7 @@ class ProductsController < ApplicationController
 				@person_product.person_id = params[:product][i[0]]
 				@person_product.contact = params[:product][i[1]]
 				@person_product.rol = params[:product][i[2]]
+				@person_product.role_project = params[:product][i[3]]
 				@person_product.save
 			end
 		end

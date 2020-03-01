@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_201832) do
+ActiveRecord::Schema.define(version: 2020_03_01_163237) do
 
   create_table "cluster_people", force: :cascade do |t|
     t.integer "person_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_201832) do
     t.datetime "updated_at", null: false
     t.integer "contact"
     t.integer "rol"
+    t.integer "role_project"
     t.index ["person_id"], name: "index_person_products_on_person_id"
     t.index ["product_id"], name: "index_person_products_on_product_id"
   end
