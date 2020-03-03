@@ -27,12 +27,12 @@
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 
-				<td style="width:100px"><strong>
+				<td style="width:120px"><strong>
 					<% @person.each_with_index do |i,index| %>
 						<% if index < @person.length - 1 %>
-							<%= link_to i, person_path(Person.find_by cedeusname: i) %>,
+							<%= i %>,
 						<% else %>
-							<%= link_to i, person_path(Person.find_by cedeusname: i) %>
+							<%= i %>
 						<% end %>
 					<% end %>
 				</strong>
@@ -45,7 +45,7 @@
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
 				<td style="text-align: center">
-					<strong><%= image_tag("ditl_small.png", style: "height:30%") if product.ditl_check %>
+					<strong><%= image_tag("ditl_small.png", style: "height:25%") if product.ditl_check %>
 					<%= image_tag("brt_small.jpg", style: "height:25%") if product.brt_check  %>
 					<%= image_tag("cedeus_accmov.png", style: "height:20%") if product.cedeus_check %>
 					<%= image_tag("cedeus_calles.png", style: "height:20%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
