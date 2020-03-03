@@ -4,7 +4,7 @@
 	<tr>
 		<th class="vertical">Periodo</th>
 		<th>Autores</th>
-		<th>DOI</th>
+		<th width="110px">DOI</th>
 		<th>Título</th>
 		<th>Revista</th>
 		<th>Volumen</th>
@@ -25,9 +25,9 @@
 			<% end %>
 
 			<tr>
-				<td><strong><%= product.registro %></strong></td>
+				<td><%= product.registro %></td>
 
-				<td style="width:120px"><strong>
+				<td style="width:120px; color:darkcyan"><strong>
 					<% @person.each_with_index do |i,index| %>
 						<% if index < @person.length - 1 %>
 							<%= i %>,
