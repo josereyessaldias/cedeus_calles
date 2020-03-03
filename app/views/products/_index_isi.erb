@@ -58,11 +58,11 @@
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
-				<td>
-					<strong><%= "DITL" if product.ditl_check %>
-					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS(A&M)" if product.cedeus_check %>
-					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
+				<td style="text-align: center">
+					<strong><%= image_tag("ditl_small.png", style: "height:30%") if product.ditl_check %>
+					<%= image_tag("brt_small.jpg", style: "height:25%") if product.brt_check  %>
+					<%= image_tag("cedeus_accmov.png", style: "height:14%") if product.cedeus_check %>
+					<%= image_tag("cedeus_calles.png", style: "height:14%") if product.cedeuscalles_check %></strong>
 				</td>
 
 				<td style="max-width: 30px">

@@ -93,7 +93,7 @@
 								<li><%= link_to congreso.titulo, asset_path(congreso.respaldos.first.file), :target => "_blank" %><br>
 							<% else %>
 								<li><%= congreso.titulo %>
-							<% end %></strong> |
+							<% end %></strong>
 							<i><%= congreso.congreso %></i>
 							<div class="mb-1">
 								<% congreso.person_product.order(:id).each do |person_prod| %>
