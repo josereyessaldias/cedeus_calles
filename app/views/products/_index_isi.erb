@@ -3,7 +3,6 @@
 <table>
 	<tr>
 		<th class="vertical">Periodo</th>
-		<th>Research Line</th>
 		<th>Autores</th>
 		<th>DOI</th>
 		<th>Título</th>
@@ -17,29 +16,16 @@
 	</tr>
 
 	<% @products.each do |product| %>
-		<% @clust = [] %>
 		<% @person = [] %>
 
 		<% if product.tipo == "revista_isi" %>
 			
 			<% product.person_product.order(:id).each do |person_prod| %>
-
-				<% person_prod.person.clusters.each do |cluster| %>	
-					<% if cluster.name != "Sin Cluster" %>
-						<% @clust << cluster.name %>
-					<% end %>
-				<% end %>
 				<% @person << person_prod.person.cedeusname %>
-
 			<% end %>
 
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
-				<td>
-					<% @clust.uniq.each do |i| %>
-						<%= i %>/ 
-					<% end %>
-				</td>
 
 				<td style="width:100px"><strong>
 					<% @person.each_with_index do |i,index| %>
