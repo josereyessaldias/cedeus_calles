@@ -4,7 +4,6 @@
 	<tr>
 		<th>Periodo</th>
 		<th>Tipo de Actividad</th>
-		<th>Research Line</th>
 		<th>Nombre Congreso</th>
 		<th>Título Ponencia</th>
 		<th>Participantes</th>
@@ -15,17 +14,10 @@
 	</tr>
 
 	<% @products.each do |product| %>
-		<% @clust = [] %>
 		<% @persona = [] %>
 		<% if product.tipo == "congreso" %>
 			
 			<% product.person_product.order(:id).each do |person_prod| %>
-
-				<% person_prod.person.clusters.each do |cluster| %>	
-					<% if cluster.name != "Sin Cluster" %>
-						<% @clust << cluster.name %>
-					<% end %>
-				<% end %>
 				<% @par = [] %>
 				<% @par << person_prod.person.cedeusname %>
 				<% @par << person_prod.contact_before_type_cast %>
@@ -35,11 +27,6 @@
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.tipocongreso_before_type_cast %></td>
-				<td>
-					<% @clust.uniq.each do |i| %>
-						<%= i %>/ 
-					<% end %>
-				</td>
 				<td><%= product.congreso %> </td>
 				<td><%= product.titulo %></td>
 

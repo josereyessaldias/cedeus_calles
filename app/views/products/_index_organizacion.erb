@@ -4,7 +4,6 @@
 	<tr>
 		<th class="vertical">Periodo</th>
 		<th>Tipo de Actividad</th>
-		<th>Research Line</th>
 		<th>Nombre Actividad</th>
 		<th>Número de Participantes</th>
 		<th>Ciudad/País</th>
@@ -14,27 +13,16 @@
 	</tr>
 
 	<% @products.each do |product| %>
-		<% @clust = [] %>
 		<% @persona = [] %>
 		<% if product.tipo == "organizacion" %>
 			
 			<% product.persons.each do |person| %>
-
-				<% person.clusters.each do |cluster| %>	
-					<% if cluster.name != "Sin Cluster" %>
-						<% @clust << cluster.name %>
-					<% end %>
-				<% end %>
 				<% @persona << person.name %>
 			<% end %>
 
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.tipoorganizacion_before_type_cast %></td>
-				<td><% if product.cluster != nil %>
-						<%= product.cluster.name %>
-					<% end %>
-					</td>
 				<td><%= product.titulo %></td>
 				<td><%= product.numpart %></td>
 				<td><%= product.year %></td>

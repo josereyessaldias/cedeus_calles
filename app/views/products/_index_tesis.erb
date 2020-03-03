@@ -3,7 +3,6 @@
 <table>
 	<tr>
 		<th class="vertical">Periodo</th>
-		<th>Research Line</th>
 		<th>Etapa</th>
 		<th>Estudiante</th>
 		<th>RUT</th>
@@ -21,27 +20,15 @@
 	<tr>
 
 	<% @products.each do |product| %>
-		<% @clust = [] %>
 		<% @persona = [] %>
 		<% if product.tipo == "tesis" %>
 			
 			<% product.person_product.order(:id).each do |person_prod| %>
-
-				<% person_prod.person.clusters.each do |cluster| %>	
-					<% if cluster.name != "Sin Cluster" %>
-						<% @clust << cluster.name %>
-					<% end %>
-				<% end %>
 				<% @persona << person_prod.person.cedeusname %>
 			<% end %>
 
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
-				<td>
-					<% @clust.uniq.each do |i| %>
-						<%= i %>/ 
-					<% end %>
-				</td>
 				<td>
 					<%= product.etapa_before_type_cast %>
 				</td>
