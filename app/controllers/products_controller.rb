@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 	def new
 		@tipo = params[:tipo]
 		@product = Product.new
-		@persons = Person.all
+		@persons = Person.all.order(:name)
 		@clusters = Cluster.all
 
 		@person_array = []
