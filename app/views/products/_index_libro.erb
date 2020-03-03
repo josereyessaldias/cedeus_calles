@@ -35,26 +35,26 @@
 				<td><strong><%= product.registro %></strong></td>
 
 			
-				<td>
+				<td style="width:100px; color:darkcyan"><strong>
 					<% @autores.each do |i| %>
 						<%= i %>
 					<% end %>
 				</td>
-				<td>
+				<td style="width:100px; color:darkcyan"><strong>
 					<% @editores.each do |i| %>
 						<%= i %>
 					<% end %>
-				</td>
-				<td><%= product.revista %> </td>
-				<td><%= product.titulo %></td>
+				</td></strong>
+				<td style="width:220px;"><%= product.revista %> </td>
+				<td style="max-width: 350px"><%= product.titulo %></td>
 				<td><%= product.pages %></td>
-				<td><%= product.editorial %></td>
+				<td style="width:150px;"><%= product.editorial %></td>
 				<td><%= product.year %></td>
-				<td>
-					<strong><%= "DITL" if product.ditl_check %>
-					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS(A&M)" if product.cedeus_check %>
-					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
+				<td style="text-align: center">
+					<strong><%= image_tag("ditl_small.png", style: "height:25%") if product.ditl_check %>
+					<%= image_tag("brt_small.jpg", style: "height:25%") if product.brt_check  %>
+					<%= image_tag("cedeus_accmov.png", style: "height:20%") if product.cedeus_check %>
+					<%= image_tag("cedeus_calles.png", style: "height:20%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>

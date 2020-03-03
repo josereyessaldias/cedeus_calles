@@ -4,7 +4,7 @@
 	<tr>
 		<th>Periodo</th>
 		<th>Autores</th>
-		<th>DOI</th>
+		<th width="110px">DOI</th>
 		<th>Título</th>
 		<th>Revista</th>
 		<th>Volumen</th>
@@ -25,25 +25,25 @@
 			<% end %>
 
 			<tr>
-				<td><strong><%= product.registro %></strong></td>
+				<td><%= product.registro %></td>
 				</td>
-				<td>
+				<td style="width:120px; color:darkcyan"><strong>
 					<% @person.each do |i| %>
 						<%= i %>, 
 					<% end %>
-				</td>
-				<td><%= product.doi %></td>
-				<td><%= product.titulo %></td>
-				<td><%= product.revista %> </td>
+				</td></strong>
+				<td style="max-width:70px;word-wrap: break-word"><%= product.doi %></td>
+				<td style="width:350px;"><strong><%= product.titulo %></strong></td>
+				<td><i><%= product.revista %></i></td>
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
 				<td><%= product.indexacion %></td>
-				<td>
-					<strong><%= "DITL" if product.ditl_check %>
-					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS(A&M)" if product.cedeus_check %>
-					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
+				<td style="text-align: center">
+					<strong><%= image_tag("ditl_small.png", style: "height:25%") if product.ditl_check %>
+					<%= image_tag("brt_small.jpg", style: "height:25%") if product.brt_check  %>
+					<%= image_tag("cedeus_accmov.png", style: "height:20%") if product.cedeus_check %>
+					<%= image_tag("cedeus_calles.png", style: "height:20%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>
