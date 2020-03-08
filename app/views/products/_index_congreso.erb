@@ -2,7 +2,7 @@
 
 <table>
 	<tr>
-		<th>Periodo</th>
+		<th class="vertical">Periodo</th>
 		<th>Tipo de Actividad</th>
 		<th>Nombre Congreso</th>
 		<th>Título Ponencia</th>
@@ -27,10 +27,10 @@
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.tipocongreso_before_type_cast %></td>
-				<td><%= product.congreso %> </td>
-				<td><%= product.titulo %></td>
+				<td style="max-width:250px;"><%= product.congreso %> </td>
+				<td style="width: 300px"><%= product.titulo %></td>
 
-				<td><% @persona.each do |i| %>
+				<td style="width:240px; color:darkcyan"><% @persona.each do |i| %>
 						<%= i[0] %>
 						<% if i[1].to_i > 0 and i[1].to_i < 4 %>
 							(<i><%= PersonProduct.contacts.key(i[1]) %></i>)
@@ -41,11 +41,11 @@
 
 				<td><%= product.lugar %></td>
 				<td><%= product.year %></td>
-				<td>
-					<strong><%= "DITL" if product.ditl_check %>
-					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS(A&M)" if product.cedeus_check %>
-					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
+				<td style="text-align: center">
+					<strong><%= image_tag("4_ing_ditl.png", style: "height:50%") if product.ditl_check %>
+					<%= image_tag("3_brt.png", style: "height:50%") if product.brt_check  %>
+					<%= image_tag("2_cedeus_am.png", style: "height:50%") if product.cedeus_check %>
+					<%= image_tag("1_cedeus_calles.png", style: "height:50%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 
 				<td>
