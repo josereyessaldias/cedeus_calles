@@ -27,8 +27,8 @@
 			<tr>
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.tipocongreso_before_type_cast %></td>
-				<td style="max-width:250px;"><%= product.congreso %> </td>
-				<td style="width: 300px"><%= product.titulo %></td>
+				<td style="max-width:250px;"><i><%= product.congreso %> </i></td>
+				<td style="width: 300px"><strong><%= product.titulo %></strong></td>
 
 				<td style="width:240px; color:darkcyan"><% @persona.each do |i| %>
 						<%= i[0] %>

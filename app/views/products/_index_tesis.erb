@@ -32,12 +32,12 @@
 				<td>
 					<%= product.etapa_before_type_cast %>
 				</td>
-				<td><%= product.estudiante %></td>
-				<td><%= product.rut %></td>
+				<td><strong><%= product.estudiante %></strong></td>
+				<td style="width: 80px"><%= product.rut %></td>
 				<td><%= product.genero %></td>
-				<td><%= product.titulo %></td>
+				<td style="max-width: 400px"><i><%= product.titulo %></i></td>
 				<td><%= product.grado_before_type_cast %></td>
-				<td style="width:140px; color:darkcyan">
+				<td style="max-width:200px; color:darkcyan">
 					<% @persona.each do |i| %>
 						<%= i %>, 
 					<% end %>
