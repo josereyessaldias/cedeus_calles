@@ -4,7 +4,7 @@
 	<tr>
 		<th class="vertical">Periodo</th>
 		<th>Autores</th>
-		<th width="130px">DOI</th>
+		<th width="120px">DOI</th>
 		<th>Título</th>
 		<th>Revista</th>
 		<th>Volumen</th>
@@ -43,11 +43,11 @@
 				<td><%= product.volume %></td>
 				<td><%= product.pages %></td>
 				<td><%= product.year %></td>
-				<td style="text-align: center">
-					<strong><%= image_tag("4_ing_ditl.png", style: "height:50%") if product.ditl_check %>
-					<%= image_tag("3_brt.png", style: "height:50%") if product.brt_check  %>
-					<%= image_tag("2_cedeus_am.png", style: "height:50%") if product.cedeus_check %>
-					<%= image_tag("1_cedeus_calles.png", style: "height:50%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
+				<td style="text-align: center; width:169px">
+					<strong><%= image_tag("4_ing_ditl.png", style: "height:45%") if product.ditl_check %>
+					<%= image_tag("3_brt.png", style: "height:45%") if product.brt_check  %>
+					<%= image_tag("2_cedeus_am.png", style: "height:45%") if product.cedeus_check %>
+					<%= image_tag("1_cedeus_calles.png", style: "height:45%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 
 				<td style="max-width: 30px">
