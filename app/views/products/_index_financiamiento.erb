@@ -24,7 +24,7 @@
 				<td><strong><%= product.registro %></strong></td>
 				<td><%= product.titulo %></td>
 				
-				<td style="width:100px"><strong>
+				<td style="width:140px; color:darkcyan">
 					<% @person.each_with_index do |i,index| %>
 						<% if index < @person.length - 1 %>
 							<%= link_to i, person_path(Person.find_by cedeusname: i) %>,
@@ -32,17 +32,16 @@
 							<%= link_to i, person_path(Person.find_by cedeusname: i) %>
 						<% end %>
 					<% end %>
-				</strong>
 				</td>
 
 				<td><%= product.inicio %></td>
 				<td><%= product.termino %></td>
 				<td><%= number_to_currency(product.monto, strip_insignificant_zeros: true) %></td>
-				<td>
-					<strong><%= "DITL" if product.ditl_check %>
-					<%= "BRT+" if product.brt_check  %>
-					<%= "CEDEUS(A&M)" if product.cedeus_check %>
-					<%= "CEDEUS_CALLES" if product.cedeuscalles_check %></strong>
+				<td style="text-align: center; width:169px">
+					<strong><%= image_tag("4_ing_ditl.png", style: "height:45%") if product.ditl_check %>
+					<%= image_tag("3_brt.png", style: "height:45%") if product.brt_check  %>
+					<%= image_tag("2_cedeus_am.png", style: "height:45%") if product.cedeus_check %>
+					<%= image_tag("1_cedeus_calles.png", style: "height:45%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 
 				<td>

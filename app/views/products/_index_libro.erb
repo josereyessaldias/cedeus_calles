@@ -50,11 +50,11 @@
 				<td><%= product.pages %></td>
 				<td style="width:150px;"><%= product.editorial %></td>
 				<td><%= product.year %></td>
-				<td style="text-align: center">
-					<strong><%= image_tag("4_ing_ditl.png", style: "height:50%") if product.ditl_check %>
-					<%= image_tag("3_brt.png", style: "height:50%") if product.brt_check  %>
-					<%= image_tag("2_cedeus_am.png", style: "height:50%") if product.cedeus_check %>
-					<%= image_tag("1_cedeus_calles.png", style: "height:50%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
+				<td style="text-align: center; width:169px">
+					<strong><%= image_tag("4_ing_ditl.png", style: "height:45%") if product.ditl_check %>
+					<%= image_tag("3_brt.png", style: "height:45%") if product.brt_check  %>
+					<%= image_tag("2_cedeus_am.png", style: "height:45%") if product.cedeus_check %>
+					<%= image_tag("1_cedeus_calles.png", style: "height:45%", title: "cedeus_calles") if product.cedeuscalles_check %></strong>
 				</td>
 				<td>
 					<% product.respaldos.each_with_index do |respaldo,i| %>
