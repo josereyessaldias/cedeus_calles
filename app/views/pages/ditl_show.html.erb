@@ -1,5 +1,38 @@
 <h3><%= @person.completename %></h3>
-<br><br>
+<br>
+
+<div class="ml-5">
+	<h5>Publicaciones WoS</h5>
+	<div style="font-size: 12px">
+		<h6><% temp = 2021 %></h6>
+		<ol class="pl-3">
+			<% @person_products.where(tipo: "revista_isi").each do |paper| %>
+				<% if paper.registro != temp %>
+					</ol>
+					<% temp -= 1 %>
+					<h6><%= temp %></h6>
+					<ol class="pl-3">
+				<% end %>
+				<strong><% if paper.respaldos.first != nil %>
+					<li><%= link_to paper.titulo, asset_path(paper.respaldos.first.file), :target => "_blank" %><br>
+				<% else %>
+					<li><%= paper.titulo %>
+				<% end %></strong>
+				<div class="mb-1">
+					<i><%= paper.revista %></i> |
+					<% paper.person_product.order(:id).each do |person_prod| %>
+						<%= person_prod.person.cedeusname %>,
+					<% end %>
+				</div></li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+
+
+<br>
+<br>
+<hr>
 
 <div style="font-size: 12px" class="col-12">
 	<% @person_tipos.each do |tipos| %>
@@ -15,6 +48,7 @@
 		<% @person_products.each do |product| %>
 			<% if product.tipo == tipos %>
 				<% if (tipos == "revista_isi" or tipos == "revista_no_isi") %>
+					
 					<%= product.registro %>
 						<strong><% if product.respaldos.first != nil %>
 							<%= link_to product.titulo, asset_path(product.respaldos.first.file), :target => "_blank" %>
