@@ -4,7 +4,7 @@
 <div class="ml-5">
 	<strong>Publicaciones WoS</strong>
 	<div style="font-size: 12px">
-		<h6><% temp = 2021 %></h6>
+		<strong><% temp = 2021 %></strong>
 		<ol class="pl-3">
 			<% @paper_wos.each do |paper| %>
 				<% if paper.registro != temp %>
@@ -12,7 +12,7 @@
 					<% until paper.registro == temp do %>
 						<% temp -= 1 %>
 					<% end %>
-					<h6><%= temp %></h6>
+					<strong><%= temp %></strong>
 					<ol class="pl-3">
 				<% end %>
 				<strong><% if paper.respaldos.first != nil %>

@@ -8,6 +8,20 @@ class PagesController < ApplicationController
   	@paper_wos = @products.where(tipo: "revista_isi").order(registro: :desc)
     @participacion = @products.where(tipo: "congreso").order(registro: :desc)
     @proyectos = @products.where(tipo: "financiamiento").order(registro: :desc)
+
+    #@product_graph = @ditl_people.joins(:products).merge(Product.where(:products => {:tipo => "revista_isi", :ditl_check => true} ))
+    @years = ["2015",2016,2017,2018,2019,2020]
+    @graph = []
+    @ditl_people.each do |persona|
+      @hash = {}
+      @years.each do |year|
+        @hash[year] = persona.products.where(:registro => year,:tipo => "revista_isi", :ditl_check => true).count
+      end 
+
+      @graph << {:name => persona.completename, :data => @hash }
+    end
+
+
   end
 
   def ditl_show
