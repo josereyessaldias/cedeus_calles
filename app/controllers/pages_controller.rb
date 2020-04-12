@@ -22,7 +22,7 @@ class PagesController < ApplicationController
         @hash[year] = persona.products.where(:registro => year,:tipo => "revista_isi", :ditl_check => true).count
       end 
 
-      @graph << {:name => persona.completename, :data => @hash }
+      @graph << {:name => persona.surname, :data => @hash }
     end
 
 
