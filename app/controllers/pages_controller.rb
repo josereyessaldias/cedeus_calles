@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   def ditl_show
   	@person = Person.find(params[:id])
     @person_products = @person.products.order(registro: :desc)
+    @paper_wos = @person_products.where(tipo: "revista_isi")
   	
     @person_tipos = []
 		Product.tipos.keys.each do |type|
