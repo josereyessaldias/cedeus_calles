@@ -10,8 +10,12 @@ class PagesController < ApplicationController
     @proyectos = @products.where(tipo: "financiamiento").order(registro: :desc)
 
     #@product_graph = @ditl_people.joins(:products).merge(Product.where(:products => {:tipo => "revista_isi", :ditl_check => true} ))
-    @years = [2010,2011,2012,2013,2014,"2015",2016,2017,2018,2019,2020]
-    @graph = []
+    @years = [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020]
+    @hash = {}
+    @years.each do |year|
+      @hash[year] = Product.where(:registro => year,:tipo => "revista_isi", :ditl_check => true).count
+    end
+    @graph = [:name => "DITL", :data => @hash]
     @ditl_people.each do |persona|
       @hash = {}
       @years.each do |year|
