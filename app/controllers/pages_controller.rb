@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     @years.each do |year|
       @hash[year] = Product.where(:registro => year,:tipo => "revista_isi", :ditl_check => true).count
     end
-    @graph = [:name => "DITL", :data => @hash]
+    @graph = [{:name => "DITL", :data => @hash , :visible => false}]
     @ditl_people.each do |persona|
       @hash = {}
       @years.each do |year|
